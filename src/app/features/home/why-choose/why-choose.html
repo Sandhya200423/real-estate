@@ -1,0 +1,129 @@
+<section class="why-section section">
+
+
+    <div class="container why-container">
+
+
+        <!-- LEFT CONTENT -->
+
+        <div class="why-content">
+
+
+            <span class="section-subtitle">
+                WHY CHOOSE SKYDWELL
+            </span>
+
+
+
+            <h2 class="section-title">
+
+                Building Homes With
+                <br>
+
+                <span>
+                    Trust & Excellence
+                </span>
+
+            </h2>
+
+
+
+            <p class="section-description">
+
+                SkyDwell creates exceptional living spaces
+                with premium quality, modern design and
+                thoughtful planning to deliver a better
+                lifestyle experience.
+
+            </p>
+
+
+
+            <div class="trust-points">
+
+
+                <div class="trust-item">
+
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+
+                    <span>
+                        Transparent Process
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="trust-item">
+
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+
+                    <span>
+                        Customer First Approach
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <!-- RIGHT FEATURES -->
+
+
+        <div class="feature-area">
+
+
+            @for(item of features; track item.title){
+
+
+                <div class="feature-box card">
+
+
+                    <div class="icon-box">
+
+                        <i [class]="item.icon"></i>
+
+                    </div>
+
+
+
+                    <h3 class="heading">
+
+                        {{item.title}}
+
+                    </h3>
+
+
+
+                    <p class="text">
+
+                        {{item.text}}
+
+                    </p>
+
+
+                </div>
+
+
+            }
+
+
+        </div>
+
+
+    </div>
+
+
+</section>

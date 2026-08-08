@@ -1,0 +1,148 @@
+<header class="header" [class.scrolled]="isScrolled">
+
+    <div class="container">
+
+        <div class="navbar">
+
+            <!-- Logo -->
+            <a routerLink="/" class="logo">
+
+                <img
+                    src="logon.png"
+                    alt="SkyDwell Logo"
+                    class="logo-img">
+
+                <div class="logo-text">
+
+                    <h2>SkyDwell</h2>
+
+                    <span>Luxury Real Estate</span>
+
+                </div>
+
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav-links" [class.active]="menuOpen">
+
+                @for(item of navItems; track item.name){
+
+                    @if(item.dropdown){
+
+                        <div class="buy-dropdown">
+
+                            <a
+    [routerLink]="item.link"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: false }">
+
+    {{ item.name }}
+    <i class="fa-solid fa-chevron-down"></i>
+
+</a>
+                            
+
+                            <div class="buy-dropdown-menu">
+
+                                @for(menu of item.dropdown; track menu.name){
+
+                                    <a
+                                        [routerLink]="['/buy']"
+                                        [fragment]="menu.fragment"
+                                        (click)="closeMenu()">
+
+                                        {{ menu.name }}
+
+                                    </a>
+
+                                }
+
+                            </div>
+
+                        </div>
+
+                    }@else{
+
+                        <a
+                            [routerLink]="item.link"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact:true }"
+                            (click)="closeMenu()">
+
+                            {{ item.name }}
+
+                        </a>
+
+                    }
+
+                }
+
+                <!-- Mobile Buttons -->
+
+                <div class="mobile-buttons">
+
+                    <a
+                        routerLink="/signin"
+                        class="btn btn-outline"
+                        (click)="closeMenu()">
+
+                        Sign In
+
+                    </a>
+
+                    <a
+                        routerLink="/sell"
+                        class="btn btn-primary"
+                        (click)="closeMenu()">
+
+                        Add Property
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+            <!-- Desktop Buttons -->
+
+            <div class="header-buttons">
+
+                <a
+                    routerLink="/signin"
+                    class="btn btn-outline">
+
+                    Sign In
+
+                </a>
+
+                <a
+                    routerLink="/sell"
+                    class="btn btn-primary">
+
+                    Add Property
+
+                </a>
+
+            </div>
+
+            <!-- Mobile Menu -->
+
+            <button
+                class="menu-btn"
+                type="button"
+                (click)="toggleMenu()">
+
+                <i
+                    class="fa-solid"
+                    [class.fa-bars]="!menuOpen"
+                    [class.fa-xmark]="menuOpen">
+
+                </i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>

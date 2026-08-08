@@ -1,1 +1,234 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Playfair Display", serif;
+}
+
+:root{
+    --primary:#102B3F;
+    --secondary:#D7A63C;
+    --white:#FFFFFF;
+    --black:#1B1B1B;
+    --text:#6C757D;
+    --bg:#F8F8F6;
+    --border:#E5E7EB;
+}
+html{
+    scroll-behavior:smooth;
+}
+/* ==========================
+   Common Section
+========================== */
+.heading{
+    color:var(--primary);
+    font-weight:600;
+    line-height:1.2;
+}
+
+.text{
+    color:var(--text);
+    line-height:1.8;
+}
+.section{
+    padding:100px 0;
+}
+
+.container{
+    max-width:1320px;
+    width:90%;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-subtitle{
+    display:inline-block;
+    font-size:15px;
+    font-weight:500;
+    color:var(--secondary);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.section-title{
+    font-size:46px;
+    font-weight:600;
+    color:var(--primary);
+    line-height:1.2;
+    margin-bottom:15px;
+}
+
+.section-description{
+    max-width:650px;
+    margin:auto;
+    font-size:16px;
+    color:var(--text);
+    line-height:1.8;
+}
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 30px;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:500;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.35s ease;
+    border:none;
+    
+}
+
+.btn-primary{
+    background:var(--secondary);
+    color:var(--white);
+}
+
+.btn-primary:hover{
+    background:#c89529;
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1.5px solid var(--white);
+    color:var(--white);
+    background:transparent;
+}
+
+.btn-outline:hover{
+    background:var(--white);
+    color:var(--primary);
+}
+
+.btn-dark{
+    background:var(--primary);
+    color:var(--white);
+}
+
+.btn-dark:hover{
+    background:#18384b;
+}
+.card{
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+.img-fluid{
+    width:100%;
+    display:block;
+}
+
+.radius{
+    border-radius:20px;
+}
+.badge{
+    display:inline-block;
+    padding:8px 18px;
+    background:rgba(212,160,55,.15);
+    color:var(--secondary);
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+.bg-light{
+    background:var(--bg);
+}
+
+.bg-dark{
+    background:var(--primary);
+}
+
+.bg-white{
+    background:var(--white);
+}
+
+.grid{
+    display:grid;
+    gap:30px;
+}
+
+.grid-2{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.grid-3{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.grid-4{
+    grid-template-columns:repeat(4,1fr);
+}
+.icon-box{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:rgba(212,160,55,.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--secondary);
+    font-size:24px;
+}
+@media(max-width:992px){
+
+.grid-4,
+.grid-3,
+.grid-2{
+grid-template-columns:1fr;
+}
+
+.section{
+padding:80px 0;
+}
+
+.section-title{
+font-size:34px;
+}
+
+}
+
+@media(max-width:576px){
+
+.section{
+padding:60px 0;
+}
+
+.section-title{
+font-size:28px;
+}
+
+.section-description{
+font-size:15px;
+}
+
+.btn{
+width:100%;
+}
+
+}
+/* Font Awesome Fix */
+
+.fa,
+.fa-solid,
+.fas{
+
+    font-family:"Font Awesome 6 Free" !important;
+    font-weight:900 !important;
+
+}

@@ -1,0 +1,146 @@
+/*=========================
+ Recommendation
+=========================*/
+
+.recommendation{
+
+    background:var(--bg);
+
+}
+
+.recommendation-banner{
+
+    position:relative;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(16,43,63,.60),
+    rgba(16,43,63,.60)),
+    url('/recommandation.png');
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.recommendation-overlay{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:65px;
+
+    gap:60px;
+
+}
+
+.recommendation-content{
+
+    max-width:520px;
+
+}
+
+.recommendation-content h2{
+
+    font-size:42px;
+
+    color:var(--white);
+
+    margin-bottom:18px;
+
+    line-height:1.2;
+
+}
+
+.recommendation-content p{
+
+    color:rgba(255,255,255,.85);
+
+    margin-bottom:30px;
+
+    line-height:1.8;
+
+}
+
+.recommendation-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.recommend-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    padding:16px 22px;
+
+    border-radius:14px;
+
+    color:var(--white);
+
+    border:1px solid rgba(255,255,255,.10);
+
+}
+
+.recommend-item i{
+
+    color:var(--secondary);
+
+    font-size:18px;
+
+}
+
+@media(max-width:992px){
+
+.recommendation-overlay{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:45px 30px;
+
+}
+
+.recommendation-list{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.recommendation-content h2{
+
+    font-size:30px;
+
+}
+
+.recommend-item{
+
+    justify-content:center;
+
+}
+
+}

@@ -1,0 +1,91 @@
+ .popular-location{
+    background:var(--white);
+   
+}
+
+.location-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-top:60px;
+
+}
+
+.location-card{
+
+    position:relative;
+
+    height:320px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+}
+
+.location-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.location-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.location-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.65)
+    );
+
+}
+
+.location-overlay{
+
+    position:absolute;
+
+    left:25px;
+
+    bottom:25px;
+
+    z-index:2;
+
+    color:var(--white);
+
+}
+
+.location-overlay h3{
+
+    font-size:24px;
+
+    margin-bottom:8px;
+
+}
+
+.location-overlay p{
+
+    font-size:15px;
+
+}

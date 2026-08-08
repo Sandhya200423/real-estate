@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "47921e95-6b93-4f98-9394-dc96e9375f81"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -25,8 +26,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
-            ]
+  "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+  "src/styles.css"
+]
           },
           "configurations": {
             "production": {
