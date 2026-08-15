@@ -1,23 +1,24 @@
-/*=========================
- Hero
-=========================*/
+/*=========================*
+ * Hero
+ *=========================*/
 
 .hero{
     position:relative;
     height:80vh;
     min-height:760px;
-    padding-bottom:20px;  
+    padding-bottom:20px;
     overflow:visible;
 }
 
 .hero-bg{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
     filter:brightness(.95) contrast(1.05);
 }
+
 .hero-overlay{
     position:absolute;
     inset:0;
@@ -32,35 +33,34 @@
 }
 
 .hero .container{
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    align-items: center;
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    align-items:center;
 }
 
 .hero-content{
-    max-width: 650px;
-    margin-top: -60px;
+    max-width:650px;
+    margin-top:-60px;
 }
 
-/*=========================
- Heading
-=========================*/
+
+/*=========================*
+ * Heading
+ *=========================*/
 
 .hero-heading{
-    text-align: left;
-    margin: 0;
+    text-align:left;
+    margin:0;
 }
 
 .hero-heading .section-subtitle{
-
     color:var(--secondary);
-   
 }
 
 .hero-heading .section-title{
-    color: var(--white);
+    color:var(--white);
 }
 
 .hero-heading .section-description{
@@ -71,9 +71,10 @@
     line-height:1.8;
 }
 
-/*=========================
- Buttons
-=========================*/
+
+/*=========================*
+ * Buttons
+ *=========================*/
 
 .hero-buttons{
     display:flex;
@@ -82,9 +83,9 @@
 }
 
 
-/*=========================
- Search
-=========================*/
+/*=========================*
+ * Search
+ *=========================*/
 
 .hero-search{
     position:absolute;
@@ -99,306 +100,413 @@
     width:90%;
     max-width:1250px;
     margin:auto;
-
     background:var(--white);
-
     border-radius:18px;
-
     padding:20px 25px;
-
     display:grid;
     grid-template-columns:repeat(4,1fr) 180px;
     gap:20px;
-
     box-shadow:0 20px 50px rgba(0,0,0,.15);
 }
 
 .search-item label{
-
     display:block;
-
     color:var(--primary);
-
     font-weight:600;
-
     margin-bottom:12px;
-
 }
 
 .search-item select{
-
     width:100%;
-
     height:58px;
-
     border:1px solid var(--border);
-
     border-radius:12px;
-
     padding:0 18px;
-
     outline:none;
-
     font-size:15px;
-
 }
 
 .search-box .btn{
-
     height:58px;
-
     margin-top:34px;
-
-}
-
-/*====================================
-        992px
-====================================*/
-
-@media (max-width:992px){
-
-.hero{
-
-    min-height:auto;
-
-    height:auto;
-
-    padding:160px 0 320px;
-
 }
 
 
-.hero .container{
+/*=========================*
+ * LARGE LAPTOP
+ *=========================*/
 
-    align-items:flex-start;
+@media(max-width:1400px){
 
+    .hero{
+        min-height:700px;
+    }
+
+    .hero-content{
+        max-width:600px;
+    }
+
+    .search-box{
+        width:92%;
+        grid-template-columns:repeat(4,1fr) 160px;
+        gap:15px;
+    }
+
+    .hero-buttons{
+        gap:15px;
+        margin-top:35px;
+    }
 }
 
 
-.hero-content{
+/*=========================*
+ * LAPTOP
+ *=========================*/
 
-    max-width:100%;
+@media(max-width:1200px){
 
+    .hero{
+        min-height:680px;
+    }
+
+    .hero-content{
+        max-width:560px;
+        margin-top:-40px;
+    }
+
+    .hero-heading .section-description{
+        max-width:560px;
+        font-size:15px;
+    }
+
+    .hero-buttons{
+        gap:15px;
+        margin-top:30px;
+    }
+
+    .search-box{
+        width:94%;
+        grid-template-columns:repeat(4,1fr) 140px;
+        gap:12px;
+        padding:18px 20px;
+    }
+
+    .search-item label{
+        font-size:14px;
+        margin-bottom:10px;
+    }
+
+    .search-item select{
+        height:54px;
+        padding:0 14px;
+        font-size:14px;
+    }
+
+    .search-box .btn{
+        height:54px;
+        margin-top:31px;
+    }
 }
 
 
+/*=========================*
+ * TABLET
+ *=========================*/
 
-.hero-heading{
+@media(max-width:992px){
 
-    text-align:center;
+    .hero{
+        height:auto;
+        min-height:700px;
+        padding-bottom:150px;
+    }
 
+    .hero-overlay{
+        background:linear-gradient(
+            to bottom,
+            rgba(16,43,63,.82) 0%,
+            rgba(16,43,63,.55) 55%,
+            rgba(16,43,63,.30) 100%
+        );
+    }
+
+    .hero .container{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+        align-items:center;
+        margin-top:60px;
+    }
+
+    .hero-content{
+        width:100%;
+        max-width:700px;
+        margin-top:50px;
+    }
+
+    .hero-heading{
+        text-align:center;
+    }
+
+    .hero-heading .section-subtitle{
+        display:block;
+        color:var(--secondary);
+        text-align:center;
+        margin-bottom:10px;
+    }
+
+    .hero-heading .section-title{
+        text-align:center;
+    }
+
+    .hero-heading .section-description{
+        max-width:650px;
+        text-align:center;
+        margin:15px auto 0;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+        align-items:center;
+        margin-top:25px;
+    }
+
+    .hero-buttons .btn{
+        min-width:130px;
+        padding:11px 18px;
+        font-size:13px;
+    }
+
+    .hero-search{
+        bottom:-100px;
+    }
+
+    .search-box{
+        width:92%;
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+        padding:20px;
+    }
+
+    .search-box .btn{
+        width:100%;
+        height:54px;
+        margin-top:0;
+    }
 }
 
 
-.hero-heading .section-description{
+/*=========================*
+ * MOBILE TABLET
+ *=========================*/
 
-    margin:auto;
+@media(max-width:768px){
 
+    .hero{
+        min-height:680px;
+        padding-bottom:180px;
+    }
+
+    .hero-content{
+        max-width:100%;
+        padding:0 18px;
+        margin-top:40px;
+    }
+
+    .hero-heading .section-subtitle{
+        font-size:13px;
+        margin-bottom:8px;
+    }
+
+    .hero-heading .section-description{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .hero-buttons{
+        flex-direction:row;
+        justify-content:center;
+        gap:10px;
+    }
+
+    .hero-buttons .btn{
+        min-width:120px;
+        padding:10px 15px;
+        font-size:12px;
+    }
+
+    .hero-search{
+        bottom:-30px;
+    }
+
+    .search-box{
+        width:90%;
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+        padding:18px;
+    }
+
+    .search-item label{
+        font-size:13px;
+        margin-bottom:8px;
+    }
+
+    .search-item select{
+        height:50px;
+        font-size:13px;
+        padding:0 12px;
+    }
+
+    .search-box .btn{
+        height:50px;
+        font-size:13px;
+    }
 }
 
 
+/*=========================*
+ * MOBILE
+ *=========================*/
 
-.hero-buttons,
-.btn-group{
+@media(max-width:576px){
 
-    justify-content:center;
+    .hero{
+        min-height:650px;
+        padding-bottom:280px;
+    }
 
+    .hero-content{
+        padding:0 18px;
+        margin-top:20px;
+    }
+
+    .hero-heading .section-subtitle{
+        font-size:12px;
+        margin-bottom:8px;
+    }
+
+    .hero-heading .section-description{
+        max-width:100%;
+        font-size:13px;
+        line-height:1.6;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+        margin-top:22px;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+        max-width:250px;
+        min-width:150px;
+        padding:10px 16px;
+        font-size:12px;
+    }
+
+    .hero-search{
+        bottom:-30px;
+    }
+
+    .search-box{
+        width:92%;
+        max-width:400px;
+        grid-template-columns:1fr;
+        gap:8px;
+        padding:10px 14px;
+        border-radius:14px;
+    }
+
+    .search-item{
+        height:60px;
+        font-size:12px;
+    }
+
+    .search-item label{
+        margin-bottom:5px;
+        font-size:12px;
+    }
+
+    .search-item select{
+        height:48px;
+        font-size:12px;
+    }
+
+    .search-box .btn{
+        height:48px;
+        font-size:12px;
+    }
 }
 
 
+/*=========================*
+ * SMALL MOBILE
+ *=========================*/
 
-.hero-search{
+@media(max-width:430px){
 
-    bottom:25px;
+    .hero{
+        min-height:620px;
+        padding-bottom:220px;
+    }
 
+    .hero-heading .section-subtitle{
+        font-size:11px;
+    }
+
+    .hero-heading .section-description{
+        font-size:12px;
+    }
+
+    .hero-buttons .btn{
+        max-width:220px;
+        min-width:140px;
+        padding:9px 14px;
+        font-size:11px;
+    }
+
+    .hero-search{
+        bottom:-50px;
+    }
+
+    .search-box{
+        width:94%;
+        padding:14px;
+    }
+
+    .search-item select,
+    .search-box .btn{
+        height:46px;
+    }
 }
 
 
-
-.search-box{
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:18px;
-
-}
-
-
-
-.search-box .btn{
-
-    grid-column:1/-1;
-
-    margin-top:0;
-
-    width:100%;
-
-}
-
-
-}
-
-
-
-
-
-/*====================================
-        768px
-====================================*/
-
-@media (max-width:768px){
-
-
-.hero{
-
-    padding:140px 0 380px;
-
-}
-
-
-
-.hero-content{
-
-    width:100%;
-
-}
-
-
-
-.search-box{
-
-    grid-template-columns:1fr;
-
-    padding:22px;
-
-}
-
-
-
-.search-box .btn{
-
-    width:100%;
-
-}
-
-
-}
-
-
-
-
-
-/*====================================
-        576px
-====================================*/
-
-@media (max-width:576px){
-
-
-.hero{
-
-    padding:120px 0 420px;
-
-}
-
-
-
-.hero-heading{
-
-    text-align:center;
-
-}
-
-
-
-.hero-buttons,
-.btn-group{
-
-    flex-direction:column;
-
-    gap:15px;
-
-}
-
-
-
-.hero-buttons .btn,
-.btn-group .btn{
-
-    width:100%;
-
-}
-
-
-
-.hero-search{
-
-    bottom:15px;
-
-}
-
-
-
-.search-box{
-
-    padding:18px;
-
-    border-radius:16px;
-
-}
-
-
-
-.search-item label{
-
-    font-size:14px;
-
-}
-
-
-
-.search-item select{
-
-    height:50px;
-
-}
-
-
-
-.search-box .btn{
-
-    height:50px;
-
-}
-
-
-
-}
-
-
-
-
-
-/*====================================
-        390px
-====================================*/
-
-@media (max-width:390px){
-
-
-.hero{
-
-    padding:110px 0 450px;
-
-}
-
-
-
-.search-box{
-
-    padding:15px;
-
-}
-
-
+/*=========================*
+ * VERY SMALL MOBILE
+ *=========================*/
+
+@media(max-width:390px){
+
+    .hero{
+        min-height:600px;
+    }
+
+    .hero-heading .section-subtitle{
+        font-size:10px;
+    }
+
+    .hero-heading .section-description{
+        font-size:11px;
+    }
+
+    .hero-buttons .btn{
+        max-width:200px;
+        font-size:10px;
+    }
+
+    .search-box{
+        width:95%;
+    }
 }

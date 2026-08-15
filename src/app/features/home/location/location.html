@@ -1,52 +1,32 @@
 <section class="popular-location section">
-
     <div class="container">
-
         <div class="section-heading">
-
             <span class="section-subtitle">
                 POPULAR LOCATIONS
             </span>
-
             <h2 class="section-title">
                 Explore Properties in
                 <br>
                 Top Locations
             </h2>
-
             <p class="section-description">
                 Discover premium properties in the most desirable
                 locations with excellent connectivity and lifestyle.
             </p>
-
         </div>
-
-
         <div class="location-grid">
-
             @for(location of locations; track location.name){
-
             <div class="location-card">
-
                 <img
                     [src]="location.image"
                     [alt]="location.name"
                     class="img-fluid">
-
                 <div class="location-overlay">
-
                     <h3>{{location.name}}</h3>
-
                     <p>{{location.properties}} Properties</p>
-
                 </div>
-
             </div>
-
             }
-
         </div>
-
     </div>
-
 </section>

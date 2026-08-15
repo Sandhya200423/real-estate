@@ -13,11 +13,8 @@
                     class="logo-img">
 
                 <div class="logo-text">
-
                     <h2>SkyDwell</h2>
-
                     <span>Luxury Real Estate</span>
-
                 </div>
 
             </a>
@@ -25,26 +22,26 @@
             <!-- Navigation -->
             <nav class="nav-links" [class.active]="menuOpen">
 
-                @for(item of navItems; track item.name){
+                @for(item of navItems; track item.name) {
 
-                    @if(item.dropdown){
+                    @if(item.dropdown) {
 
                         <div class="buy-dropdown">
 
                             <a
-    [routerLink]="item.link"
-    routerLinkActive="active"
-    [routerLinkActiveOptions]="{ exact: false }">
+                                [routerLink]="item.link"
+                                routerLinkActive="active"
+                                [routerLinkActiveOptions]="{ exact: false }">
 
-    {{ item.name }}
-    <i class="fa-solid fa-chevron-down"></i>
+                                {{ item.name }}
 
-</a>
-                            
+                                <i class="fa-solid fa-chevron-down"></i>
+
+                            </a>
 
                             <div class="buy-dropdown-menu">
 
-                                @for(menu of item.dropdown; track menu.name){
+                                @for(menu of item.dropdown; track menu.name) {
 
                                     <a
                                         [routerLink]="['/buy']"
@@ -61,12 +58,12 @@
 
                         </div>
 
-                    }@else{
+                    } @else {
 
                         <a
                             [routerLink]="item.link"
                             routerLinkActive="active"
-                            [routerLinkActiveOptions]="{ exact:true }"
+                            [routerLinkActiveOptions]="{ exact: true }"
                             (click)="closeMenu()">
 
                             {{ item.name }}
@@ -78,7 +75,6 @@
                 }
 
                 <!-- Mobile Buttons -->
-
                 <div class="mobile-buttons">
 
                     <a
@@ -104,7 +100,6 @@
             </nav>
 
             <!-- Desktop Buttons -->
-
             <div class="header-buttons">
 
                 <a
@@ -126,7 +121,6 @@
             </div>
 
             <!-- Mobile Menu -->
-
             <button
                 class="menu-btn"
                 type="button"
@@ -136,7 +130,6 @@
                     class="fa-solid"
                     [class.fa-bars]="!menuOpen"
                     [class.fa-xmark]="menuOpen">
-
                 </i>
 
             </button>

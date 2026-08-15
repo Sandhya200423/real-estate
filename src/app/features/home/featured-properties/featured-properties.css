@@ -1,65 +1,35 @@
-/*=========================
- Featured
-=========================*/
-
+/*Featured*/
 .featured{
     background:var(--primary);
     padding-top:100px;
 }
-
-
-/*=========================
- Main Layout
-=========================*/
-
+/*Main Layout*/
 .featured-wrapper{
-
     display:grid;
-
     grid-template-columns:300px 1fr;
-
     gap:45px;
-
     align-items:center;
-    
-
 }
-
-
-
-/*=========================
- Left Content
-=========================*/
-
-
+/*Left Content*/
 .featured-left{
-
     width:90%;
-
-} 
-
+}
 .featured-left .section-title{
-
-     font-size:46px;
+    font-size:46px;
     font-weight:600;
     color:var(--white);
     line-height:1.2;
     margin-bottom:15px;
-
 }
 .featured-left .section-description{
-
-     max-width:650px;
+    max-width:650px;
     margin:auto;
     font-size:16px;
     color:var(--white);
     line-height:1.8;
-     margin-bottom:30px;
-
+    margin-bottom:30px;
 }
-
 .featured-left .section-subtitle{
-
     display:inline-block;
     font-size:15px;
     font-weight:500;
@@ -67,364 +37,393 @@
     text-transform:uppercase;
     letter-spacing:2px;
     margin-bottom:12px;
-
 }
-/*=========================
- Slider
-=========================*/
-
-
+/*Slider*/
 .featured-right{
-
     position:relative;
-
     overflow:hidden;
-
 }
-
-
 .properties-slider{
-
     overflow:hidden;
-
     width:100%;
-
 }
-
-
 .slider-track{
-
     display:flex;
-
     gap:24px;
-
     transition:.5s ease;
-
 }
-
-
-
-/*=========================
- Cards
-=========================*/
-
-
+/*Cards*/
 .property-card{
-
     flex:0 0 calc(33.333% - 20px);
-
     background:var(--white);
-
     border:1px solid var(--border);
-
     border-radius:18px;
-
     overflow:hidden;
-
 }
-
-
- .btn-dark {
-
+.btn-dark{
     transition:.35s ease;
-
     border:none;
-
     background:var(--secondary);
-
     color:var(--white);
-    
 }
-/*=========================
- Image
-=========================*/
-
-
+/*Image*/
 .property-image{
-
     position:relative;
-
 }
-
-
 .property-image img{
-
     width:100%;
-
     height:220px;
-
     object-fit:cover;
-
     display:block;
-
 }
-
-
-
-
 .property-card:hover img{
-
     transform:scale(1.05);
-
 }
-
-
-
-
 /* Badge */
-
 .badge{
-
     position:absolute;
-
     top:15px;
-
     left:15px;
-
     background:#fff4d6;
-
     color:var(--secondary);
-
     padding:8px 18px;
-
     border-radius:20px;
-
     font-size:13px;
-
     font-weight:600;
-
 }
-
-
-
 /* Wishlist */
-
-
 .wishlist{
-
     position:absolute;
-
     top:15px;
-
     right:15px;
-
     width:38px;
-
     height:38px;
-
     border-radius:50%;
-
     background:white;
-
     border:none;
-
 }
-
-
-
-
-/*=========================
- Content
-=========================*/
-
-
+/*Content*/
 .property-content{
-
     padding:20px;
-
 }
-
-
 .property-content .heading{
-
     font-size:20px;
-
     margin-bottom:10px;
-
 }
-
-
-
 .property-content .text{
-
     display:flex;
-
     gap:8px;
-
     margin-bottom:15px;
-
 }
-
-
-
-
 .price{
-
     font-size:26px;
-
     color:var(--primary);
-
     margin-bottom:18px;
-
 }
-
-
-
 /* Info */
-
-
 .property-info{
-
     display:flex;
-
     justify-content:space-between;
-
     padding-top:15px;
-
     border-top:1px solid var(--border);
-
 }
-
-
 .property-info span{
-
     font-size:13px;
-
     display:flex;
-
     align-items:center;
-
     gap:5px;
-
 }
-
-
-
-
-/*=========================
- Arrows
-=========================*/
-
-
+/*Arrows*/
 .slider-buttons{
-
     display:flex;
-
     gap:10px;
-
     margin-top:20px;
-     justify-content:flex-end;
+    justify-content:flex-end;
 }
-
-
 .arrow-btn{
-
     width:45px;
-
     height:45px;
-
     border-radius:50%;
-
     border:1px solid var(--border);
-
     background:var(--secondary);
     color:var(--white);
-    
     cursor:pointer;
-
 }
-
-
 .arrow-btn:hover{
-
     background:var(--primary);
-
     color:white;
-
 }
-
-
-
-
-
-/*=========================
- Responsive
-=========================*/
-
 
 @media(max-width:1200px){
+    .featured{
+        padding-top:90px;
+    }
 
+    .featured-wrapper{
+        grid-template-columns:250px 1fr;
+        gap:30px;
+    }
 
-.featured-wrapper{
+    .featured-left{
+        width:100%;
+    }
 
-    grid-template-columns:260px 1fr;
+    .featured-left .section-title{
+        font-size:40px;
+    }
 
+    .property-card{
+        flex:0 0 calc(50% - 12px);
+    }
+
+    .property-image img{
+        height:210px;
+    }
 }
-
-
-.property-card{
-
-    flex:0 0 calc(50% - 15px);
-
-}
-
-
-}
-
-
-
 
 @media(max-width:992px){
+    .featured-wrapper{
+        grid-template-columns:300px 1fr;
+        gap:30px;
+        align-items:center;
+    }
 
+    .featured-left{
+        width:100%;
+        text-align:left;
+    }
 
-.featured-wrapper{
+    .featured-left .section-title{
+        font-size:38px;
+    }
 
-    grid-template-columns:1fr;
+    .featured-left .section-description{
+        max-width:650px;
+        margin:0 0 25px;
+    }
 
+    .featured-right{
+        width:100%;
+        max-width:500px;
+        margin:0 auto;
+    }
+
+    .properties-slider{
+        width:100%;
+        overflow:hidden;
+    }
+
+    .slider-track{
+        gap:1;
+    }
+
+    .property-card{
+        flex:0 0 100% !important;
+        width:100% !important;
+        min-width:100% !important;
+    }
+
+    .property-image img{
+        height:180px;
+    }
+
+    .slider-buttons{
+        justify-content:flex-end;
+    }
 }
+@media(min-width:993px) and (max-width:1100px){
+    .featured-wrapper{
+        grid-template-columns:260px 1fr;
+        gap:25px;
+    }
 
+    .featured-right{
+        width:100%;
+        max-width:none;
+    }
 
-.featured-left{
+    .properties-slider{
+        width:100%;
+        overflow:hidden;
+    }
 
-    text-align:center;
+    .slider-track{
+        gap:10px;
+    }
 
+    .property-card{
+        flex:0 0 calc(50% - 7.5px);
+        min-width:0;
+    }
+
+    .property-image img{
+        height:180px;
+    }
 }
+@media(max-width:768px){
+    .featured{
+        padding-top:70px;
+    }
 
+    .featured-wrapper{
+        gap:30px;
+    }
 
-.featured-left .section-title{
+    .featured-left .section-subtitle{
+        font-size:13px;
+        margin-bottom:10px;
+    }
 
-    font-size:35px;
+    .featured-left .section-title{
+        font-size:32px;
+    }
 
+    .featured-left .section-description{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .property-card{
+        flex:0 0 100%;
+    }
+
+    .property-image img{
+        height:220px;
+    }
+
+    .property-content{
+        padding:18px;
+    }
+
+    .property-content .heading{
+        font-size:19px;
+    }
+
+    .price{
+        font-size:23px;
+    }
 }
-
-
-.slider-buttons{
-
-    justify-content:center;
-
-}
-
-
-
-}
-
-
 
 @media(max-width:576px){
+    .featured{
+        padding-top:60px;
+    }
 
+    .featured-wrapper{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .featured-left{
+        width:100%;
+        text-align:center;
+    }
+
+    .featured-left .section-subtitle{
+        font-size:12px;
+        letter-spacing:1.5px;
+    }
+
+    .featured-left .section-title{
+        font-size:28px;
+    }
+
+    .featured-left .section-description{
+        font-size:13px;
+        line-height:1.6;
+    }
+
+    .featured-right{
+        width:100%;
+        max-width:100%;
+        margin:0 auto;
+    }
+
+    .properties-slider{
+        width:100%;
+        overflow:hidden;
+    }
+
+    .slider-track{
+        gap:0;
+    }
+
+    .property-card{
+        flex:0 0 100%;
+        width:100%;
+        min-width:100%;
+    }
+
+    .property-image img{
+        height:200px;
+    }
+
+    .property-content{
+        padding:16px;
+    }
+
+    .property-content .heading{
+        font-size:18px;
+    }
+
+    .property-content .text{
+        font-size:13px;
+    }
+
+    .price{
+        font-size:22px;
+    }
+
+    .property-info span{
+        font-size:12px;
+    }
+
+    .slider-buttons{
+        margin-top:15px;
+        justify-content:center;
+    }
+
+    .arrow-btn{
+        width:40px;
+        height:40px;
+    }
+}
+
+@media(max-width:430px){
+    .featured{
+        padding-top:50px;
+    }
+
+    .featured-left .section-title{
+        font-size:25px;
+    }
+
+    .featured-left .section-description{
+        font-size:12px;
+    }
+
+    .property-image img{
+        height:185px;
+    }
+
+    .property-content{
+        padding:14px;
+    }
+
+    .property-content .heading{
+        font-size:17px;
+    }
+
+    .price{
+        font-size:20px;
+    }
+    .slider-track{
+    gap: 1;
+}
 
 .property-card{
-
     flex:0 0 100%;
-
+    width:100%;
+    min-width:100%;
 }
-
-
-.property-image img{
-
-    height:240px;
-
-}
-
-
 }
