@@ -483,9 +483,7 @@ CARDS
         max-width: 1100px;
         padding: 0 30px;
     }
-   .section-heading {
-      margin-top: 30px;
-   }
+
     .contact-wrapper {
         grid-template-columns: 1.6fr 1fr;
         gap: 25px;
@@ -539,9 +537,6 @@ CARDS
     .contact-section .container {
         padding: 0 25px;
     }
-   .section-heading {
-      margin-top: 30px;
-   }
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -606,9 +601,6 @@ CARDS
     .contact-section .container {
         padding: 0 20px;
     }
-   .section-heading {
-      margin-top: 30px;
-   }
     .contact-wrapper {
         gap: 25px;
     }
@@ -793,9 +785,7 @@ CARDS
     .contact-section .container {
         padding: 0 15px;
     }
-    .section-heading {
-      margin-top: 30px;
-   }
+    
     .contact-form-card,
     .contact-info-card {
         padding: 20px;
@@ -946,9 +936,7 @@ CARDS
     .contact-section .container {
         padding: 0 18px;
     }
-    .section-heading {
-      margin-top: 30px;
-   }
+
     .contact-form-card,
     .contact-info-card {
         padding: 17px;

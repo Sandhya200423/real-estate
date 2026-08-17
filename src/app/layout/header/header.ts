@@ -17,6 +17,7 @@ export class HeaderComponent {
 
   menuOpen = false;
   isScrolled = false;
+  buyDropdownOpen = false;
 
   navItems = [
     { name: 'Home', link: '/' },
@@ -24,12 +25,12 @@ export class HeaderComponent {
     { name: 'Buy', link: '/buy' ,
 
       dropdown: [
-  { name: 'Find Your Home', fragment: 'find-home' },
-  { name: 'Explore Locations', fragment: 'locations' },
-  { name: 'Featured Properties', fragment: 'featured' },
-  { name: 'New Launches', fragment: 'new-launches' },
-  { name: 'Home Loan & EMI', fragment: 'emi' },
-]
+        { name: 'Find Your Home', fragment: 'find-home' },
+        { name: 'Explore Locations', fragment: 'locations' },
+        { name: 'Featured Properties', fragment: 'featured' },
+        { name: 'New Launches', fragment: 'new-launches' },
+        { name: 'Home Loan & EMI', fragment: 'emi' },
+      ]
     },
     { name: 'Sell', link: '/sell' },
     { name: 'About', link: '/about' },
@@ -42,8 +43,13 @@ export class HeaderComponent {
     this.menuOpen = !this.menuOpen;
   }
 
+  toggleBuyDropdown() {
+    this.buyDropdownOpen = !this.buyDropdownOpen;
+  }
+
   closeMenu() {
     this.menuOpen = false;
+    this.buyDropdownOpen = false;
   }
 
   @HostListener('window:scroll')

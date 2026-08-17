@@ -32,19 +32,6 @@
     max-width:520px;
 }
 
-.recommendation-content h2{
-    font-size:42px;
-    color:var(--white);
-    margin-bottom:18px;
-    line-height:1.2;
-}
-
-.recommendation-content p{
-    color:rgba(255,255,255,.85);
-    margin-bottom:30px;
-    line-height:1.8;
-}
-
 .recommendation-content .btn-primary{
     display:inline-block;
     width:auto;
@@ -97,17 +84,6 @@
         max-width:45%;
     }
 
-    .recommendation-content h2{
-        font-size:34px;
-        margin-bottom:15px;
-    }
-
-    .recommendation-content p{
-        font-size:12px;
-        line-height:1.6;
-        margin-bottom:20px;
-    }
-
     .recommendation-list{
         width:55%;
         gap:14px;
@@ -147,16 +123,6 @@
         max-width:100%;
     }
 
-    .recommendation-content h2{
-        font-size:32px;
-    }
-
-    .recommendation-content p{
-        font-size:12px;
-        line-height:1.6;
-        margin-bottom:20px;
-    }
-
     .recommendation-list{
         width:100%;
         max-width:600px;
@@ -185,18 +151,6 @@
     .recommendation-overlay{
         padding:40px 18px;
         gap:25px;
-    }
-
-    .recommendation-content h2{
-        font-size:28px;
-        line-height:1.25;
-        margin-bottom:12px;
-    }
-
-    .recommendation-content p{
-        font-size:12px;
-        line-height:1.6;
-        margin-bottom:20px;
     }
 
     .recommendation-content .btn-primary{
@@ -236,14 +190,6 @@
         gap:22px;
     }
 
-    .recommendation-content h2{
-        font-size:25px;
-    }
-
-    .recommendation-content p{
-        font-size:12px;
-    }
-
     .recommendation-content .btn-primary{
         min-width:220px;
         padding:13px 20px;
@@ -274,15 +220,6 @@
     .recommendation-overlay{
         padding:30px 12px;
     }
-
-    .recommendation-content h2{
-        font-size:23px;
-    }
-
-    .recommendation-content p{
-        font-size:11px;
-    }
-
     .recommendation-content .btn-primary{
         min-width:200px;
         padding:12px 18px;

@@ -3,16 +3,6 @@
     background:var(--bg);
 }
 
-.section-header{
-    text-align:center;
-    max-width:700px;
-    margin:0 auto 45px;
-}
-
-.section-title span{
-    color:var(--secondary);
-}
-
 /* Main Box */
 
 .confidence-box{
@@ -72,10 +62,7 @@
     .buy-confidence{
         padding:90px 0;
     }
-    .section-header{
-        padding:0 15px;
-        margin-top: 20px;
-    }
+
     .confidence-box{
         grid-template-columns:1fr 1fr;
         max-height:320px;
@@ -114,11 +101,6 @@
         padding:70px 0;
     }
 
-    .section-header{
-        padding:0 20px;
-        margin-bottom:30px;
-    }
-
     .confidence-box{
         grid-template-columns:1fr;
         max-height:none;
@@ -138,11 +120,6 @@
 
     .buy-confidence{
         padding:55px 0;
-    }
-
-    .section-header{
-        padding:0 15px;
-        margin-top: 20px;
     }
 
     .confidence-content{
@@ -179,10 +156,6 @@
         padding:45px 0;
     }
      
-    .section-header{
-        padding:0 15px;
-        margin-top: 20px;
-    }
     .confidence-content{
         padding:25px 16px;
        

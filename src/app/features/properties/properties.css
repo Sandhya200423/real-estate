@@ -32,27 +32,6 @@ z-index:2;
 .hero-content{
 max-width:650px;
 }
-.section-subtitle.hero-tag{
-color:var(--secondary);
-font-size:13px;
-font-weight:700;
-letter-spacing:3px;
-text-transform:uppercase;
-}
-.section-title{
-font-size:46px;
-font-weight:600;
-color:var(--white);
-line-height:1.2;
-margin-bottom:15px;
-}
-.section-description{
-max-width:650px;
-margin:auto;
-font-size:16px;
-color:var(--white);
-line-height:1.8;
-}
 /*========================================
         SEARCH BOX
 ========================================*/
@@ -604,10 +583,6 @@ color:var(--text);
         min-width: 0;
     }
 
-    .section-title {
-        font-size: 42px;
-    }
-
     .search-box {
         width: 100%;
         max-width: 100%;
@@ -696,15 +671,6 @@ color:var(--text);
         text-align: center;
     }
 
-    .section-description {
-        width: 100%;
-        max-width: 600px;
-        margin: 15px auto 25px;
-        padding: 0 10px;
-        box-sizing: border-box;
-        line-height: 1.7;
-    }
-
     .search-box {
         width: 100%;
         max-width: 100%;
@@ -790,20 +756,6 @@ color:var(--text);
     .hero-content {
         width: 100%;
         text-align: center;
-    }
-
-    .section-title {
-        font-size: 36px;
-    }
-
-    .section-description {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 8px;
-        margin: 12px auto 22px;
-        font-size: 14px;
-        line-height: 1.6;
-        box-sizing: border-box;
     }
 
     .search-box {
@@ -898,20 +850,6 @@ color:var(--text);
     .hero-content {
         width: 100%;
         text-align: center;
-    }
-
-    .section-title {
-        font-size: 30px;
-    }
-
-    .section-description {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 5px;
-        margin: 10px auto 20px;
-        font-size: 13px;
-        line-height: 1.6;
-        box-sizing: border-box;
     }
 
     .search-box {

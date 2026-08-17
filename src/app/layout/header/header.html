@@ -20,26 +20,40 @@
             </a>
 
             <!-- Navigation -->
-            <nav class="nav-links" [class.active]="menuOpen">
+                        <nav class="nav-links" [class.active]="menuOpen">
 
-                @for(item of navItems; track item.name) {
+                                        @for(item of navItems; track item.name) {
 
-                    @if(item.dropdown) {
+                                            @if(item.dropdown) {
 
-                        <div class="buy-dropdown">
+                                                <div class="buy-dropdown">
 
-                            <a
-                                [routerLink]="item.link"
-                                routerLinkActive="active"
-                                [routerLinkActiveOptions]="{ exact: false }">
+                            <div class="buy-link">
 
-                                {{ item.name }}
+                                <a
+                            [routerLink]="item.link"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: false }"
+                            (click)="closeMenu()">
 
-                                <i class="fa-solid fa-chevron-down"></i>
+                            {{ item.name }}
 
-                            </a>
+                        </a>
 
-                            <div class="buy-dropdown-menu">
+                                <button
+                                    type="button"
+                                    class="dropdown-arrow"
+                                    (click)="toggleBuyDropdown()">
+
+                                    <i class="fa-solid fa-chevron-down"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div
+                                class="buy-dropdown-menu"
+                                [class.open]="buyDropdownOpen">
 
                                 @for(menu of item.dropdown; track menu.name) {
 
@@ -53,6 +67,8 @@
                                     </a>
 
                                 }
+
+                            
 
                             </div>
 

@@ -18,25 +18,6 @@
     );
     z-index:1;
 }
-.about-hero .section-heading{
-    margin-top: 100px;
-    text-align:center;
-}
-
-.about-hero .section-title{
-    font-size:46px;
-    font-weight:600;
-    color:var(--white);
-    line-height:1.2;
-    margin-bottom:15px;
-}
-.about-hero .section-description{
-    max-width:650px;
-    margin:auto;
-    font-size:16px;
-    color:var(--bg);
-    line-height:1.8;
-}
 
 /*ABOUT COMPANY*/
 .about-company{
@@ -55,19 +36,6 @@
     gap:70px;
 }
 /* LEFT CONTENT */
-.about-left h2{
-    font-size:46px;
-    line-height:1.15;
-    color:var(--primary);
-    margin-bottom:25px;
-    font-weight:700;
-}
-.about-left p{
-    color:#6B7280;
-    font-size:17px;
-    line-height:1.8;
-    margin-bottom:18px;
-}
 .about-btn{
     margin-top:20px;
     padding:15px 35px;
@@ -175,18 +143,6 @@ MISSION SECTION
     border-radius:30px;
     box-shadow:0 30px 70px rgba(0,0,0,.15);
 }
-.mission-content h2{
-    font-size:45px;
-    line-height:1.2;
-    color:var(--primary);
-    margin-bottom:25px;
-}
-.mission-content p{
-    color:#6B7280;
-    font-size:17px;
-    line-height:1.8;
-    margin-bottom:18px;
-}
 /* Mission Vision Box */
 .mission-box{
     display:grid;
@@ -215,10 +171,7 @@ MISSION SECTION
     margin-bottom:10px;
     color:#111827;
 }
-.mission-box p{
-    font-size:15px;
-    margin:0;
-}
+
 
 
 /* WHY CHOOSE SECTION */
@@ -266,11 +219,7 @@ MISSION SECTION
     color:#111827;
     margin-bottom:12px;
 }
-.choose-card p{
-    color:#6B7280;
-    line-height:1.7;
-    font-size:15px;
-}
+
 /* =========================================
    ABOUT PAGE - ALL DEVICES RESPONSIVE
 ========================================= */
@@ -290,15 +239,6 @@ MISSION SECTION
     .mission-grid {
         gap: 45px;
     }
-
-    .about-left h2 {
-        font-size: 40px;
-    }
-
-    .mission-content h2 {
-        font-size: 40px;
-    }
-
     .about-right {
         height: 480px;
     }
@@ -321,21 +261,6 @@ MISSION SECTION
         height: 450px;
         margin-top: 90px;
     }
-
-    .about-hero .section-heading {
-        margin-top: 60px;
-        margin-bottom: 40px;
-    }
-
-    .about-hero .section-title {
-        font-size: 40px;
-    }
-
-    .about-hero .section-description {
-        font-size: 15px;
-        padding: 0 20px;
-    }
-
     .about-company {
         padding: 80px 0;
     }
@@ -348,15 +273,6 @@ MISSION SECTION
     .about-left {
         text-align: center;
     }
-
-    .about-left h2 {
-        font-size: 38px;
-    }
-
-    .about-left p {
-        font-size: 16px;
-    }
-
     .about-right {
         height: 450px;
         max-width: 700px;
@@ -391,10 +307,6 @@ MISSION SECTION
         text-align: center;
     }
 
-    .mission-content h2 {
-        font-size: 38px;
-    }
-
     .mission-box {
         text-align: left;
     }
@@ -413,33 +325,9 @@ MISSION SECTION
         margin-top: 80px;
     }
 
-    .about-hero .section-heading {
-        margin-top: 40px;
-        margin-bottom: 30px;
-    }
-
-    .about-hero .section-title {
-        font-size: 34px;
-    }
-
-    .about-hero .section-description {
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
     .about-company {
         padding: 70px 0;
     }
-
-    .about-left h2 {
-        font-size: 34px;
-    }
-
-    .about-left p {
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
     .about-right {
         height: 400px;
     }
@@ -478,15 +366,6 @@ MISSION SECTION
         height: 400px;
     }
 
-    .mission-content h2 {
-        font-size: 34px;
-    }
-
-    .mission-content p {
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
     .mission-box {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -509,9 +388,6 @@ MISSION SECTION
         font-size: 19px;
     }
 
-    .choose-card p {
-        font-size: 14px;
-    }
 }
 
 
@@ -522,33 +398,12 @@ MISSION SECTION
         height: 350px;
         margin-top: 70px;
     }
-    .about-hero .section-heading {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .about-hero .section-title {
-        font-size: 30px;
-    }
-
-    .about-hero .section-description {
-        font-size: 13px;
-        padding: 0 10px;
-    }
-
     .about-company {
         padding: 60px 0;
     }
 
     .container {
         width: 92%;
-    }
-    .about-left h2 {
-        font-size: 30px;
-    }
-
-    .about-left p {
-        font-size: 14px;
     }
 
     .about-btn {
@@ -624,10 +479,6 @@ MISSION SECTION
         font-size: 19px;
     }
 
-    .mission-box p {
-        font-size: 13px;
-    }
-
     .why-choose {
         padding: 60px 0;
     }
@@ -644,10 +495,6 @@ MISSION SECTION
     .choose-card h3 {
         font-size: 20px;
     }
-
-    .choose-card p {
-        font-size: 14px;
-    }
 }
 
 
@@ -657,18 +504,6 @@ MISSION SECTION
     .about-hero {
         height: 320px;
         margin-top: 65px;
-    }
-
-    .about-hero .section-title {
-        font-size: 27px;
-    }
-
-    .about-hero .section-description {
-        font-size: 12px;
-    }
-
-    .about-left h2 {
-        font-size: 27px;
     }
 
     .about-right {
@@ -699,10 +534,6 @@ MISSION SECTION
         height: 290px;
     }
 
-    .mission-content h2 {
-        font-size: 27px;
-    }
-
     .mission-box div {
         padding: 18px;
     }
@@ -715,20 +546,6 @@ MISSION SECTION
     .about-hero {
         height: 300px;
     }
-
-    .about-hero .section-title {
-        font-size: 25px;
-    }
-
-    .about-hero .section-description {
-        font-size: 11px;
-        line-height: 1.6;
-    }
-
-    .about-left h2 {
-        font-size: 25px;
-    }
-
     .about-right {
         height: 260px;
     }
@@ -753,16 +570,8 @@ MISSION SECTION
         font-size: 21px;
     }
 
-    .stat-card p {
-        font-size: 10px;
-    }
-
     .mission-image img {
         height: 260px;
-    }
-
-    .mission-content h2 {
-        font-size: 25px;
     }
 
     .choose-card {

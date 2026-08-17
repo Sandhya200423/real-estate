@@ -13,29 +13,6 @@ background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 }
-.section-subtitle{
-display:inline-block;
-font-size:15px;
-font-weight:500;
-color:var(--secondary);
-text-transform:uppercase;
-letter-spacing:2px;
-margin-bottom:12px;
-}
-.section-title{
-font-size:46px;
-font-weight:600;
-color:var(--white);
-line-height:1.2;
-margin-bottom:15px;
-}
-.section-description{
-max-width:650px;
-margin:auto;
-font-size:16px;
-color:var(--white);
-line-height:1.8;
-}
 /*=========================*
 *Layout*
 *=========================*/
@@ -138,15 +115,6 @@ transform:translateY(-8px);
         gap: 18px;
     }
 
-    .section-title {
-        font-size: 38px;
-    }
-
-    .section-description {
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
     .trust-points {
         margin-top: 28px;
         gap: 15px;
@@ -189,23 +157,6 @@ transform:translateY(-8px);
         width: 100%;
         text-align: center;
     }
-
-    .section-subtitle {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-    .section-title {
-        font-size: 36px;
-        margin-bottom: 12px;
-    }
-
-    .section-description {
-        max-width: 650px;
-        margin: 0 auto;
-        font-size: 15px;
-    }
-
     .trust-points {
         align-items: center;
         margin-top: 25px;
@@ -239,21 +190,6 @@ transform:translateY(-8px);
 
     .why-container {
         gap: 35px;
-    }
-
-    .section-subtitle {
-        font-size: 12px;
-        letter-spacing: 1.5px;
-    }
-
-    .section-title {
-        font-size: 30px;
-        line-height: 1.25;
-    }
-
-    .section-description {
-        font-size: 14px;
-        line-height: 1.7;
     }
 
     .trust-points {
@@ -302,15 +238,6 @@ transform:translateY(-8px);
     .why-section {
         padding: 45px 15px;
     }
-
-    .section-title {
-        font-size: 27px;
-    }
-
-    .section-description {
-        font-size: 13px;
-    }
-
     .trust-item {
         font-size: 13px;
     }
@@ -340,10 +267,6 @@ transform:translateY(-8px);
     .why-section {
         padding-left: 12px;
         padding-right: 12px;
-    }
-
-    .section-title {
-        font-size: 24px;
     }
 
     .feature-area {

@@ -25,20 +25,12 @@
     align-items:center;
     gap:60px;
 }
-.hero-left h1{
-    font-size:46px;
-    font-weight:600;
-    color:var(--white);
-    line-height:1.2;
-    margin-bottom:15px;
+ 
+.agent-hero .section-description {
+    max-width: 760px;
+    margin: 0 0 25px 0;
 }
-.hero-left p{
-    max-width:560px;
-    color:#e5e7eb;
-    font-size:17px;
-    line-height:1.8;
-    margin-bottom:35px;
-}
+
 .hero-btns{
     display:flex;
     gap:18px;
@@ -90,18 +82,6 @@
     grid-template-columns:1fr 1fr;
     gap:70px;
     align-items:center;
-}
-.about-content h2{
-    font-size:46px;
-    color:var(--primary);
-    line-height:1.25;
-    margin-bottom:20px;
-    font-weight:700;
-}
-.about-content p{
-    color:var(--text);
-    line-height:1.9;
-    margin-bottom:28px;
 }
 .about-list{
     list-style:none;
@@ -168,18 +148,6 @@
 .service-image img:hover{
     transform:scale(1.03);
 }
-.service-content h2{
-    font-size:46px;
-    color:var(--primary);
-    margin:18px 0;
-    line-height:1.25;
-    font-weight: 700;
-}
-.service-content p{
-    color:var(--text);
-    line-height:1.9;
-    margin-bottom:30px;
-}
 .service-boxes{
     display:flex;
     flex-direction:column;
@@ -229,6 +197,7 @@
 .agent-cta{
     padding-bottom:100px;
 }
+
 .cta-box{
     background:linear-gradient(135deg,var(--primary),#1c3d55);
     border-radius:24px;
@@ -239,18 +208,7 @@
     align-items:center;
     gap:40px;
 }
-.cta-box span{
-    color:var(--secondary);
-    font-weight:600;
-}
-.cta-box h2{
-    margin:15px 0;
-    font-size:42px;
-}
-.cta-box p{
-    color:#e5e7eb;
-    max-width:600px;
-}
+
 .cta-btn{
     padding:16px 34px;
     background:var(--secondary);
@@ -281,14 +239,6 @@
         gap: 40px;
     }
 
-    .hero-left h1 {
-        font-size: 42px;
-    }
-
-    .hero-left p {
-        font-size: 16px;
-    }
-
     .agent-about,
     .agent-services {
         padding: 80px 0;
@@ -298,19 +248,10 @@
     .agent-services-grid {
         gap: 45px;
     }
-
-    .about-content h2,
-    .service-content h2 {
-        font-size: 40px;
-    }
-
-    .cta-box {
+     .cta-box {
         padding: 50px;
     }
 
-    .cta-box h2 {
-        font-size: 36px;
-    }
     .about-content {
     display: flex;
     flex-direction: column;
@@ -350,16 +291,6 @@
         align-items: center;
     }
 
-    .hero-left h1 {
-        font-size: 40px;
-        max-width: 700px;
-    }
-
-    .hero-left p {
-        max-width: 650px;
-        font-size: 16px;
-    }
-
     .hero-btns {
         justify-content: center;
         flex-wrap: wrap;
@@ -385,10 +316,6 @@
     .about-content {
         text-align: center;
         
-    }
-
-    .about-content h2 {
-        font-size: 40px;
     }
 
     .about-list {
@@ -431,10 +358,6 @@
         text-align: center;
     }
 
-    .service-content h2 {
-        font-size: 40px;
-    }
-
     .service-boxes {
         text-align: left;
         max-width: 700px;
@@ -453,15 +376,6 @@
         flex-direction: column;
         text-align: center;
     }
-
-    .cta-box h2 {
-        font-size: 36px;
-    }
-
-    .cta-box p {
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
 
@@ -476,21 +390,6 @@
     .agent-hero-content {
         gap: 35px;
     }
-
-    .hero-left h1 {
-        font-size: 34px;
-        line-height: 1.25;
-        margin-bottom: 15px;
-    }
-
-    .hero-left p {
-        font-size: 15px;
-        line-height: 1.7;
-        margin-bottom: 25px;
-    }
-    .agent-hero .section-subtitle {
-    margin-top: 20px;
-}
 
     .hero-btns {
         width: 100%;
@@ -524,16 +423,6 @@
         gap: 35px;
     }
 
-    .about-content h2 {
-        font-size: 34px;
-        line-height: 1.25;
-    }
-
-    .about-content p {
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
     .about-list li {
         font-size: 14px;
         margin-bottom: 14px;
@@ -554,16 +443,6 @@
         gap: 35px;
     }
 
-    .service-content h2 {
-        font-size: 34px;
-        line-height: 1.25;
-    }
-
-    .service-content p {
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
     .service-box {
         padding: 16px;
         gap: 14px;
@@ -580,10 +459,6 @@
         font-size: 17px;
     }
 
-    .service-box p {
-        font-size: 13px;
-    }
-
 
     /* CTA */
 
@@ -595,16 +470,6 @@
         padding: 35px 25px;
         border-radius: 20px;
         gap: 25px;
-    }
-
-    .cta-box h2 {
-        font-size: 30px;
-        line-height: 1.25;
-    }
-
-    .cta-box p {
-        font-size: 14px;
-        line-height: 1.7;
     }
 
     .cta-btn {
@@ -634,35 +499,16 @@
         padding: 65px 0 40px;
     }
 
-    .hero-left h1 {
-        font-size: 29px;
-    }
-
-    .hero-left p {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
     .hero-right img {
         border-radius: 16px;
     }
-    .agent-hero .section-subtitle {
-    margin-top: 20px;
-}
+    
 
 
     /* ABOUT */
 
     .agent-about {
         padding: 55px 0;
-    }
-
-    .about-content h2 {
-        font-size: 29px;
-    }
-
-    .about-content p {
-        font-size: 14px;
     }
 
     .about-list li {
@@ -684,14 +530,6 @@
 
     .agent-services {
         padding: 55px 0;
-    }
-
-    .service-content h2 {
-        font-size: 29px;
-    }
-
-    .service-content p {
-        font-size: 14px;
     }
 
     .service-box {
@@ -721,14 +559,6 @@
         padding: 30px 20px;
     }
 
-    .cta-box h2 {
-        font-size: 27px;
-    }
-
-    .cta-box p {
-        font-size: 13px;
-    }
-
     .cta-btn {
         padding: 13px 25px;
         font-size: 14px;
@@ -739,31 +569,12 @@
 /* ---------- VERY SMALL MOBILE ---------- */
 @media (max-width: 400px) {
 
-    .hero-left h1 {
-        font-size: 26px;
-    }
-
-    .hero-left p {
-        font-size: 13px;
-    }
-
+    
     .btn-primary,
     .btn-outline {
         max-width: 240px;
         padding: 12px 20px;
         font-size: 14px;
-    }
-
-    .about-content h2,
-    .service-content h2 {
-        font-size: 26px;
-    }
-   .agent-hero .section-subtitle {
-    margin-top: 20px;
-}
-    .about-content p,
-    .service-content p {
-        font-size: 13px;
     }
 
     .service-box {
@@ -783,9 +594,5 @@
 
     .service-box p {
         font-size: 11px;
-    }
-
-    .cta-box h2 {
-        font-size: 24px;
     }
 }

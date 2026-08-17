@@ -81,6 +81,7 @@ SECTION HEADING
 .section-heading {
     text-align: center;
     margin-bottom: 60px;
+    margin-top: 60px;
 }
 
 /* ====================
@@ -119,6 +120,17 @@ SECTION DESCRIPTION
     font-size: 16px;
     color: var(--text);
     line-height: 1.8;
+}
+/* =========================
+   WHITE TEXT VARIANT
+========================= */
+
+.section-title.white {
+    color: var(--white);
+}
+
+.section-description.white {
+    color: var(--white);
 }
 
 /* ================
@@ -215,20 +227,6 @@ COMMON RADIUS
 
 .radius {
     border-radius: 20px;
-}
-
-/* ===============
-COMMON BADGE
-=============== */
-
-.badge {
-    display: inline-block;
-    padding: 8px 18px;
-    background: rgba(212, 160, 55, .15);
-    color: var(--secondary);
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 600;
 }
 
 /* ================
