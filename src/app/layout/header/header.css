@@ -264,6 +264,7 @@ cursor:pointer;
 display:none;
 }
 
+/*----Responsive---*/
 
 @media (max-width:1400px) {
     .navbar {
