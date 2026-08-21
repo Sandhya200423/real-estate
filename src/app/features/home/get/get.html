@@ -1,51 +1,59 @@
 <section class="recommendation section">
+
     <div class="container">
-    <div class="recommendation-banner">
-    <div class="recommendation-overlay">
 
-        <!-- Left -->
-        <div class="recommendation-content">
-            <h2 class="section-title white">
-                Ready to Find Your
-                Dream Home?
-            </h2>
+        <div class="recommendation-banner">
 
-            <p class="section-description white">
-                Get personalized property recommendations
-                based on your budget, lifestyle and preferences.
-            </p>
+            <div class="recommendation-overlay">
 
-            <a href="#" class="btn btn-primary">
-                Get Home Recommendations
-            </a>
-        </div>
+                <!-- Left -->
+                <div class="recommendation-content">
 
-        <!-- Right -->
-        <div class="recommendation-list">
-            <div class="recommend-item">
-                <i class="fa-solid fa-circle-check"></i>
-                <span>
-                    Personalized Suggestions
-                </span>
+                    <h2 class="section-title white">
+                        Ready to Find Your
+                        Dream Home?
+                    </h2>
+
+                    <p class="section-description white">
+                        Get personalized property recommendations based on
+                        your budget, lifestyle and preferences.
+                    </p>
+
+                    <a
+                        href="#"
+                        class="btn btn-primary"
+                        (click)="getRecommendations()">
+
+                        Get Home Recommendations
+
+                    </a>
+
+                </div>
+
+
+                <!-- Right -->
+                <div class="recommendation-list">
+
+                    @for (item of recommendations; track item) {
+
+                        <div class="recommend-item">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                {{ item }}
+                            </span>
+
+                        </div>
+
+                    }
+
+                </div>
+
             </div>
 
-            <div class="recommend-item">
-                <i class="fa-solid fa-circle-check"></i>
-                <span>
-                    Expert Consultation
-                </span>
-            </div>
-
-            <div class="recommend-item">
-                <i class="fa-solid fa-circle-check"></i>
-                <span>
-                    Best Price Guarantee
-                </span>
-            </div>
         </div>
 
     </div>
-</div>
 
-</div>
 </section>

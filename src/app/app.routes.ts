@@ -1,58 +1,64 @@
 import { Routes } from '@angular/router';
 
-import { Home } from './features/homen/home';
-import { PropertiesComponent } from './features/properties/properties';
-import { Sell } from './features/sell/sell';
-import { About } from './features/about/about';
-import { Agent } from './features/agent/agent';
-import { Buy } from './features/buy/buy';
-import { Blog } from './features/blog/blog';
-import { Contactus } from './features/contactus/contactus';
-
-
-
-
-
 export const routes: Routes = [
-  {
-    path: '',
-    component: Home
-  },
- 
-  {
-    path: 'properties',
-    component: PropertiesComponent
-  },
-  {
-    path: 'buy',
-    component: Buy
-  },
+    {
+        path: '',
+        loadComponent: () =>
+            import('./features/homen/home')
+                .then(m => m.Home)
+    },
 
+    {
+        path: 'properties',
+        loadComponent: () =>
+            import('./features/properties/properties')
+                .then(m => m.Properties)
+    },
 
-  {
-    path: 'sell',
-    component: Sell
-  },
+    {
+        path: 'buy',
+        loadComponent: () =>
+            import('./features/buy/buy')
+                .then(m => m.Buy)
+    },
 
-  {
-    path: 'about',
-    component: About
-  },
+    {
+        path: 'sell',
+        loadComponent: () =>
+            import('./features/sell/sell')
+                .then(m => m.Sell)
+    },
 
-  {
-    path: 'agents',
-    component: Agent
-  },
-  {
-    path: 'blog',
-    component: Blog
-  },
-  {
-    path: 'contactus',
-    component: Contactus
-  },
-  {
-    path: '**',
-    redirectTo: ''
-  }
+    {
+        path: 'about',
+        loadComponent: () =>
+            import('./features/about/about')
+                .then(m => m.About)
+    },
+
+    {
+        path: 'agents',
+        loadComponent: () =>
+            import('./features/agent/agent')
+                .then(m => m.Agent)
+    },
+
+    {
+        path: 'blog',
+        loadComponent: () =>
+            import('./features/blog/blog')
+                .then(m => m.Blog)
+    },
+
+    {
+        path: 'contactus',
+        loadComponent: () =>
+            import('./features/contactus/contactus')
+                .then(m => m.Contactus)
+    },
+
+    {
+        path: '**',
+        redirectTo: ''
+    }
 ];

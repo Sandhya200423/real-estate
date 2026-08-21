@@ -2,11 +2,18 @@
 
 <app-property-info></app-property-info>
 
-<app-featured-properties></app-featured-properties>
+@defer (on viewport) {
+    <app-featured-properties></app-featured-properties>
+} @placeholder {
+    <div style="min-height: 300px;"></div>
+}
 
 <app-why-choose></app-why-choose>
 
-<app-popular-location></app-popular-location>
+@defer (on viewport) {
+    <app-popular-location></app-popular-location>
+} @placeholder {
+    <div style="min-height: 300px;"></div>
+}
 
 <app-get></app-get>
-

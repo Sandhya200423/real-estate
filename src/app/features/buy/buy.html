@@ -1,63 +1,77 @@
+<!-- ================= BUY CONFIDENCE ================= -->
 <section class="buy-confidence section">
+
     <div class="container">
+
         <!-- Common Section Heading -->
-         <div class="section-heading">
+        <div class="section-heading">
+
             <h2 class="section-title">
                 Find Your Perfect Home
-                <span>With Confidence</span>
+                <span>
+                    With Confidence
+                </span>
             </h2>
+
             <p class="section-description">
-                Explore verified luxury properties, premium locations
-                and expert guidance to make your home buying journey
-                simple, secure and rewarding.
+                Explore verified luxury properties, premium locations and
+                expert guidance to make your home buying journey simple,
+                secure and rewarding.
             </p>
+
         </div>
+
+
         <div class="confidence-box">
+
             <!-- Left Content -->
-             <div class="confidence-content">
-                <div class="buy-feature">
-                <i class="fa-solid fa-building"></i>
-                <div>
+            <div class="confidence-content">
+
+                <div
+                    class="buy-feature"
+                    *ngFor="let feature of features">
+
+                    <i [class]="feature.icon"></i>
+
+                    <div>
+
+                        <h3>
+                            {{ feature.title }}
+                        </h3>
 
                         <p>
-    Apartments, villas and premium homes
-    designed for every lifestyle.
-</p>
-</div>
-</div>
+                            {{ feature.description }}
+                        </p>
 
-<div class="buy-feature">
-    <i class="fa-solid fa-shield-halved"></i>
-    <div>
-        <h3>Verified Listings</h3>
-        <p>
-            Genuine properties with transparent
-            details and trusted information.
-        </p>
+                    </div>
+
+                </div>
+
+
+                <a
+                    routerLink="/properties"
+                    class="btn btn-primary">
+
+                    Explore Properties
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- Right Image -->
+            <div class="confidence-image">
+
+                <img
+                    [src]="image"
+                    alt="Premium Property">
+
+            </div>
+
+        </div>
+
     </div>
-</div>
 
-<div class="buy-feature">
-    <i class="fa-solid fa-user-tie"></i>
-    <div>
-        <h3>Expert Assistance</h3>
-        <p>
-            Professional support from search
-            to ownership.
-        </p>
-    </div>
-</div>
-
-<a routerLink="/properties" class="btn btn-primary">
-    Explore Properties
-    <i class="fa-solid fa-arrow-right"></i>
-</a>
-
-</div>
-<!-- Right Image -->
- <div class="confidence-image">
-    <img src="/f3.jpg">
- </div>
-</div>
-</div>
 </section>

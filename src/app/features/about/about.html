@@ -1,212 +1,237 @@
+<!-- ================= ABOUT HERO ================= -->
 <section class="about-hero">
     <div class="about-overlay">
-         <div class="section-heading">
+        <div class="section-heading">
+
             <span class="section-subtitle">
-                    About Us
-                </span>
-                <h1 class="section-title white">
+                About Us
+            </span>
+
+            <h1 class="section-title white">
                 Building Trust,
                 <br>
                 Creating Dream Homes
             </h1>
+
             <p class="section-description white">
-                We help families and investors discover premium
-                residential and commercial properties across India
-                with complete transparency and trusted guidance.
+                We help families and investors discover premium residential
+                and commercial properties across India with complete
+                transparency and trusted guidance.
             </p>
-         </div>
+
         </div>
+    </div>
 </section>
 
+
+<!-- ================= ABOUT COMPANY ================= -->
 <section class="about-company">
     <div class="container">
+
         <div class="about-grid">
+
             <!-- Left Content -->
-             <div class="about-left">
+            <div class="about-left">
+
                 <span class="section-subtitle">
                     WHO WE ARE
                 </span>
+
                 <h2 class="section-title">
                     The Real Estate
+                    <br>
                     Company You Can
+                    <br>
                     Trust
                 </h2>
+
                 <p class="section-description">
-                    At SkyDwell, we make buying, selling and investing
-                    in properties simple, transparent and stress-free.
-                    Our experienced team helps you find premium homes
-                    and commercial spaces that perfectly match your needs.
+                    At SkyDwell, we make buying, selling and investing in
+                    properties simple, transparent and stress-free. Our
+                    experienced team helps you find premium homes and
+                    commercial spaces that perfectly match your needs.
                 </p>
+
                 <p class="section-description">
-                    With verified property listings, expert guidance,
-                    legal assistance and complete market transparency,
-                    we ensure every customer enjoys a safe and rewarding
-                    real estate journey.
+                    With verified property listings, expert guidance, legal
+                    assistance and complete market transparency, we ensure
+                    every customer enjoys a safe and rewarding real estate
+                    journey.
                 </p>
-                <button class="about-btn">
+
+                <button
+                    class="about-btn"
+                    (click)="learnMore()">
                     Learn More
                 </button>
+
             </div>
+
+
             <!-- Right Images -->
-             <div class="about-right">
+            <div class="about-right">
+
                 <div class="small-image">
-                    <img src="/a2.jpg" alt="Modern Living Room">
-                    </div>
-                    <div class="large-image">
-                        <img src="/a3.jpg" alt="Luxury Apartment">
-                    </div>
+                    <img
+                        [src]="companyImages.small"
+                        alt="Modern Living Room">
                 </div>
+
+                <div class="large-image">
+                    <img
+                        [src]="companyImages.large"
+                        alt="Luxury Apartment">
+                </div>
+
             </div>
+
         </div>
-    </section>
-    
-<section class="about-stats">
-   <div class="container">
-    <div class="stats-grid">
-        <div class="stat-card">
-            <i class="fa-solid fa-users"></i>
-            <h3>15K+</h3>
-            <p>Happy Customers</p>
-        </div>
-        <div class="stat-card">
-            <i class="fa-solid fa-building"></i>
-            <h3>3,500+</h3>
-            <p>Properties Listed</p>
-        </div>
-        <div class="stat-card">
-            <i class="fa-solid fa-city"></i>
-            <h3>50+</h3>
-            <p>Cities Covered</p>
-        </div>
-        <div class="stat-card">
-            <i class="fa-solid fa-headset"></i>
-            <h3>24/7</h3>
-            <p>Customer Support</p>
-        </div>
+
     </div>
-</div>
 </section>
 
+
+<!-- ================= ABOUT STATS ================= -->
+<section class="about-stats">
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div
+                class="stat-card"
+                *ngFor="let stat of stats">
+
+                <i [class]="stat.icon"></i>
+
+                <h3>
+                    {{ stat.number }}
+                </h3>
+
+                <p>
+                    {{ stat.label }}
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= MISSION ================= -->
 <section class="mission-section">
     <div class="container">
-    <div class="mission-grid">
-    <!-- Left Image -->
-    <div class="mission-image">
-        <img
-        src="/a5.jpg"
-        alt="Luxury Home">
-    </div>
-    <!-- Right Content -->
-    <div class="mission-content">
-        <span class="section-subtitle">
-            OUR MISSION
-        </span>
-        <h2 class="section-title">
-            Because A Home
-            Can Change Everything
-        </h2>
-        <p class="section-description">
-            Our mission is to simplify real estate by
-            connecting people with trusted properties,
-            verified buyers and expert guidance.
-        </p>
-        <p class="section-description">
-            We believe every home has a story. With
-            transparency, technology and customer-first
-            service, we help you make confident property
-            decisions.
-        </p>
-        <div class="mission-box">
-            <div>
-                <i class="fa-solid fa-bullseye"></i>
-                <h3>
-                    Our Mission
-                </h3>
-                <p>
-                    Deliver reliable real estate solutions
-                    with complete transparency.
-                </p>
+
+        <div class="mission-grid">
+
+            <!-- Left Image -->
+            <div class="mission-image">
+
+                <img
+                    [src]="missionImage"
+                    alt="Luxury Home">
+
             </div>
-            <div>
-                <i class="fa-solid fa-eye"></i>
-                <h3>
-                    Our Vision
-                </h3>
-                <p>
-                    Become India's most trusted property
-                    platform.
+
+
+            <!-- Right Content -->
+            <div class="mission-content">
+
+                <span class="section-subtitle">
+                    OUR MISSION
+                </span>
+
+                <h2 class="section-title">
+                    Because A Home
+                    <br>
+                    Can Change Everything
+                </h2>
+
+                <p class="section-description">
+                    Our mission is to simplify real estate by connecting
+                    people with trusted properties, verified buyers and
+                    expert guidance.
                 </p>
+
+                <p class="section-description">
+                    We believe every home has a story. With transparency,
+                    technology and customer-first service, we help you make
+                    confident property decisions.
+                </p>
+
+
+                <div class="mission-box">
+
+                    <div *ngFor="let item of missionDetails">
+
+                        <i [class]="item.icon"></i>
+
+                        <h3>
+                            {{ item.title }}
+                        </h3>
+
+                        <p>
+                            {{ item.description }}
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
-    </div>
-</div>
+
     </div>
 </section>
 
+
+<!-- ================= WHY CHOOSE ================= -->
 <section class="why-choose">
 
     <div class="section-heading">
-    <span class="section-subtitle">
-        WHY CHOOSE US
-    </span>
-    <h2 class="section-title">
-        Why Thousands Of Customers
-        Trust SkyDwell
-    </h2>
-    <p class="section-description">
-        We provide a seamless real estate experience
-        with verified properties, expert support and
-        complete transparency.
-    </p>
-</div>
-<div class="choose-grid">
-    <div class="choose-card">
-        <div class="choose-icon">
-            <i class="fa-solid fa-shield-halved"></i>
-        </div>
-        <h3>
-            Verified Properties
-        </h3>
-        <p>
-            Every property is carefully verified
-            to ensure safe and reliable transactions.
+
+        <span class="section-subtitle">
+            WHY CHOOSE US
+        </span>
+
+        <h2 class="section-title">
+            Why Thousands Of Customers
+            <br>
+            Trust SkyDwell
+        </h2>
+
+        <p class="section-description">
+            We provide a seamless real estate experience with verified
+            properties, expert support and complete transparency.
         </p>
+
     </div>
-    <div class="choose-card">
-        <div class="choose-icon">
-            <i class="fa-solid fa-user-tie"></i>
+
+
+    <div class="choose-grid">
+
+        <div
+            class="choose-card"
+            *ngFor="let card of chooseCards">
+
+            <div class="choose-icon">
+
+                <i [class]="card.icon"></i>
+
+            </div>
+
+            <h3>
+                {{ card.title }}
+            </h3>
+
+            <p>
+                {{ card.description }}
+            </p>
+
         </div>
-        <h3>
-            Expert Guidance
-        </h3>
-        <p>
-            Our professionals help you make
-            confident property decisions.
-        </p>
+
     </div>
-    <div class="choose-card">
-        <div class="choose-icon">
-            <i class="fa-solid fa-handshake"></i>
-        </div>
-        <h3>
-            Transparent Process
-        </h3>
-        <p>
-            Clear documentation and honest
-            communication at every step.
-        </p>
-    </div>
-    <div class="choose-card">
-        <div class="choose-icon">
-            <i class="fa-solid fa-headset"></i>
-        </div>
-        <h3>
-            24/7 Support
-        </h3>
-        <p>
-            Dedicated support whenever you
-            need assistance.
-        </p>
-    </div>
-</div>
+
 </section>

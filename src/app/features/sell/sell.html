@@ -1,164 +1,80 @@
-<!-- ================= SELL HERO ================= -->
 <section class="sell-hero">
     <div class="container">
         <div class="sell-hero-wrapper">
-            <!-- Content -->
             <div class="sell-hero-content">
                 <span class="section-subtitle">
-                    SELL YOUR PROPERTY
+                    {{ hero.subtitle }}
                 </span>
                 <h1 class="section-title">
-                    Sell Your Property
+                    {{ hero.title }}
                     <br>
-                    Faster With Verified Buyers
+                    {{ hero.highlight }}
                 </h1>
                 <p class="section-description">
-                    Reach thousands of genuine buyers across India.
-                    List your property with SkyDwell and get the
-                    best market value without any hassle.
+                    {{ hero.description }}
                 </p>
                 <div class="sell-buttons">
-                    <a class="btn btn-primary">
-                        List Property
+                    <a class="btn btn-primary" (click)="listProperty()">
+                        {{ hero.button }}
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
                 <div class="sell-features">
-                    <div>
+                    <div *ngFor="let feature of sellFeatures">
                         <i class="fa-solid fa-circle-check"></i>
-                        Free Listing
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Verified Buyers
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Zero Brokerage
+                        {{ feature }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<!-- ================= WHY SELL ================= -->
 <section class="why-sell">
     <div class="container">
         <div class="section-heading">
             <span class="section-subtitle">
-                WHY SELL WITH SKYDWELL
+                {{ whySell.subtitle }}
             </span>
             <h2 class="section-title">
-                Sell Smarter,
-                Sell Faster
+                {{ whySell.title }}
             </h2>
             <p class="section-description">
-                We help homeowners sell faster with verified buyers,
-                professional marketing and transparent documentation.
-                From listing to registration, we manage everything.
+                {{ whySell.description }}
             </p>
         </div>
         <div class="sell-cards">
-            <div class="sell-card">
+            <div class="sell-card" *ngFor="let card of sellCards">
                 <div class="sell-icon">
-                    <i class="fa-solid fa-house-circle-check"></i>
+                    <i class="fa-solid" [ngClass]="card.icon"></i>
                 </div>
                 <h3>
-                    Free Property Listing
+                    {{ card.title }}
                 </h3>
                 <p>
-                    List your property with zero hidden charges
-                    and reach thousands of buyers.
-                </p>
-            </div>
-            <div class="sell-card">
-                <div class="sell-icon">
-                    <i class="fa-solid fa-user-check"></i>
-                </div>
-                <h3>
-                    Verified Buyers
-                </h3>
-                <p>
-                    Connect with genuine buyers
-                    looking for properties.
-                </p>
-            </div>
-            <div class="sell-card">
-                <div class="sell-icon">
-                    <i class="fa-solid fa-bullhorn"></i>
-                </div>
-                <h3>
-                    Premium Marketing
-                </h3>
-                <p>
-                    Professional photos and
-                    maximum property visibility.
-                </p>
-            </div>
-            <div class="sell-card">
-                <div class="sell-icon">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                </div>
-                <h3>
-                    Legal Assistance
-                </h3>
-                <p>
-                    Complete documentation support
-                    till final deal closure.
+                    {{ card.description }}
                 </p>
             </div>
         </div>
     </div>
 </section>
-
-<!-- ================= TRUST ================= -->
 <section class="trust">
     <div class="container">
         <div class="trust-box">
-            <div>
+            <div *ngFor="let stat of trustStats">
                 <h2>
-                    10,000+
+                    {{ stat.number }}
                 </h2>
                 <span>
-                    Active Buyers
-                </span>
-            </div>
-            <div>
-                <h2>
-                    1500+
-                </h2>
-                <span>
-                    Properties Sold
-                </span>
-            </div>
-            <div>
-                <h2>
-                    98%
-                </h2>
-                <span>
-                    Customer Satisfaction
-                </span>
-            </div>
-            <div>
-                <h2>
-                    25+
-                </h2>
-                <span>
-                    Cities Covered
+                    {{ stat.label }}
                 </span>
             </div>
         </div>
     </div>
 </section>
-
-<!--==================== SELL FORM ====================-->
 <section class="property-form-section">
     <div class="container">
         <div class="form-layout">
-            <!-- ================= LEFT ================= -->
             <div class="form-left">
-                <!-- ================= Basic Information ================= -->
                 <div class="form-card">
                     <div class="form-header">
                         <div class="form-icon">
@@ -177,21 +93,18 @@
                                 Property Title
                                 <span>*</span>
                             </label>
-                            <input
-                                type="text"
-                                placeholder="Luxury 3 BHK Apartment">
+                            <input type="text" name="title" [(ngModel)]="property.title" placeholder="Luxury 3 BHK Apartment">
                         </div>
                         <div class="form-group">
                             <label>
                                 Property Type
                                 <span>*</span>
                             </label>
-                            <select>
-                                <option>Select Property Type</option>
-                                <option>Apartment</option>
-                                <option>Villa</option>
-                                <option>Plot</option>
-                                <option>Commercial</option>
+                            <select name="propertyType" [(ngModel)]="property.propertyType">
+                                <option value="">Select Property Type</option>
+                                <option *ngFor="let type of propertyTypes" [value]="type">
+                                    {{ type }}
+                                </option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -199,624 +112,392 @@
                                 Property For
                                 <span>*</span>
                             </label>
-                            <select>
-                                <option>Sell</option>
-                                <option>Rent</option>
+                            <select name="propertyFor" [(ngModel)]="property.propertyFor">
+                                <option *ngFor="let option of propertyFor" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Expected Price</label>
+                            <input type="number" name="expectedPrice" [(ngModel)]="property.expectedPrice" placeholder="₹">
+                        </div>
+                        <div class="form-group">
+                            <label>Carpet Area</label>
+                            <input type="number" name="carpetArea" [(ngModel)]="property.carpetArea" placeholder="1200 Sq.ft">
+                        </div>
+                        <div class="form-group full">
+                            <label>Description</label>
+                            <textarea rows="6" name="description" [(ngModel)]="property.description" placeholder="Describe your property..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-card">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h2>Location Details</h2>
+                            <p>
+                                Enter your property's exact location.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>
+                                State
+                                <span>*</span>
+                            </label>
+                            <select name="state" [(ngModel)]="property.state">
+                                <option value="">Select State</option>
+                                <option *ngFor="let state of states" [value]="state">
+                                    {{ state }}
+                                </option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>
-                                Expected Price
+                                City
+                                <span>*</span>
                             </label>
-                            <input
-                                type="number"
-                                placeholder="₹">
+                            <select name="city" [(ngModel)]="property.city">
+                                <option value="">Select City</option>
+                                <option *ngFor="let city of cities" [value]="city">
+                                    {{ city }}
+                                </option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>
-                                Carpet Area
+                                Locality / Area
+                                <span>*</span>
                             </label>
-                            <input
-                                type="number"
-                                placeholder="1200 Sq.ft">
+                            <input type="text" name="locality" [(ngModel)]="property.locality" placeholder="Baner">
+                        </div>
+                        <div class="form-group">
+                            <label>Landmark</label>
+                            <input type="text" name="landmark" [(ngModel)]="property.landmark" placeholder="Near Metro Station">
+                        </div>
+                        <div class="form-group">
+                            <label>PIN Code</label>
+                            <input type="text" name="pinCode" [(ngModel)]="property.pinCode" placeholder="416208">
                         </div>
                         <div class="form-group full">
                             <label>
-                                Description
+                                Complete Address
+                                <span>*</span>
                             </label>
-                            <textarea
-                                rows="6"
-                                placeholder="Describe your property..."></textarea>
+                            <textarea rows="4" name="address" [(ngModel)]="property.address" placeholder="Enter complete address"></textarea>
                         </div>
-                    </form>
+                    </div>
                 </div>
-
-                <div class="form-left">
-                    <!-- ================= Location Details ================= -->
-                    <div class="form-card">
-                        <div class="form-header">
-                            <div class="form-icon">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h2>Location Details</h2>
-                                <p>
-                                    Enter your property's exact location.
-                                </p>
-                            </div>
+                <div class="form-card">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <i class="fa-solid fa-building"></i>
                         </div>
-                        <div class="form-grid">
-                            <!-- State -->
-                            <div class="form-group">
-                                <label>
-                                    State
-                                    <span>*</span>
-                                </label>
-                                <select>
-                                    <option>Select State</option>
-                                    <option>Maharashtra</option>
-                                    <option>Karnataka</option>
-                                    <option>Goa</option>
-                                </select>
-                            </div>
-                            <!-- City -->
-                            <div class="form-group">
-                                <label>
-                                    City
-                                    <span>*</span>
-                                </label>
-                                <select>
-                                    <option>Select City</option>
-                                    <option>Pune</option>
-                                    <option>Mumbai</option>
-                                    <option>Kolhapur</option>
-                                </select>
-                            </div>
-                            <!-- Locality -->
-                            <div class="form-group">
-                                <label>
-                                    Locality / Area
-                                    <span>*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="Baner">
-                            </div>
-                            <!-- Landmark -->
-                            <div class="form-group">
-                                <label>
-                                    Landmark
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="Near Metro Station">
-                            </div>
-                            <!-- PIN -->
-                            <div class="form-group">
-                                <label>
-                                    PIN Code
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="416208">
-                            </div>
-                            <!-- Address -->
-                            <div class="form-group full">
-                                <label>
-                                    Complete Address
-                                    <span>*</span>
-                                </label>
-                                <textarea
-                                    rows="4"
-                                    placeholder="Enter complete address"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ================= Property Details ================= -->
-                    <div class="form-card">
-                        <div class="form-header">
-                            <div class="form-icon">
-                                <i class="fa-solid fa-building"></i>
-                            </div>
-                            <div>
-                                <h2>Property Details</h2>
-                                <p>
-                                    Share complete specifications of your property.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-grid four-column">
-                            <!-- BHK -->
-                            <div class="form-group">
-                                <label>
-                                    BHK
-                                    <span>*</span>
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>1 BHK</option>
-                                    <option>2 BHK</option>
-                                    <option>3 BHK</option>
-                                    <option>4 BHK</option>
-                                    <option>5+ BHK</option>
-                                </select>
-                            </div>
-                            <!-- Bathrooms -->
-                            <div class="form-group">
-                                <label>
-                                    Bathrooms
-                                    <span>*</span>
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div>
-                            <!-- Balconies -->
-                            <div class="form-group">
-                                <label>
-                                    Balconies
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3+</option>
-                                </select>
-                            </div>
-                            <!-- Carpet Area -->
-                            <div class="form-group">
-                                <label>
-                                    Carpet Area (Sq.ft)
-                                </label>
-                                <input
-                                    type="number"
-                                    placeholder="1200">
-                            </div>
-                            <!-- Built-up Area -->
-                            <div class="form-group">
-                                <label>
-                                    Built-up Area
-                                </label>
-                                <input
-                                    type="number"
-                                    placeholder="1500">
-                            </div>
-                            <!-- Total Floors -->
-                            <div class="form-group">
-                                <label>
-                                    Total Floors
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>5</option>
-                                    <option>10</option>
-                                    <option>20+</option>
-                                </select>
-                            </div>
-                            <!-- Property Floor -->
-                            <div class="form-group">
-                                <label>
-                                    Property Floor
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>Ground</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>Top Floor</option>
-                                </select>
-                            </div>
-                            <!-- Property Age -->
-                            <div class="form-group">
-                                <label>
-                                    Property Age
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>New</option>
-                                    <option>0 - 1 Years</option>
-                                    <option>1 - 5 Years</option>
-                                    <option>5 - 10 Years</option>
-                                    <option>10+ Years</option>
-                                </select>
-                            </div>
-                            <!-- Facing -->
-                            <div class="form-group">
-                                <label>
-                                    Facing
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>East</option>
-                                    <option>West</option>
-                                    <option>North</option>
-                                    <option>South</option>
-                                </select>
-                            </div>
-                            <!-- Furnishing -->
-                            <div class="form-group">
-                                <label>
-                                    Furnishing
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>Fully Furnished</option>
-                                    <option>Semi Furnished</option>
-                                    <option>Unfurnished</option>
-                                </select>
-                            </div>
-                            <!-- Ownership -->
-                            <div class="form-group">
-                                <label>
-                                    Ownership
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>Freehold</option>
-                                    <option>Leasehold</option>
-                                    <option>Co-operative Society</option>
-                                </select>
-                            </div>
-                            <!-- Parking -->
-                            <div class="form-group">
-                                <label>
-                                    Parking
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>1 Car</option>
-                                    <option>2 Cars</option>
-                                    <option>Bike Parking</option>
-                                    <option>No Parking</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ================= Pricing Details ================= -->
-                    <div class="form-card">
-                        <div class="form-header">
-                            <div class="form-icon">
-                                <i class="fa-solid fa-indian-rupee-sign"></i>
-                            </div>
-                            <div>
-                                <h2>Pricing Details</h2>
-                                <p>
-                                    Enter the pricing and payment information.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-grid three-column">
-                            <!-- Expected Price -->
-                            <div class="form-group">
-                                <label>
-                                    Expected Price (₹)
-                                    <span>*</span>
-                                </label>
-                                <input
-                                    type="number"
-                                    placeholder="85,00,000">
-                            </div>
-                            <!-- Price Negotiable -->
-                            <div class="form-group">
-                                <label>
-                                    Price Negotiable
-                                </label>
-                                <select>
-                                    <option>Select Option</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
-                                </select>
-                            </div>
-                            <!-- Maintenance -->
-                            <div class="form-group">
-                                <label>
-                                    Maintenance Charges
-                                </label>
-                                <input
-                                    type="number"
-                                    placeholder="3000">
-                            </div>
-                            <!-- Booking Amount -->
-                            <div class="form-group">
-                                <label>
-                                    Booking Amount
-                                </label>
-                                <input
-                                    type="number"
-                                    placeholder="100000">
-                            </div>
-                            <!-- Monthly Rent -->
-                            <div class="form-group">
-                                <label>
-                                    Monthly Rent
-                                </label>
-                                <input
-                                    type="number"
-                                    placeholder="Only For Rent">
-                            </div>
-                            <!-- Security Deposit -->
-                            <div class="form-group">
-                                <label>
-                                    Security Deposit
-                                </label>
-                                <input
-                                    type="number"
-                                    placeholder="If Applicable">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ================= Amenities & Facilities ================= -->
-                    <div class="form-card">
-                        <div class="form-header">
-                            <div class="form-icon">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div>
-                                <h2>Amenities & Facilities</h2>
-                                <p>
-                                    Select all the facilities available in your property.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="amenities-grid">
-                            <!-- Parking -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-car"></i>
-                                <span>
-                                    Parking
-                                </span>
-                            </label>
-                            <!-- Lift -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-elevator"></i>
-                                <span>
-                                    Lift
-                                </span>
-                            </label>
-                            <!-- Gym -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-dumbbell"></i>
-                                <span>
-                                    Gym
-                                </span>
-                            </label>
-                            <!-- Swimming Pool -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-water-ladder"></i>
-                                <span>
-                                    Swimming Pool
-                                </span>
-                            </label>
-                            <!-- Garden -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-tree"></i>
-                                <span>
-                                    Garden
-                                </span>
-                            </label>
-                            <!-- Security -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-shield-halved"></i>
-                                <span>
-                                    Security
-                                </span>
-                            </label>
-                            <!-- CCTV -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-video"></i>
-                                <span>
-                                    CCTV
-                                </span>
-                            </label>
-                            <!-- Power Backup -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-bolt"></i>
-                                <span>
-                                    Power Backup
-                                </span>
-                            </label>
-                            <!-- Club House -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-users"></i>
-                                <span>
-                                    Club House
-                                </span>
-                            </label>
-                            <!-- Kids Area -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-child"></i>
-                                <span>
-                                    Kids Play Area
-                                </span>
-                            </label>
-                            <!-- Fire Safety -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-fire-extinguisher"></i>
-                                <span>
-                                    Fire Safety
-                                </span>
-                            </label>
-                            <!-- Visitor Parking -->
-                            <label class="amenity-item">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-square-parking"></i>
-                                <span>
-                                    Visitor Parking
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- ================= Photos & Media ================= -->
-                    <div class="form-card">
-                        <div class="form-header">
-                            <div class="form-icon">
-                                <i class="fa-solid fa-image"></i>
-                            </div>
-                            <div>
-                                <h2>Photos & Media</h2>
-                                <p>
-                                    Upload clear images to attract more buyers.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Upload Box -->
-                        <div class="upload-box">
-                            <div class="upload-icon">
-                                <i class="fa-solid fa-cloud-arrow-up"></i>
-                            </div>
-                            <h3>
-                                Upload Property Images
-                            </h3>
+                        <div>
+                            <h2>Property Details</h2>
                             <p>
-                                Add minimum 5 high quality images
+                                Share complete specifications of your property.
                             </p>
-                            <label class="upload-btn">
-                                <i class="fa-solid fa-plus"></i>
-                                Choose Images
-                                <input
-                                    type="file"
-                                    multiple
-                                    hidden>
+                        </div>
+                    </div>
+                    <div class="form-grid four-column">
+                        <div class="form-group">
+                            <label>
+                                BHK
+                                <span>*</span>
                             </label>
+                            <select name="bhk" [(ngModel)]="property.bhk">
+                                <option value="">Select</option>
+                                <option *ngFor="let option of bhkOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Bathrooms
+                                <span>*</span>
+                            </label>
+                            <select name="bathrooms" [(ngModel)]="property.bathrooms">
+                                <option value="">Select</option>
+                                <option *ngFor="let option of bathroomOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Balconies</label>
+                            <select name="balconies" [(ngModel)]="property.balconies">
+                                <option value="">Select</option>
+                                <option *ngFor="let option of balconyOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Carpet Area (Sq.ft)</label>
+                            <input type="number" name="propertyCarpetArea" [(ngModel)]="property.carpetArea" placeholder="1200">
+                        </div>
+                        <div class="form-group">
+                            <label>Built-up Area</label>
+                            <input type="number" name="builtUpArea" [(ngModel)]="property.builtUpArea" placeholder="1500">
+                        </div>
+                        <div class="form-group">
+                            <label>Total Floors</label>
+                            <select name="totalFloors" [(ngModel)]="property.totalFloors">
+                                <option value="">Select</option>
+                                <option *ngFor="let option of floorOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Property Floor</label>
+                            <select name="propertyFloor" [(ngModel)]="property.propertyFloor">
+                                <option value="">Select</option>
+                                <option *ngFor="let option of propertyFloorOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Property Age</label>
+                            <select name="propertyAge" [(ngModel)]="property.propertyAge">
+                                <option value="">Select</option>
+                                <option *ngFor="let option of propertyAgeOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Facing</label>
+                            <select name="facing" [(ngModel)]="property.facing">
+                                <option value="">Select</option>
+                                <option *ngFor="let option of facingOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Furnishing</label>
+                            <select name="furnishing" [(ngModel)]="property.furnishing">
+                                <option value="">Select</option>
+                                <option *ngFor="let option of furnishingOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Ownership</label>
+                            <select name="ownership" [(ngModel)]="property.ownership">
+                                <option value="">Select</option>
+                                <option *ngFor="let option of ownershipOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Parking</label>
+                            <select name="parking" [(ngModel)]="property.parking">
+                                <option value="">Select</option>
+                                <option *ngFor="let option of parkingOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
                         </div>
                     </div>
-
-                    <!-- ================= Your Details ================= -->
-                    <div class="form-card">
-                        <div class="form-header">
-                            <div class="form-icon">
-                                <i class="fa-solid fa-user"></i>
-                            </div>
-                            <div>
-                                <h2>Your Details</h2>
-                                <p>
-                                    Provide your contact information.
-                                </p>
-                            </div>
+                </div>
+                <div class="form-card">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
                         </div>
-                        <div class="form-grid">
-                            <!-- Name -->
-                            <div class="form-group">
-                                <label>
-                                    Full Name
-                                    <span>*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="Enter your name">
-                            </div>
-                            <!-- Phone -->
-                            <div class="form-group">
-                                <label>
-                                    Mobile Number
-                                    <span>*</span>
-                                </label>
-                                <input
-                                    type="tel"
-                                    placeholder="+91 98765 43210">
-                            </div>
-                            <!-- Email -->
-                            <div class="form-group">
-                                <label>
-                                    Email Address
-                                </label>
-                                <input
-                                    type="email"
-                                    placeholder="example@gmail.com">
-                            </div>
-                            <!-- Role -->
-                            <div class="form-group">
-                                <label>
-                                    You Are
-                                </label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>Owner</option>
-                                    <option>Agent</option>
-                                    <option>Builder</option>
-                                </select>
-                            </div>
-                            <!-- Message -->
-                            <div class="form-group full">
-                                <label>
-                                    Additional Information
-                                </label>
-                                <textarea
-                                    rows="5"
-                                    placeholder="Any additional details...">
-                                </textarea>
-                            </div>
+                        <div>
+                            <h2>Pricing Details</h2>
+                            <p>
+                                Enter the pricing and payment information.
+                            </p>
                         </div>
                     </div>
-
-                    <!-- ================= Review & Submit ================= -->
-                    <div class="form-card review-card">
-                        <div class="form-header">
-                            <div class="form-icon">
-                                <i class="fa-solid fa-circle-check"></i>
-                            </div>
-                            <div>
-                                <h2>Review & Submit</h2>
-                                <p>
-                                    Check all details before submitting your property.
-                                </p>
-                            </div>
+                    <div class="form-grid three-column">
+                        <div class="form-group">
+                            <label>
+                                Expected Price (₹)
+                                <span>*</span>
+                            </label>
+                            <input type="number" name="pricingExpectedPrice" [(ngModel)]="property.expectedPrice" placeholder="85,00,000">
                         </div>
-                        <div class="review-content">
-                            <div class="review-item">
-                                <i class="fa-solid fa-shield-halved"></i>
-                                <span>
-                                    Your information is secure with us.
-                                </span>
-                            </div>
-                            <div class="review-item">
-                                <i class="fa-solid fa-user-check"></i>
-                                <span>
-                                    Our team will verify your property details.
-                                </span>
-                            </div>
+                        <div class="form-group">
+                            <label>Price Negotiable</label>
+                            <select name="priceNegotiable" [(ngModel)]="property.priceNegotiable">
+                                <option value="">Select Option</option>
+                                <option *ngFor="let option of negotiableOptions" [value]="option">
+                                    {{ option }}
+                                </option>
+                            </select>
                         </div>
-                        <div class="form-actions">
-                            <button
-                                type="button"
-                                class="btn btn-outline">
-                                Save Draft
-                            </button>
-                            <button
-                                type="submit"
-                                class="btn btn-primary">
-                                Submit Property
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
+                        <div class="form-group">
+                            <label>Maintenance Charges</label>
+                            <input type="number" name="maintenance" [(ngModel)]="property.maintenance" placeholder="3000">
                         </div>
+                        <div class="form-group">
+                            <label>Booking Amount</label>
+                            <input type="number" name="bookingAmount" [(ngModel)]="property.bookingAmount" placeholder="100000">
+                        </div>
+                        <div class="form-group">
+                            <label>Monthly Rent</label>
+                            <input type="number" name="monthlyRent" [(ngModel)]="property.monthlyRent" placeholder="Only For Rent">
+                        </div>
+                        <div class="form-group">
+                            <label>Security Deposit</label>
+                            <input type="number" name="securityDeposit" [(ngModel)]="property.securityDeposit" placeholder="If Applicable">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-card">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div>
+                            <h2>Amenities & Facilities</h2>
+                            <p>
+                                Select all the facilities available in your property.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="amenities-grid">
+                        <label class="amenity-item" *ngFor="let amenity of amenities">
+                            <input type="checkbox" [value]="amenity.name">
+                            <i class="fa-solid" [ngClass]="amenity.icon"></i>
+                            <span>
+                                {{ amenity.name }}
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-card">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <i class="fa-solid fa-image"></i>
+                        </div>
+                        <div>
+                            <h2>Photos & Media</h2>
+                            <p>
+                                Upload clear images to attract more buyers.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="upload-box">
+                        <div class="upload-icon">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <h3>
+                            Upload Property Images
+                        </h3>
+                        <p>
+                            Add minimum 5 high quality images
+                        </p>
+                        <label class="upload-btn">
+                            <i class="fa-solid fa-plus"></i>
+                            Choose Images
+                            <input type="file" multiple hidden accept="image/*" (change)="onImagesSelected($event)">
+                        </label>
+                        <div class="selected-files" *ngIf="selectedImages.length">
+                            <p>
+                                {{ selectedImages.length }} images selected
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-card">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h2>Your Details</h2>
+                            <p>
+                                Provide your contact information.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>
+                                Full Name
+                                <span>*</span>
+                            </label>
+                            <input type="text" name="fullName" [(ngModel)]="property.fullName" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Mobile Number
+                                <span>*</span>
+                            </label>
+                            <input type="tel" name="mobile" [(ngModel)]="property.mobile" placeholder="+91 98765 43210">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" [(ngModel)]="property.email" placeholder="example@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>You Are</label>
+                            <select name="role" [(ngModel)]="property.role">
+                                <option value="">Select</option>
+                                <option *ngFor="let role of userRoles" [value]="role">
+                                    {{ role }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label>Additional Information</label>
+                            <textarea rows="5" name="additionalInformation" [(ngModel)]="property.additionalInformation" placeholder="Any additional details..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-card review-card">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <h2>Review & Submit</h2>
+                            <p>
+                                Check all details before submitting your property.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>
+                                Your information is secure with us.
+                            </span>
+                        </div>
+                        <div class="review-item">
+                            <i class="fa-solid fa-user-check"></i>
+                            <span>
+                                Our team will verify your property details.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" (click)="saveDraft()">
+                            Save Draft
+                        </button>
+                        <button type="button" class="btn btn-primary" (click)="submitProperty()">
+                            Submit Property
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-
-            <!-- ================= SIDEBAR ================= -->
             <aside class="sell-sidebar">
                 <div class="sidebar-card">
                     <h3>
@@ -824,10 +505,9 @@
                         Tips
                     </h3>
                     <ul>
-                        <li> Fill accurate details</li>
-                        <li> Upload high quality photos</li>
-                        <li>Mention nearby landmarks</li>
-                        <li>Keep contact number active</li>
+                        <li *ngFor="let tip of tips">
+                            {{ tip }}
+                        </li>
                     </ul>
                 </div>
                 <div class="sidebar-card">
@@ -835,10 +515,9 @@
                         Why SkyDwell?
                     </h3>
                     <ul>
-                        <li>Verified Buyers</li>
-                        <li>Professional Support</li>
-                        <li>Fast Listing</li>
-                        <li>Secure Process</li>
+                        <li *ngFor="let item of whySkyDwell">
+                            {{ item }}
+                        </li>
                     </ul>
                 </div>
                 <div class="contact-card">
@@ -855,12 +534,12 @@
         </div>
     </div>
 </section>
-
-<!--==================== SELLING PROCESS ====================-->
 <section class="selling-process">
     <div class="container">
         <div class="section-heading">
-            <span class="section-subtitle">HOW IT WORKS</span>
+            <span class="section-subtitle">
+                HOW IT WORKS
+            </span>
             <h2 class="section-title">
                 Sell Your Property
             </h2>
@@ -870,60 +549,20 @@
             </p>
         </div>
         <div class="process-wrapper">
-            <div class="process-item">
-                <div class="process-icon">
-                    <i class="fa-solid fa-file-circle-plus"></i>
+            <ng-container *ngFor="let process of sellingProcess; let last = last">
+                <div class="process-item">
+                    <div class="process-icon">
+                        <i class="fa-solid" [ngClass]="process.icon"></i>
+                    </div>
+                    <h3>
+                        {{ process.title }}
+                    </h3>
+                    <p>
+                        {{ process.description }}
+                    </p>
                 </div>
-                <h3>List Property</h3>
-                <p>
-                    Fill basic details and upload
-                    property images.
-                </p>
-            </div>
-            <div class="process-line"></div>
-            <div class="process-item">
-                <div class="process-icon">
-                    <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <h3>Verification</h3>
-                <p>
-                    Our team verifies your
-                    property details.
-                </p>
-            </div>
-            <div class="process-line"></div>
-            <div class="process-item">
-                <div class="process-icon">
-                    <i class="fa-solid fa-bullhorn"></i>
-                </div>
-                <h3>Promotion</h3>
-                <p>
-                    We promote your property
-                    to verified buyers.
-                </p>
-            </div>
-            <div class="process-line"></div>
-            <div class="process-item">
-                <div class="process-icon">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-                <h3>Buyer Visits</h3>
-                <p>
-                    Interested buyers visit
-                    your property.
-                </p>
-            </div>
-            <div class="process-line"></div>
-            <div class="process-item">
-                <div class="process-icon">
-                    <i class="fa-solid fa-handshake"></i>
-                </div>
-                <h3>Deal Closed</h3>
-                <p>
-                    Complete documentation
-                    and receive payment.
-                </p>
-            </div>
+                <div class="process-line" *ngIf="!last"></div>
+            </ng-container>
         </div>
     </div>
 </section>

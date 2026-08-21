@@ -1,15 +1,31 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-agent',
-  standalone: true,
-  imports: [
-    CommonModule
-  ],
+  imports: [],
   templateUrl: './agent.html',
-  styleUrl: './agent.css',
+  styleUrl: './agent.css'
 })
 export class Agent {
+
+  exploreAgents() {
+    console.log('Explore Agents clicked');
+  }
+
+  contactUs() {
+    console.log('Contact Us clicked');
+  }
+
+  exploreProperties() {
+    console.log('Explore Properties clicked');
+  }
+
+  getFreeConsultation() {
+    console.log('Get Free Consultation clicked');
+  }
+
+  contactNow() {
+    console.log('Contact Now clicked');
+  }
 
 }

@@ -1,62 +1,71 @@
-.about-hero{
-    height:500px;
-    background:url("/emi.png") center center/cover no-repeat;
-    position:relative;
-    display:flex;
-    align-items:center;
+.about-hero {
+    height: 550px;
+    background-image: url("/about/emi.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
     margin-top: 108px;
-}
-.about-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        90deg,
-        rgba(16,43,63,0.82) 0%,
-        rgba(16,43,63,0.68) 35%,
-        rgba(16,43,63,0.52) 70%,
-        rgba(16,43,63,0.40) 100%
-    );
-    z-index:1;
-}
 
+    .about-overlay {
+        position: absolute;
+        inset: 0;display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+
+        background: linear-gradient(
+            90deg,
+            rgba(16,43,63,0.82) 0%,
+            rgba(16,43,63,0.68) 35%,
+            rgba(16,43,63,0.52) 70%,
+            rgba(16,43,63,0.40) 100%
+        );
+
+        z-index: 1;
+    }
+}
 /*ABOUT COMPANY*/
 .about-company{
     padding:100px 0;
     background:#ffffff;
-}
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:70px;
-}
-/* LEFT CONTENT */
-.about-btn{
-    margin-top:20px;
-    padding:15px 35px;
-    border:none;
-    border-radius:50px;
-    background:var(--primary);
-    color:white;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-}
-.about-right{
-    position:relative;
-    height:520px;
-}
-.about-right img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:25px;
+    .container{
+        width:90%;
+        max-width:1200px;
+        margin:auto;
+    }
+    .about-grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        align-items:center;
+        gap:70px;
+    }
+    /* LEFT CONTENT */
+    .about-btn{
+        margin-top:20px;
+        padding:15px 35px;
+        border:none;
+        border-radius:50px;
+        background:var(--primary);
+        color:white;
+        font-size:16px;
+        font-weight:600;
+        cursor:pointer;
+        transition:.3s;
+    }
+    .about-right{
+        position:relative;
+        height:520px;
+        img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:25px;
+        }
+    }
 }
 /* ===============================
 IMAGES
@@ -68,6 +77,9 @@ IMAGES
     right:0;
     top:40px;
     box-shadow:0 25px 60px rgba(0,0,0,.15);
+    img{
+        border-radius:18px;
+    }
 }
 .small-image{
     width:45%;
@@ -79,10 +91,9 @@ IMAGES
     border:8px solid white;
     border-radius:25px;
     box-shadow:0 20px 40px rgba(0,0,0,.18);
-}
-.small-image img,
-.large-image img{
-    border-radius:18px;
+    img{
+        border-radius:18px;
+    }
 }
 /* ===============================
 STATS
@@ -90,11 +101,11 @@ STATS
 .about-stats{
     padding:70px 0;
     background:#F8FAFC;
-}
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
+    .stats-grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:25px;
+    }
 }
 .stat-card{
     background:white;
@@ -103,25 +114,25 @@ STATS
     border-radius:20px;
     border:1px solid #E5E7EB;
     transition:.3s;
-}
-.stat-card:hover{
-    transform:translateY(-10px);
-    border-color:var(--secondary);
-    box-shadow:0 20px 40px rgba(0,0,0,.08);
-}
-.stat-card i{
-    font-size:35px;
-    color:var(--secondary);
-    margin-bottom:18px;
-}
-.stat-card h3{
-    font-size:36px;
-    color:#111827;
-    margin-bottom:8px;
-}
-.stat-card p{
-    color:#6B7280;
-    font-size:16px;
+    &:hover{
+        transform:translateY(-10px);
+        border-color:var(--secondary);
+        box-shadow:0 20px 40px rgba(0,0,0,.08);
+    }
+    i{
+        font-size:35px;
+        color:var(--secondary);
+        margin-bottom:18px;
+    }
+    h3{
+        font-size:36px;
+        color:#111827;
+        margin-bottom:8px;
+    }
+    p{
+        color:#6B7280;
+        font-size:16px;
+    }
 }
 /* ===============================
 MISSION SECTION
@@ -129,19 +140,21 @@ MISSION SECTION
 .mission-section{
     padding:100px 0;
     background:white;
+    .mission-grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:70px;
+        align-items:center;
+    }
 }
-.mission-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-}
-.mission-image img{
-    width:100%;
-    height:550px;
-    object-fit:cover;
-    border-radius:30px;
-    box-shadow:0 30px 70px rgba(0,0,0,.15);
+.mission-image{
+    img{
+        width:100%;
+        height:550px;
+        object-fit:cover;
+        border-radius:30px;
+        box-shadow:0 30px 70px rgba(0,0,0,.15);
+    }
 }
 /* Mission Vision Box */
 .mission-box{
@@ -149,432 +162,395 @@ MISSION SECTION
     grid-template-columns:1fr 1fr;
     gap:25px;
     margin-top:35px;
+    div{
+        padding:25px;
+        background:#F8FAFC;
+        border-radius:20px;
+        border-left:4px solid var(--primary);
+        transition:.3s;
+    }
+    &:hover{
+        transform:translateY(-8px);
+        box-shadow:0 15px 35px rgba(0,0,0,.08);
+    }
+    i{
+        font-size:32px;
+        color:var(--primary);
+        margin-bottom:15px;
+    }
+    h3{
+        font-size:22px;
+        margin-bottom:10px;
+        color:#111827;
+    }
 }
-.mission-box div{
-    padding:25px;
-    background:#F8FAFC;
-    border-radius:20px;
-    border-left:4px solid var(--primary);
-    transition:.3s;
-}
-.mission-box div:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
-.mission-box i{
-    font-size:32px;
-    color:var(--primary);
-    margin-bottom:15px;
-}
-.mission-box h3{
-    font-size:22px;
-    margin-bottom:10px;
-    color:#111827;
-}
-
-
-
 /* WHY CHOOSE SECTION */
-
 .why-choose{
     padding:100px 0;
     background:#F8FAFC;
-}
-/* Choose Cards */
-.choose-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
-}
-.choose-card{
-    background:white;
-    padding:35px 25px;
-    text-align:center;
-    border-radius:22px;
-    border:1px solid #E5E7EB;
-    transition:.35s;
-}
-.choose-card:hover{
-    transform:translateY(-12px);
-    border-color:var(--secondary);
-    box-shadow:0 25px 50px rgba(0,0,0,.08);
-}
-.choose-icon{
-    width:75px;
-    height:75px;
-    margin:auto;
-    margin-bottom:25px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:rgba(15,118,110,.1);
-}
-.choose-icon i{
-    font-size:32px;
-    color:var(--primary);
-}
-.choose-card h3{
-    font-size:22px;
-    color:#111827;
-    margin-bottom:12px;
-}
-
-/* =========================================
-   ABOUT PAGE - ALL DEVICES RESPONSIVE
-========================================= */
-
-/* Large Laptop */
-@media (max-width: 1200px) {
-
-    .about-hero .container,
-    .about-company .container,
-    .about-stats .container,
-    .mission-section .container,
-    .why-choose .container {
-        width: 90%;
+    .choose-grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:25px;
     }
-
+    .choose-card{
+        background:white;
+        padding:35px 25px;
+        text-align:center;
+        border-radius:22px;
+        border:1px solid #E5E7EB;
+        transition:.35s;
+        &:hover{
+            transform:translateY(-12px);
+            border-color:var(--secondary);
+            box-shadow:0 25px 50px rgba(0,0,0,.08);
+        }
+        .choose-icon{
+            width:75px;
+            height:75px;
+            margin:auto;
+            margin-bottom:25px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:50%;
+            background:rgba(15,118,110,.1);
+            i{
+                font-size:32px;
+                color:var(--primary);
+            }
+        }
+        h3{
+            font-size:22px;
+            color:#111827;
+            margin-bottom:12px;
+        }
+    }
+}
+/* ==============
+RESPONSIVE
+================ */
+/* ===============================
+LARGE LAPTOP
+================================ */
+@media (max-width:1200px){
+    .about-hero,
+    .about-company,
+    .about-stats,
+    .mission-section,
+    .why-choose{
+        .container{
+            width:90%;
+        }
+    }
     .about-grid,
-    .mission-grid {
-        gap: 45px;
+    .mission-grid{
+        gap:45px;
     }
-    .about-right {
-        height: 480px;
+    .about-right{
+        height:480px;
     }
-
-    .mission-image img {
-        height: 500px;
+    .mission-image{
+        img{
+            height:500px;
+        }
     }
-
     .stats-grid,
-    .choose-grid {
-        gap: 20px;
+    .choose-grid{
+        gap:20px;
     }
 }
-
-
-/* Laptop / Tablet */
-@media (max-width: 992px) {
-
-    .about-hero {
-        height: 450px;
-        margin-top: 90px;
+/* ===============================
+LAPTOP / TABLET
+================================ */
+@media (max-width:992px){
+    .about-hero{
+        height:450px;
+        margin-top:90px;
     }
-    .about-company {
-        padding: 80px 0;
+    .about-company{
+        padding:80px 0;
+        .about-grid{
+            grid-template-columns:1fr;
+            gap:50px;
+        }
+        .about-left{
+            text-align:center;
+        }
+        .about-right{
+            height:450px;
+            max-width:700px;
+            width:100%;
+            margin:auto;
+        }
     }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
+    .about-stats{
+        .stats-grid{
+            grid-template-columns:repeat(2,1fr);
+        }
     }
-
-    .about-left {
-        text-align: center;
+    .mission-section{
+        padding:80px 0;
+        .mission-grid{
+            grid-template-columns:1fr;
+            gap:45px;
+        }
+        .mission-image{
+            max-width:700px;
+            width:100%;
+            margin:auto;
+            img{
+                height:450px;
+            }
+        }
+        .mission-content{
+            text-align:center;
+        }
+        .mission-box{
+            text-align:left;
+        }
     }
-    .about-right {
-        height: 450px;
-        max-width: 700px;
-        width: 100%;
-        margin: auto;
-    }
-
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .mission-section {
-        padding: 80px 0;
-    }
-
-    .mission-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-
-    .mission-image {
-        max-width: 700px;
-        width: 100%;
-        margin: auto;
-    }
-
-    .mission-image img {
-        height: 450px;
-    }
-
-    .mission-content {
-        text-align: center;
-    }
-
-    .mission-box {
-        text-align: left;
-    }
-
-    .choose-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .why-choose{
+        .choose-grid{
+            grid-template-columns:repeat(2,1fr);
+        }
     }
 }
-
-
-/* Tablet / Mobile */
-@media (max-width: 768px) {
-
-    .about-hero {
-        height: 400px;
-        margin-top: 80px;
+/* ===============================
+TABLET / MOBILE
+================================ */
+@media (max-width:768px){
+    .about-hero{
+        height:400px;
+        margin-top:80px;
     }
-
-    .about-company {
-        padding: 70px 0;
+    .about-company{
+        padding:70px 0;
+        .about-right{
+            height:400px;
+        }
     }
-    .about-right {
-        height: 400px;
+    .large-image{
+        width:75%;
+        height:340px;
     }
-
-    .large-image {
-        width: 75%;
-        height: 340px;
+    .small-image{
+        width:45%;
+        height:210px;
     }
-
-    .small-image {
-        width: 45%;
-        height: 210px;
+    .about-stats{
+        padding:60px 0;
+        .stat-card{
+            padding:25px 15px;
+            h3{
+                font-size:30px;
+            }
+            p{
+                font-size:14px;
+            }
+        }
     }
-
-    .about-stats {
-        padding: 60px 0;
+    .mission-section{
+        padding:70px 0;
+        .mission-image{
+            img{
+                height:400px;
+            }
+        }
+        .mission-box{
+            grid-template-columns:1fr;
+            gap:15px;
+        }
     }
-
-    .stat-card {
-        padding: 25px 15px;
-    }
-
-    .stat-card h3 {
-        font-size: 30px;
-    }
-
-    .stat-card p {
-        font-size: 14px;
-    }
-
-    .mission-section {
-        padding: 70px 0;
-    }
-
-    .mission-image img {
-        height: 400px;
-    }
-
-    .mission-box {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .why-choose {
-        padding: 70px 0;
-    }
-
-    .choose-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
-    }
-
-    .choose-card {
-        padding: 28px 18px;
-    }
-
-    .choose-card h3 {
-        font-size: 19px;
-    }
-
-}
-
-
-/* Mobile */
-@media (max-width: 576px) {
-
-    .about-hero {
-        height: 350px;
-        margin-top: 70px;
-    }
-    .about-company {
-        padding: 60px 0;
-    }
-
-    .container {
-        width: 92%;
-    }
-
-    .about-btn {
-        padding: 13px 28px;
-        font-size: 14px;
-    }
-
-    .about-right {
-        height: 330px;
-    }
-
-    .large-image {
-        width: 78%;
-        height: 280px;
-        top: 20px;
-    }
-
-    .small-image {
-        width: 48%;
-        height: 170px;
-        bottom: 10px;
-        border-width: 5px;
-    }
-
-    .about-stats {
-        padding: 50px 0;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-
-    .stat-card {
-        padding: 22px 10px;
-        border-radius: 15px;
-    }
-
-    .stat-card i {
-        font-size: 28px;
-    }
-
-    .stat-card h3 {
-        font-size: 26px;
-    }
-
-    .stat-card p {
-        font-size: 12px;
-    }
-
-    .mission-section {
-        padding: 60px 0;
-    }
-
-    .mission-image img {
-        height: 330px;
-        border-radius: 20px;
-    }
-
-    .mission-content h2 {
-        font-size: 30px;
-    }
-
-    .mission-content p {
-        font-size: 14px;
-    }
-
-    .mission-box div {
-        padding: 20px;
-    }
-
-    .mission-box h3 {
-        font-size: 19px;
-    }
-
-    .why-choose {
-        padding: 60px 0;
-    }
-
-    .choose-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .choose-card {
-        padding: 28px 20px;
-    }
-
-    .choose-card h3 {
-        font-size: 20px;
+    .why-choose{
+        padding:70px 0;
+        .choose-grid{
+            grid-template-columns:repeat(2,1fr);
+            gap:18px;
+        }
+        .choose-card{
+            padding:28px 18px;
+            h3{
+                font-size:19px;
+            }
+        }
     }
 }
-
-
-/* Small Mobile */
-@media (max-width: 400px) {
-
-    .about-hero {
-        height: 320px;
-        margin-top: 65px;
+/* ===============================
+MOBILE
+================================ */
+@media (max-width:576px){
+    .about-hero{
+        height:350px;
+        margin-top:70px;
     }
-
-    .about-right {
-        height: 290px;
+    .about-company{
+        padding:60px 0;
+        .container{
+            width:92%;
+        }
+        .about-btn{
+            padding:13px 28px;
+            font-size:14px;
+        }
+        .about-right{
+            height:330px;
+        }
     }
-
-    .large-image {
-        height: 245px;
+    .large-image{
+        width:78%;
+        height:280px;
+        top:20px;
     }
-
-    .small-image {
-        height: 145px;
+    .small-image{
+        width:48%;
+        height:170px;
+        bottom:10px;
+        border-width:5px;
     }
-
-    .stats-grid {
-        gap: 10px;
+    .about-stats{
+        padding:50px 0;
+        .stats-grid{
+            grid-template-columns:1fr 1fr;
+            gap:12px;
+        }
+        .stat-card{
+            padding:22px 10px;
+            border-radius:15px;
+            i{
+                font-size:28px;
+            }
+            h3{
+                font-size:26px;
+            }
+            p{
+                font-size:12px;
+            }
+        }
     }
-
-    .stat-card h3 {
-        font-size: 23px;
+    .mission-section{
+        padding:60px 0;
+        .mission-image{
+            img{
+                height:330px;
+                border-radius:20px;
+            }
+        }
+        .mission-content{
+            h2{
+                font-size:30px;
+            }
+            p{
+                font-size:14px;
+            }
+        }
+        .mission-box{
+            div{
+                padding:20px;
+            }
+            h3{
+                font-size:19px;
+            }
+        }
     }
-
-    .stat-card p {
-        font-size: 11px;
-    }
-
-    .mission-image img {
-        height: 290px;
-    }
-
-    .mission-box div {
-        padding: 18px;
+    .why-choose{
+        padding:60px 0;
+        .choose-grid{
+            grid-template-columns:1fr;
+            gap:15px;
+        }
+        .choose-card{
+            padding:28px 20px;
+            h3{
+                font-size:20px;
+            }
+        }
     }
 }
-
-
-/* Extra Small Mobile */
-@media (max-width: 360px) {
-
-    .about-hero {
-        height: 300px;
+/* ===============================
+SMALL MOBILE
+================================ */
+@media (max-width:400px){
+    .about-hero{
+        height:320px;
+        margin-top:65px;
     }
-    .about-right {
-        height: 260px;
+    .about-company{
+        .about-right{
+            height:290px;
+        }
     }
-
-    .large-image {
-        height: 220px;
+    .large-image{
+        height:245px;
     }
-
-    .small-image {
-        height: 125px;
+    .small-image{
+        height:145px;
     }
-
-    .stat-card {
-        padding: 18px 8px;
+    .about-stats{
+        .stats-grid{
+            gap:10px;
+        }
+        .stat-card{
+            h3{
+                font-size:23px;
+            }
+            p{
+                font-size:11px;
+            }
+        }
     }
-
-    .stat-card i {
-        font-size: 24px;
+    .mission-section{
+        .mission-image{
+            img{
+                height:290px;
+            }
+        }
+        .mission-box{
+            div{
+                padding:18px;
+            }
+        }
     }
-
-    .stat-card h3 {
-        font-size: 21px;
+}
+/* ===============================
+EXTRA SMALL MOBILE
+================================ */
+@media (max-width:360px){
+    .about-hero{
+        height:300px;
     }
-
-    .mission-image img {
-        height: 260px;
+    .about-company{
+        .about-right{
+            height:260px;
+        }
     }
-
-    .choose-card {
-        padding: 24px 15px;
+    .large-image{
+        height:220px;
+    }
+    .small-image{
+        height:125px;
+    }
+    .about-stats{
+        .stat-card{
+            padding:18px 8px;
+            i{
+                font-size:24px;
+            }
+            h3{
+                font-size:21px;
+            }
+        }
+    }
+    .mission-section{
+        .mission-image{
+            img{
+                height:260px;
+            }
+        }
+    }
+    .why-choose{
+        .choose-card{
+            padding:24px 15px;
+        }
     }
 }

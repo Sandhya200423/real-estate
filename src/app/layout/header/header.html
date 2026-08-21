@@ -1,157 +1,100 @@
 <header class="header" [class.scrolled]="isScrolled">
-
     <div class="container">
-
         <div class="navbar">
-
-            <!-- Logo -->
             <a routerLink="/" class="logo">
-
-                <img
-                    src="logon.png"
-                    alt="SkyDwell Logo"
-                    class="logo-img">
-
+                <img [src]="headerData.logo" [alt]="headerData.logoAlt" class="logo-img">
                 <div class="logo-text">
-                    <h2>SkyDwell</h2>
-                    <span>Luxury Real Estate</span>
+                    <h2>{{ headerData.brandName }}</h2>
+                    <span>{{ headerData.tagline }}</span>
                 </div>
-
             </a>
 
-            <!-- Navigation -->
-                        <nav class="nav-links" [class.active]="menuOpen">
-
-                                        @for(item of navItems; track item.name) {
-
-                                            @if(item.dropdown) {
-
-                                                <div class="buy-dropdown">
-
+            <nav class="nav-links" [class.active]="menuOpen">
+                @for (item of navItems; track item.name) {
+                    @if (item.dropdown) {
+                        <div class="buy-dropdown">
                             <div class="buy-link">
-
                                 <a
-                            [routerLink]="item.link"
-                            routerLinkActive="active"
-                            [routerLinkActiveOptions]="{ exact: false }"
-                            (click)="closeMenu()">
-
-                            {{ item.name }}
-
-                        </a>
+                                    [routerLink]="item.link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: false }"
+                                    (click)="closeMenu()">
+                                    {{ item.name }}
+                                </a>
 
                                 <button
                                     type="button"
                                     class="dropdown-arrow"
                                     (click)="toggleBuyDropdown()">
-
                                     <i class="fa-solid fa-chevron-down"></i>
-
                                 </button>
-
                             </div>
 
                             <div
                                 class="buy-dropdown-menu"
                                 [class.open]="buyDropdownOpen">
-
-                                @for(menu of item.dropdown; track menu.name) {
-
+                                @for (menu of item.dropdown; track menu.name) {
                                     <a
                                         [routerLink]="['/buy']"
                                         [fragment]="menu.fragment"
                                         (click)="closeMenu()">
-
                                         {{ menu.name }}
-
                                     </a>
-
                                 }
-
-                            
-
                             </div>
-
                         </div>
-
                     } @else {
-
                         <a
                             [routerLink]="item.link"
                             routerLinkActive="active"
                             [routerLinkActiveOptions]="{ exact: true }"
                             (click)="closeMenu()">
-
                             {{ item.name }}
-
                         </a>
-
                     }
-
                 }
 
-                <!-- Mobile Buttons -->
                 <div class="mobile-buttons">
-
                     <a
-                        routerLink="/signin"
+                        [routerLink]="headerData.signInLink"
                         class="btn btn-outline"
                         (click)="closeMenu()">
-
-                        Sign In
-
+                        {{ headerData.signInText }}
                     </a>
 
                     <a
-                        routerLink="/sell"
+                        [routerLink]="headerData.addPropertyLink"
                         class="btn btn-primary"
                         (click)="closeMenu()">
-
-                        Add Property
-
+                        {{ headerData.addPropertyText }}
                     </a>
-
                 </div>
-
             </nav>
 
-            <!-- Desktop Buttons -->
             <div class="header-buttons">
-
                 <a
-                    routerLink="/signin"
+                    [routerLink]="headerData.signInLink"
                     class="btn btn-outline">
-
-                    Sign In
-
+                    {{ headerData.signInText }}
                 </a>
 
                 <a
-                    routerLink="/sell"
+                    [routerLink]="headerData.addPropertyLink"
                     class="btn btn-primary">
-
-                    Add Property
-
+                    {{ headerData.addPropertyText }}
                 </a>
-
             </div>
 
-            <!-- Mobile Menu -->
             <button
                 class="menu-btn"
                 type="button"
                 (click)="toggleMenu()">
-
                 <i
                     class="fa-solid"
                     [class.fa-bars]="!menuOpen"
                     [class.fa-xmark]="menuOpen">
                 </i>
-
             </button>
-
         </div>
-
     </div>
-
 </header>

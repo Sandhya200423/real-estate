@@ -1,39 +1,17 @@
-/*=========================*
-* Features
-*=========================*/
-
 .features{
     background:var(--white);
     padding-top:150px;
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:40px;
+    }
 }
-
-
-/*=========================*
-* Grid
-*=========================*/
-
-.features .grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:40px;
-}
-
-
-/*=========================*
-* Item
-*=========================*/
-
 .feature-item{
     display:flex;
     align-items:flex-start;
     gap:18px;
 }
-
-
-/*=========================*
-* Icon Box
-*=========================*/
-
 .icon-box{
     width:60px;
     height:60px;
@@ -43,31 +21,24 @@
     display:flex;
     align-items:center;
     justify-content:center;
+    i{
+        font-size:28px;
+        color:var(--white);
+    }
 }
-
-.icon-box i{
-    font-size:28px;
-    color:var(--white);
+.feature-content{
+    .heading{
+        margin-bottom:8px;
+        font-size:20px;
+        font-weight:600;
+        color:var(--primary);
+    }
+    .text{
+        font-size:15px;
+        line-height:1.7;
+        color:var(--text);
+    }
 }
-
-
-/*=========================*
-* Content
-*=========================*/
-
-.feature-content .heading{
-    margin-bottom:8px;
-    font-size:20px;
-    font-weight:600;
-    color:var(--primary);
-}
-
-.feature-content .text{
-    font-size:15px;
-    line-height:1.7;
-    color:var(--text);
-}
-
 
 /*=========================*
 * Responsive
@@ -75,9 +46,11 @@
 
 @media(max-width:992px){
 
-    .features .grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:30px;
+    .features{
+        .grid{
+            grid-template-columns:repeat(2,1fr);
+            gap:30px;
+        }
     }
 
     .feature-item{
@@ -93,10 +66,10 @@
 
     .features{
         padding-top:80px;
-    }
 
-    .features .grid{
-        grid-template-columns:1fr;
-        gap:25px;
+        .grid{
+            grid-template-columns:1fr;
+            gap:25px;
+        }
     }
 }

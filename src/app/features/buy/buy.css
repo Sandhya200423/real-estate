@@ -1,183 +1,138 @@
-.buy-confidence{
-    padding:130px 0;
-    background:var(--bg);
+.buy-confidence {
+  padding: 130px 0;
+  background: var(--bg);
+  .confidence-box {
+    background: var(--primary);
+    border-radius: 25px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    max-height: 350px;
+  }
+  .confidence-content {
+    padding: 50px;
+  }
+  .buy-feature {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    i {
+      color: var(--secondary);
+      font-size: 25px;
+      margin-top: 5px;
+    }
+    h3 {
+      color: white;
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+    p {
+      color: #d1d5db;
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+  .confidence-image {
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
-
-/* Main Box */
-
-.confidence-box{
-    background:var(--primary);
-    border-radius:25px;
-    overflow:hidden;
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    align-items:center;
-    max-height:350px;
-}
-
-.confidence-content{
-    padding:50px;
-}
-
-.buy-feature{
-    display:flex;
-    gap:20px;
-    margin-bottom:25px;
-}
-
-.buy-feature i{
-    color:var(--secondary);
-    font-size:25px;
-    margin-top:5px;
-}
-
-.buy-feature h3{
-    color:white;
-    font-size:18px;
-    margin:0 0 8px;
-}
-
-.buy-feature p{
-    color:#d1d5db;
-    font-size:14px;
-    margin:0;
-}
-
-.confidence-image{
-    height:100%;
-}
-
-.confidence-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
 /* =========================
    RESPONSIVE
 ========================= */
-
 @media (max-width: 992px) {
-
-    .buy-confidence{
-        padding:90px 0;
-    }
-
-    .confidence-box{
-        grid-template-columns:1fr 1fr;
-        max-height:320px;
-    }
-
-    .confidence-content{
-        padding:35px;
-    }
-
-    .buy-feature{
-        gap:15px;
-        margin-bottom:20px;
-    }
-
-    .buy-feature i{
-        font-size:22px;
-    }
-
-    .buy-feature h3{
-        font-size:16px;
-    }
-
-    .buy-feature p{
-        font-size:13px;
-    }
-
-    .confidence-image{
-        height:320px;
+    .buy-confidence {
+        padding: 90px 0;
+        .confidence-box {
+            grid-template-columns: 1fr 1fr;
+            max-height: 320px;
+        }
+        .confidence-content {
+            padding: 35px;
+        }
+        .buy-feature {
+            gap: 15px;
+            margin-bottom: 20px;
+            i {
+                font-size: 22px;
+            }
+            h3 {
+                font-size: 16px;
+            }
+            p {
+                font-size: 13px;
+            }
+        }
+        .confidence-image {
+            height: 320px;
+        }
     }
 }
-
-
 @media (max-width: 768px) {
-
-    .buy-confidence{
-        padding:70px 0;
-    }
-
-    .confidence-box{
-        grid-template-columns:1fr;
-        max-height:none;
-    }
-
-    .confidence-content{
-        padding:35px 25px;
-    }
-
-    .confidence-image{
-        height:240px;
+    .buy-confidence {
+        padding: 70px 0;
+        .confidence-box {
+            grid-template-columns: 1fr;
+            max-height: none;
+        }
+        .confidence-content {
+            padding: 35px 25px;
+        }
+        .confidence-image {
+            height: 240px;
+        }
     }
 }
-
-
 @media (max-width: 576px) {
-
-    .buy-confidence{
-        padding:55px 0;
-    }
-
-    .confidence-content{
-        padding:28px 20px;
-    }
-
-    .buy-feature{
-        gap:12px;
-        margin-bottom:18px;
-    }
-
-    .buy-feature i{
-        font-size:20px;
-    }
-
-    .buy-feature h3{
-        font-size:15px;
-    }
-
-    .buy-feature p{
-        font-size:12px;
-        line-height:1.6;
-    }
-
-    .confidence-image{
-        height:210px;
+    .buy-confidence {
+        padding: 55px 0;
+        .confidence-content {
+            padding: 28px 20px;
+        }
+        .buy-feature {
+            gap: 12px;
+            margin-bottom: 18px;
+            i {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 15px;
+            }
+            p {
+                font-size: 12px;
+                line-height: 1.6;
+            }
+        }
+        .confidence-image {
+            height: 210px;
+        }
     }
 }
-
-
 @media (max-width: 360px) {
-
-    .buy-confidence{
-        padding:45px 0;
-    }
-     
-    .confidence-content{
-        padding:25px 16px;
-       
-    }
-
-    .buy-feature{
-        gap:10px;
-    }
-
-    .buy-feature i{
-        font-size:18px;
-    }
-
-    .buy-feature h3{
-        font-size:14px;
-    }
-
-    .buy-feature p{
-        font-size:11px;
-    }
-
-    .confidence-image{
-        height:190px;
+    .buy-confidence {
+        padding: 45px 0;
+        .confidence-content {
+            padding: 25px 16px;
+        }
+        .buy-feature {
+            gap: 10px;
+            i {
+                font-size: 18px;
+            }
+            h3 {
+                font-size: 14px;
+            }
+            p {
+                font-size: 11px;
+            }
+        }
+        .confidence-image {
+            height: 190px;
+        }
     }
 }
