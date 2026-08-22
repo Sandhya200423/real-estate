@@ -1,568 +1,630 @@
 <section class="sell-hero">
-    <div class="container">
-        <div class="sell-hero-wrapper">
-            <div class="sell-hero-content">
-                <span class="section-subtitle">
-                    {{ hero.subtitle }}
-                </span>
-                <h1 class="section-title">
-                    {{ hero.title }}
-                    <br>
-                    {{ hero.highlight }}
-                </h1>
-                <p class="section-description">
-                    {{ hero.description }}
-                </p>
-                <div class="sell-buttons">
-                    <a class="btn btn-primary" (click)="listProperty()">
-                        {{ hero.button }}
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="sell-features">
-                    <div *ngFor="let feature of sellFeatures">
-                        <i class="fa-solid fa-circle-check"></i>
-                        {{ feature }}
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="sell-hero-wrapper">
+      <div class="sell-hero-content">
+        <span class="section-subtitle">
+          {{ hero.subtitle }}
+        </span>
+        <h1 class="section-title">
+          {{ hero.title }}
+          <br />
+          {{ hero.highlight }}
+        </h1>
+        <p class="section-description">
+          {{ hero.description }}
+        </p>
+        <div class="sell-buttons">
+          <a class="btn btn-primary" (click)="listProperty()">
+            {{ hero.button }}
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
+        <div class="sell-features">
+          <div *ngFor="let feature of sellFeatures">
+            <i class="fa-solid fa-circle-check"></i>
+            {{ feature }}
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <section class="why-sell">
-    <div class="container">
-        <div class="section-heading">
-            <span class="section-subtitle">
-                {{ whySell.subtitle }}
-            </span>
-            <h2 class="section-title">
-                {{ whySell.title }}
-            </h2>
-            <p class="section-description">
-                {{ whySell.description }}
-            </p>
-        </div>
-        <div class="sell-cards">
-            <div class="sell-card" *ngFor="let card of sellCards">
-                <div class="sell-icon">
-                    <i class="fa-solid" [ngClass]="card.icon"></i>
-                </div>
-                <h3>
-                    {{ card.title }}
-                </h3>
-                <p>
-                    {{ card.description }}
-                </p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-subtitle">
+        {{ whySell.subtitle }}
+      </span>
+      <h2 class="section-title">
+        {{ whySell.title }}
+      </h2>
+      <p class="section-description">
+        {{ whySell.description }}
+      </p>
     </div>
+    <div class="sell-cards">
+      <div class="sell-card" *ngFor="let card of sellCards">
+        <div class="sell-icon">
+          <i class="fa-solid" [ngClass]="card.icon"></i>
+        </div>
+        <h3>
+          {{ card.title }}
+        </h3>
+        <p>
+          {{ card.description }}
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 <section class="trust">
-    <div class="container">
-        <div class="trust-box">
-            <div *ngFor="let stat of trustStats">
-                <h2>
-                    {{ stat.number }}
-                </h2>
-                <span>
-                    {{ stat.label }}
-                </span>
-            </div>
-        </div>
+  <div class="container">
+    <div class="trust-box">
+      <div *ngFor="let stat of trustStats">
+        <h2>
+          {{ stat.number }}
+        </h2>
+        <span>
+          {{ stat.label }}
+        </span>
+      </div>
     </div>
+  </div>
 </section>
 <section class="property-form-section">
-    <div class="container">
-        <div class="form-layout">
-            <div class="form-left">
-                <div class="form-card">
-                    <div class="form-header">
-                        <div class="form-icon">
-                            <i class="fa-solid fa-house"></i>
-                        </div>
-                        <div>
-                            <h2>Basic Information</h2>
-                            <p>
-                                Tell us the basic details of your property.
-                            </p>
-                        </div>
-                    </div>
-                    <form class="property-form">
-                        <div class="form-group full">
-                            <label>
-                                Property Title
-                                <span>*</span>
-                            </label>
-                            <input type="text" name="title" [(ngModel)]="property.title" placeholder="Luxury 3 BHK Apartment">
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Property Type
-                                <span>*</span>
-                            </label>
-                            <select name="propertyType" [(ngModel)]="property.propertyType">
-                                <option value="">Select Property Type</option>
-                                <option *ngFor="let type of propertyTypes" [value]="type">
-                                    {{ type }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Property For
-                                <span>*</span>
-                            </label>
-                            <select name="propertyFor" [(ngModel)]="property.propertyFor">
-                                <option *ngFor="let option of propertyFor" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Expected Price</label>
-                            <input type="number" name="expectedPrice" [(ngModel)]="property.expectedPrice" placeholder="₹">
-                        </div>
-                        <div class="form-group">
-                            <label>Carpet Area</label>
-                            <input type="number" name="carpetArea" [(ngModel)]="property.carpetArea" placeholder="1200 Sq.ft">
-                        </div>
-                        <div class="form-group full">
-                            <label>Description</label>
-                            <textarea rows="6" name="description" [(ngModel)]="property.description" placeholder="Describe your property..."></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="form-card">
-                    <div class="form-header">
-                        <div class="form-icon">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div>
-                            <h2>Location Details</h2>
-                            <p>
-                                Enter your property's exact location.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>
-                                State
-                                <span>*</span>
-                            </label>
-                            <select name="state" [(ngModel)]="property.state">
-                                <option value="">Select State</option>
-                                <option *ngFor="let state of states" [value]="state">
-                                    {{ state }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                City
-                                <span>*</span>
-                            </label>
-                            <select name="city" [(ngModel)]="property.city">
-                                <option value="">Select City</option>
-                                <option *ngFor="let city of cities" [value]="city">
-                                    {{ city }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Locality / Area
-                                <span>*</span>
-                            </label>
-                            <input type="text" name="locality" [(ngModel)]="property.locality" placeholder="Baner">
-                        </div>
-                        <div class="form-group">
-                            <label>Landmark</label>
-                            <input type="text" name="landmark" [(ngModel)]="property.landmark" placeholder="Near Metro Station">
-                        </div>
-                        <div class="form-group">
-                            <label>PIN Code</label>
-                            <input type="text" name="pinCode" [(ngModel)]="property.pinCode" placeholder="416208">
-                        </div>
-                        <div class="form-group full">
-                            <label>
-                                Complete Address
-                                <span>*</span>
-                            </label>
-                            <textarea rows="4" name="address" [(ngModel)]="property.address" placeholder="Enter complete address"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-card">
-                    <div class="form-header">
-                        <div class="form-icon">
-                            <i class="fa-solid fa-building"></i>
-                        </div>
-                        <div>
-                            <h2>Property Details</h2>
-                            <p>
-                                Share complete specifications of your property.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="form-grid four-column">
-                        <div class="form-group">
-                            <label>
-                                BHK
-                                <span>*</span>
-                            </label>
-                            <select name="bhk" [(ngModel)]="property.bhk">
-                                <option value="">Select</option>
-                                <option *ngFor="let option of bhkOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Bathrooms
-                                <span>*</span>
-                            </label>
-                            <select name="bathrooms" [(ngModel)]="property.bathrooms">
-                                <option value="">Select</option>
-                                <option *ngFor="let option of bathroomOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Balconies</label>
-                            <select name="balconies" [(ngModel)]="property.balconies">
-                                <option value="">Select</option>
-                                <option *ngFor="let option of balconyOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Carpet Area (Sq.ft)</label>
-                            <input type="number" name="propertyCarpetArea" [(ngModel)]="property.carpetArea" placeholder="1200">
-                        </div>
-                        <div class="form-group">
-                            <label>Built-up Area</label>
-                            <input type="number" name="builtUpArea" [(ngModel)]="property.builtUpArea" placeholder="1500">
-                        </div>
-                        <div class="form-group">
-                            <label>Total Floors</label>
-                            <select name="totalFloors" [(ngModel)]="property.totalFloors">
-                                <option value="">Select</option>
-                                <option *ngFor="let option of floorOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Property Floor</label>
-                            <select name="propertyFloor" [(ngModel)]="property.propertyFloor">
-                                <option value="">Select</option>
-                                <option *ngFor="let option of propertyFloorOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Property Age</label>
-                            <select name="propertyAge" [(ngModel)]="property.propertyAge">
-                                <option value="">Select</option>
-                                <option *ngFor="let option of propertyAgeOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Facing</label>
-                            <select name="facing" [(ngModel)]="property.facing">
-                                <option value="">Select</option>
-                                <option *ngFor="let option of facingOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Furnishing</label>
-                            <select name="furnishing" [(ngModel)]="property.furnishing">
-                                <option value="">Select</option>
-                                <option *ngFor="let option of furnishingOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Ownership</label>
-                            <select name="ownership" [(ngModel)]="property.ownership">
-                                <option value="">Select</option>
-                                <option *ngFor="let option of ownershipOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Parking</label>
-                            <select name="parking" [(ngModel)]="property.parking">
-                                <option value="">Select</option>
-                                <option *ngFor="let option of parkingOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-card">
-                    <div class="form-header">
-                        <div class="form-icon">
-                            <i class="fa-solid fa-indian-rupee-sign"></i>
-                        </div>
-                        <div>
-                            <h2>Pricing Details</h2>
-                            <p>
-                                Enter the pricing and payment information.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="form-grid three-column">
-                        <div class="form-group">
-                            <label>
-                                Expected Price (₹)
-                                <span>*</span>
-                            </label>
-                            <input type="number" name="pricingExpectedPrice" [(ngModel)]="property.expectedPrice" placeholder="85,00,000">
-                        </div>
-                        <div class="form-group">
-                            <label>Price Negotiable</label>
-                            <select name="priceNegotiable" [(ngModel)]="property.priceNegotiable">
-                                <option value="">Select Option</option>
-                                <option *ngFor="let option of negotiableOptions" [value]="option">
-                                    {{ option }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Maintenance Charges</label>
-                            <input type="number" name="maintenance" [(ngModel)]="property.maintenance" placeholder="3000">
-                        </div>
-                        <div class="form-group">
-                            <label>Booking Amount</label>
-                            <input type="number" name="bookingAmount" [(ngModel)]="property.bookingAmount" placeholder="100000">
-                        </div>
-                        <div class="form-group">
-                            <label>Monthly Rent</label>
-                            <input type="number" name="monthlyRent" [(ngModel)]="property.monthlyRent" placeholder="Only For Rent">
-                        </div>
-                        <div class="form-group">
-                            <label>Security Deposit</label>
-                            <input type="number" name="securityDeposit" [(ngModel)]="property.securityDeposit" placeholder="If Applicable">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-card">
-                    <div class="form-header">
-                        <div class="form-icon">
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <div>
-                            <h2>Amenities & Facilities</h2>
-                            <p>
-                                Select all the facilities available in your property.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="amenities-grid">
-                        <label class="amenity-item" *ngFor="let amenity of amenities">
-                            <input type="checkbox" [value]="amenity.name">
-                            <i class="fa-solid" [ngClass]="amenity.icon"></i>
-                            <span>
-                                {{ amenity.name }}
-                            </span>
-                        </label>
-                    </div>
-                </div>
-                <div class="form-card">
-                    <div class="form-header">
-                        <div class="form-icon">
-                            <i class="fa-solid fa-image"></i>
-                        </div>
-                        <div>
-                            <h2>Photos & Media</h2>
-                            <p>
-                                Upload clear images to attract more buyers.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="upload-box">
-                        <div class="upload-icon">
-                            <i class="fa-solid fa-cloud-arrow-up"></i>
-                        </div>
-                        <h3>
-                            Upload Property Images
-                        </h3>
-                        <p>
-                            Add minimum 5 high quality images
-                        </p>
-                        <label class="upload-btn">
-                            <i class="fa-solid fa-plus"></i>
-                            Choose Images
-                            <input type="file" multiple hidden accept="image/*" (change)="onImagesSelected($event)">
-                        </label>
-                        <div class="selected-files" *ngIf="selectedImages.length">
-                            <p>
-                                {{ selectedImages.length }} images selected
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-card">
-                    <div class="form-header">
-                        <div class="form-icon">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <div>
-                            <h2>Your Details</h2>
-                            <p>
-                                Provide your contact information.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>
-                                Full Name
-                                <span>*</span>
-                            </label>
-                            <input type="text" name="fullName" [(ngModel)]="property.fullName" placeholder="Enter your name">
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Mobile Number
-                                <span>*</span>
-                            </label>
-                            <input type="tel" name="mobile" [(ngModel)]="property.mobile" placeholder="+91 98765 43210">
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" name="email" [(ngModel)]="property.email" placeholder="example@gmail.com">
-                        </div>
-                        <div class="form-group">
-                            <label>You Are</label>
-                            <select name="role" [(ngModel)]="property.role">
-                                <option value="">Select</option>
-                                <option *ngFor="let role of userRoles" [value]="role">
-                                    {{ role }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group full">
-                            <label>Additional Information</label>
-                            <textarea rows="5" name="additionalInformation" [(ngModel)]="property.additionalInformation" placeholder="Any additional details..."></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-card review-card">
-                    <div class="form-header">
-                        <div class="form-icon">
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-                        <div>
-                            <h2>Review & Submit</h2>
-                            <p>
-                                Check all details before submitting your property.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <div class="review-item">
-                            <i class="fa-solid fa-shield-halved"></i>
-                            <span>
-                                Your information is secure with us.
-                            </span>
-                        </div>
-                        <div class="review-item">
-                            <i class="fa-solid fa-user-check"></i>
-                            <span>
-                                Our team will verify your property details.
-                            </span>
-                        </div>
-                    </div>
-                    <div class="form-actions">
-                        <button type="button" class="btn btn-outline" (click)="saveDraft()">
-                            Save Draft
-                        </button>
-                        <button type="button" class="btn btn-primary" (click)="submitProperty()">
-                            Submit Property
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="form-layout">
+      <div class="form-left">
+        <div class="form-card">
+          <div class="form-header">
+            <div class="form-icon">
+              <i class="fa-solid fa-house"></i>
             </div>
-            <aside class="sell-sidebar">
-                <div class="sidebar-card">
-                    <h3>
-                        <i class="fa-regular fa-lightbulb"></i>
-                        Tips
-                    </h3>
-                    <ul>
-                        <li *ngFor="let tip of tips">
-                            {{ tip }}
-                        </li>
-                    </ul>
-                </div>
-                <div class="sidebar-card">
-                    <h3>
-                        Why SkyDwell?
-                    </h3>
-                    <ul>
-                        <li *ngFor="let item of whySkyDwell">
-                            {{ item }}
-                        </li>
-                    </ul>
-                </div>
-                <div class="contact-card">
-                    <i class="fa-solid fa-headset"></i>
-                    <h3>Need Help?</h3>
-                    <p>
-                        Contact our property experts anytime.
-                    </p>
-                    <a href="#" class="contact-btn">
-                        Contact Us
-                    </a>
-                </div>
-            </aside>
+            <div>
+              <h2>Basic Information</h2>
+              <p>Tell us the basic details of your property.</p>
+            </div>
+          </div>
+          <form class="property-form">
+            <div class="form-group full">
+              <label>
+                Property Title
+                <span>*</span>
+              </label>
+              <input
+                type="text"
+                name="title"
+                [(ngModel)]="property.title"
+                placeholder="Luxury 3 BHK Apartment"
+              />
+            </div>
+            <div class="form-group">
+              <label>
+                Property Type
+                <span>*</span>
+              </label>
+              <select name="propertyType" [(ngModel)]="property.propertyType">
+                <option value="">Select Property Type</option>
+                <option *ngFor="let type of propertyTypes" [value]="type">
+                  {{ type }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>
+                Property For
+                <span>*</span>
+              </label>
+              <select name="propertyFor" [(ngModel)]="property.propertyFor">
+                <option *ngFor="let option of propertyFor" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Expected Price</label>
+              <input
+                type="number"
+                name="expectedPrice"
+                [(ngModel)]="property.expectedPrice"
+                placeholder="₹"
+              />
+            </div>
+            <div class="form-group">
+              <label>Carpet Area</label>
+              <input
+                type="number"
+                name="carpetArea"
+                [(ngModel)]="property.carpetArea"
+                placeholder="1200 Sq.ft"
+              />
+            </div>
+            <div class="form-group full">
+              <label>Description</label>
+              <textarea
+                rows="6"
+                name="description"
+                [(ngModel)]="property.description"
+                placeholder="Describe your property..."
+              ></textarea>
+            </div>
+          </form>
         </div>
+        <div class="form-card">
+          <div class="form-header">
+            <div class="form-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <h2>Location Details</h2>
+              <p>Enter your property's exact location.</p>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>
+                State
+                <span>*</span>
+              </label>
+              <select name="state" [(ngModel)]="property.state">
+                <option value="">Select State</option>
+                <option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>
+                City
+                <span>*</span>
+              </label>
+              <select name="city" [(ngModel)]="property.city">
+                <option value="">Select City</option>
+                <option *ngFor="let city of cities" [value]="city">
+                  {{ city }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>
+                Locality / Area
+                <span>*</span>
+              </label>
+              <input
+                type="text"
+                name="locality"
+                [(ngModel)]="property.locality"
+                placeholder="Baner"
+              />
+            </div>
+            <div class="form-group">
+              <label>Landmark</label>
+              <input
+                type="text"
+                name="landmark"
+                [(ngModel)]="property.landmark"
+                placeholder="Near Metro Station"
+              />
+            </div>
+            <div class="form-group">
+              <label>PIN Code</label>
+              <input
+                type="text"
+                name="pinCode"
+                [(ngModel)]="property.pinCode"
+                placeholder="416208"
+              />
+            </div>
+            <div class="form-group full">
+              <label>
+                Complete Address
+                <span>*</span>
+              </label>
+              <textarea
+                rows="4"
+                name="address"
+                [(ngModel)]="property.address"
+                placeholder="Enter complete address"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form-card">
+          <div class="form-header">
+            <div class="form-icon">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <div>
+              <h2>Property Details</h2>
+              <p>Share complete specifications of your property.</p>
+            </div>
+          </div>
+          <div class="form-grid four-column">
+            <div class="form-group">
+              <label>
+                BHK
+                <span>*</span>
+              </label>
+              <select name="bhk" [(ngModel)]="property.bhk">
+                <option value="">Select</option>
+                <option *ngFor="let option of bhkOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>
+                Bathrooms
+                <span>*</span>
+              </label>
+              <select name="bathrooms" [(ngModel)]="property.bathrooms">
+                <option value="">Select</option>
+                <option *ngFor="let option of bathroomOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Balconies</label>
+              <select name="balconies" [(ngModel)]="property.balconies">
+                <option value="">Select</option>
+                <option *ngFor="let option of balconyOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Carpet Area (Sq.ft)</label>
+              <input
+                type="number"
+                name="propertyCarpetArea"
+                [(ngModel)]="property.carpetArea"
+                placeholder="1200"
+              />
+            </div>
+            <div class="form-group">
+              <label>Built-up Area</label>
+              <input
+                type="number"
+                name="builtUpArea"
+                [(ngModel)]="property.builtUpArea"
+                placeholder="1500"
+              />
+            </div>
+            <div class="form-group">
+              <label>Total Floors</label>
+              <select name="totalFloors" [(ngModel)]="property.totalFloors">
+                <option value="">Select</option>
+                <option *ngFor="let option of floorOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Property Floor</label>
+              <select name="propertyFloor" [(ngModel)]="property.propertyFloor">
+                <option value="">Select</option>
+                <option *ngFor="let option of propertyFloorOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Property Age</label>
+              <select name="propertyAge" [(ngModel)]="property.propertyAge">
+                <option value="">Select</option>
+                <option *ngFor="let option of propertyAgeOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Facing</label>
+              <select name="facing" [(ngModel)]="property.facing">
+                <option value="">Select</option>
+                <option *ngFor="let option of facingOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Furnishing</label>
+              <select name="furnishing" [(ngModel)]="property.furnishing">
+                <option value="">Select</option>
+                <option *ngFor="let option of furnishingOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Ownership</label>
+              <select name="ownership" [(ngModel)]="property.ownership">
+                <option value="">Select</option>
+                <option *ngFor="let option of ownershipOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Parking</label>
+              <select name="parking" [(ngModel)]="property.parking">
+                <option value="">Select</option>
+                <option *ngFor="let option of parkingOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-card">
+          <div class="form-header">
+            <div class="form-icon">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+            </div>
+            <div>
+              <h2>Pricing Details</h2>
+              <p>Enter the pricing and payment information.</p>
+            </div>
+          </div>
+          <div class="form-grid three-column">
+            <div class="form-group">
+              <label>
+                Expected Price (₹)
+                <span>*</span>
+              </label>
+              <input
+                type="number"
+                name="pricingExpectedPrice"
+                [(ngModel)]="property.expectedPrice"
+                placeholder="85,00,000"
+              />
+            </div>
+            <div class="form-group">
+              <label>Price Negotiable</label>
+              <select name="priceNegotiable" [(ngModel)]="property.priceNegotiable">
+                <option value="">Select Option</option>
+                <option *ngFor="let option of negotiableOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Maintenance Charges</label>
+              <input
+                type="number"
+                name="maintenance"
+                [(ngModel)]="property.maintenance"
+                placeholder="3000"
+              />
+            </div>
+            <div class="form-group">
+              <label>Booking Amount</label>
+              <input
+                type="number"
+                name="bookingAmount"
+                [(ngModel)]="property.bookingAmount"
+                placeholder="100000"
+              />
+            </div>
+            <div class="form-group">
+              <label>Monthly Rent</label>
+              <input
+                type="number"
+                name="monthlyRent"
+                [(ngModel)]="property.monthlyRent"
+                placeholder="Only For Rent"
+              />
+            </div>
+            <div class="form-group">
+              <label>Security Deposit</label>
+              <input
+                type="number"
+                name="securityDeposit"
+                [(ngModel)]="property.securityDeposit"
+                placeholder="If Applicable"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-card">
+          <div class="form-header">
+            <div class="form-icon">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <h2>Amenities & Facilities</h2>
+              <p>Select all the facilities available in your property.</p>
+            </div>
+          </div>
+          <div class="amenities-grid">
+            <label class="amenity-item" *ngFor="let amenity of amenities">
+              <input type="checkbox" [value]="amenity.name" />
+              <i class="fa-solid" [ngClass]="amenity.icon"></i>
+              <span>
+                {{ amenity.name }}
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="form-card">
+          <div class="form-header">
+            <div class="form-icon">
+              <i class="fa-solid fa-image"></i>
+            </div>
+            <div>
+              <h2>Photos & Media</h2>
+              <p>Upload clear images to attract more buyers.</p>
+            </div>
+          </div>
+          <div class="upload-box">
+            <div class="upload-icon">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+            <h3>Upload Property Images</h3>
+            <p>Add minimum 5 high quality images</p>
+            <label class="upload-btn">
+              <i class="fa-solid fa-plus"></i>
+              Choose Images
+              <input
+                type="file"
+                multiple
+                hidden
+                accept="image/*"
+                (change)="onImagesSelected($event)"
+              />
+            </label>
+            <div class="selected-files" *ngIf="selectedImages.length">
+              <p>{{ selectedImages.length }} images selected</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-card">
+          <div class="form-header">
+            <div class="form-icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div>
+              <h2>Your Details</h2>
+              <p>Provide your contact information.</p>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>
+                Full Name
+                <span>*</span>
+              </label>
+              <input
+                type="text"
+                name="fullName"
+                [(ngModel)]="property.fullName"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="form-group">
+              <label>
+                Mobile Number
+                <span>*</span>
+              </label>
+              <input
+                type="tel"
+                name="mobile"
+                [(ngModel)]="property.mobile"
+                placeholder="+91 98765 43210"
+              />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input
+                type="email"
+                name="email"
+                [(ngModel)]="property.email"
+                placeholder="example@gmail.com"
+              />
+            </div>
+            <div class="form-group">
+              <label>You Are</label>
+              <select name="role" [(ngModel)]="property.role">
+                <option value="">Select</option>
+                <option *ngFor="let role of userRoles" [value]="role">
+                  {{ role }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>Additional Information</label>
+              <textarea
+                rows="5"
+                name="additionalInformation"
+                [(ngModel)]="property.additionalInformation"
+                placeholder="Any additional details..."
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form-card review-card">
+          <div class="form-header">
+            <div class="form-icon">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+              <h2>Review & Submit</h2>
+              <p>Check all details before submitting your property.</p>
+            </div>
+          </div>
+          <div class="review-content">
+            <div class="review-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span> Your information is secure with us. </span>
+            </div>
+            <div class="review-item">
+              <i class="fa-solid fa-user-check"></i>
+              <span> Our team will verify your property details. </span>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline" (click)="saveDraft()">Save Draft</button>
+            <button type="button" class="btn btn-primary" (click)="submitProperty()">
+              Submit Property
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <aside class="sell-sidebar">
+        <div class="sidebar-card">
+          <h3>
+            <i class="fa-regular fa-lightbulb"></i>
+            Tips
+          </h3>
+          <ul>
+            <li *ngFor="let tip of tips">
+              {{ tip }}
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h3>Why SkyDwell?</h3>
+          <ul>
+            <li *ngFor="let item of whySkyDwell">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+        <div class="contact-card">
+          <i class="fa-solid fa-headset"></i>
+          <h3>Need Help?</h3>
+          <p>Contact our property experts anytime.</p>
+          <a href="#" class="contact-btn"> Contact Us </a>
+        </div>
+      </aside>
     </div>
+  </div>
 </section>
 <section class="selling-process">
-    <div class="container">
-        <div class="section-heading">
-            <span class="section-subtitle">
-                HOW IT WORKS
-            </span>
-            <h2 class="section-title">
-                Sell Your Property
-            </h2>
-            <p class="section-description">
-                Our simple process helps you sell your property
-                quickly with complete transparency.
-            </p>
-        </div>
-        <div class="process-wrapper">
-            <ng-container *ngFor="let process of sellingProcess; let last = last">
-                <div class="process-item">
-                    <div class="process-icon">
-                        <i class="fa-solid" [ngClass]="process.icon"></i>
-                    </div>
-                    <h3>
-                        {{ process.title }}
-                    </h3>
-                    <p>
-                        {{ process.description }}
-                    </p>
-                </div>
-                <div class="process-line" *ngIf="!last"></div>
-            </ng-container>
-        </div>
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-subtitle"> HOW IT WORKS </span>
+      <h2 class="section-title">Sell Your Property</h2>
+      <p class="section-description">
+        Our simple process helps you sell your property quickly with complete transparency.
+      </p>
     </div>
+    <div class="process-wrapper">
+      <ng-container *ngFor="let process of sellingProcess; let last = last">
+        <div class="process-item">
+          <div class="process-icon">
+            <i class="fa-solid" [ngClass]="process.icon"></i>
+          </div>
+          <h3>
+            {{ process.title }}
+          </h3>
+          <p>
+            {{ process.description }}
+          </p>
+        </div>
+        <div class="process-line" *ngIf="!last"></div>
+      </ng-container>
+    </div>
+  </div>
 </section>

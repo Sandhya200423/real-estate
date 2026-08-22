@@ -4,10 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-agent',
   imports: [],
   templateUrl: './agent.html',
-  styleUrl: './agent.css'
+  styleUrl: './agent.css',
 })
 export class Agent {
-
   exploreAgents() {
     console.log('Explore Agents clicked');
   }
@@ -27,5 +26,4 @@ export class Agent {
   contactNow() {
     console.log('Contact Now clicked');
   }
-
 }

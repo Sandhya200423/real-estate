@@ -1,201 +1,197 @@
-.recommendation{
-    background:var(--bg);
-    .recommendation-banner{
-        position:relative;
-        border-radius:22px;
-        overflow:hidden;
-        background:
-            linear-gradient(
-                rgba(16,43,63,.60),
-                rgba(16,43,63,.60)
-            ),
-            url('/get/recommandation.png');
-        background-size:cover;
-        background-position:center;
+.recommendation {
+  background: var(--bg);
+  .recommendation-banner {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    background:
+      linear-gradient(rgba(16, 43, 63, 0.6), rgba(16, 43, 63, 0.6)), url('/get/recommandation.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .recommendation-overlay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 65px;
+    gap: 60px;
+  }
+  .recommendation-content {
+    max-width: 520px;
+    .btn-primary {
+      display: inline-block;
+      width: auto;
+      min-width: 250px;
+      padding: 14px 28px;
+      text-align: center;
     }
-    .recommendation-overlay{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:65px;
-        gap:60px;
+  }
+  .recommendation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .recommend-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 16px 22px;
+    border-radius: 14px;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    i {
+      color: var(--secondary);
+      font-size: 18px;
     }
-    .recommendation-content{
-        max-width:520px;
-        .btn-primary{
-            display:inline-block;
-            width:auto;
-            min-width:250px;
-            padding:14px 28px;
-            text-align:center;
-        }
-    }
-    .recommendation-list{
-        display:flex;
-        flex-direction:column;
-        gap:18px;
-    }
-    .recommend-item{
-        display:flex;
-        align-items:center;
-        gap:15px;
-        background:rgba(255,255,255,.08);
-        backdrop-filter:blur(10px);
-        padding:16px 22px;
-        border-radius:14px;
-        color:var(--white);
-        border:1px solid rgba(255,255,255,.10);
-        i{
-            color:var(--secondary);
-            font-size:18px;
-        }
-    }
+  }
 }
 /*=========================*
  * TABLET / SMALL LAPTOP
  *=========================*/
 @media (max-width: 992px) {
-    .recommendation {
-        .recommendation-banner {
-            border-radius: 20px;
-        }
-        .recommendation-overlay {
-            padding: 50px 40px;
-            gap: 40px;
-            align-items: flex-start;
-        }
-        .recommendation-content {
-            max-width: 45%;
-        }
-        .recommendation-list {
-            width: 55%;
-            gap: 14px;
-        }
-        .recommend-item {
-            padding: 14px 18px;
-            gap: 12px;
-            font-size: 14px;
-            i {
-                font-size: 17px;
-            }
-        }
+  .recommendation {
+    .recommendation-banner {
+      border-radius: 20px;
     }
+    .recommendation-overlay {
+      padding: 50px 40px;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .recommendation-content {
+      max-width: 45%;
+    }
+    .recommendation-list {
+      width: 55%;
+      gap: 14px;
+    }
+    .recommend-item {
+      padding: 14px 18px;
+      gap: 12px;
+      font-size: 14px;
+      i {
+        font-size: 17px;
+      }
+    }
+  }
 }
 /*=========================*
  * TABLET
  *=========================*/
 @media (max-width: 768px) {
-    .recommendation {
-        .recommendation-banner {
-            border-radius: 18px;
-        }
-        .recommendation-overlay {
-            flex-direction: column;
-            padding: 50px 30px;
-            gap: 30px;
-            text-align: center;
-            align-items: center;
-        }
-        .recommendation-content {
-            max-width: 100%;
-        }
-        .recommendation-list {
-            width: 100%;
-            max-width: 600px;
-            gap: 14px;
-        }
-        .recommend-item {
-            justify-content: flex-start;
-            text-align: left;
-            padding: 15px 18px;
-        }
+  .recommendation {
+    .recommendation-banner {
+      border-radius: 18px;
     }
+    .recommendation-overlay {
+      flex-direction: column;
+      padding: 50px 30px;
+      gap: 30px;
+      text-align: center;
+      align-items: center;
+    }
+    .recommendation-content {
+      max-width: 100%;
+    }
+    .recommendation-list {
+      width: 100%;
+      max-width: 600px;
+      gap: 14px;
+    }
+    .recommend-item {
+      justify-content: flex-start;
+      text-align: left;
+      padding: 15px 18px;
+    }
+  }
 }
 /*=========================*
  * MOBILE
  *=========================*/
 @media (max-width: 576px) {
-    .recommendation {
-        .recommendation-banner {
-            border-radius: 16px;
-            background-position: center;
-        }
-        .recommendation-overlay {
-            padding: 40px 18px;
-            gap: 25px;
-        }
-        .recommendation-content {
-            .btn-primary {
-                min-width: 250px;
-            }
-        }
-        .recommendation-list {
-            gap: 12px;
-        }
-        .recommend-item {
-            padding: 13px 15px;
-            gap: 10px;
-            font-size: 13px;
-            border-radius: 12px;
-            i {
-                font-size: 16px;
-                flex-shrink: 0;
-            }
-        }
+  .recommendation {
+    .recommendation-banner {
+      border-radius: 16px;
+      background-position: center;
     }
+    .recommendation-overlay {
+      padding: 40px 18px;
+      gap: 25px;
+    }
+    .recommendation-content {
+      .btn-primary {
+        min-width: 250px;
+      }
+    }
+    .recommendation-list {
+      gap: 12px;
+    }
+    .recommend-item {
+      padding: 13px 15px;
+      gap: 10px;
+      font-size: 13px;
+      border-radius: 12px;
+      i {
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+    }
+  }
 }
 /*=========================*
  * SMALL MOBILE
  *=========================*/
 @media (max-width: 430px) {
-    .recommendation {
-        .recommendation-banner {
-            border-radius: 14px;
-        }
-        .recommendation-overlay {
-            padding: 35px 15px;
-            gap: 22px;
-        }
-        .recommendation-content {
-            .btn-primary {
-                min-width: 220px;
-                padding: 13px 20px;
-            }
-        }
-        .recommendation-list {
-            gap: 10px;
-        }
-        .recommend-item {
-            padding: 12px 13px;
-            font-size: 12px;
-            gap: 9px;
-            i {
-                font-size: 15px;
-            }
-        }
+  .recommendation {
+    .recommendation-banner {
+      border-radius: 14px;
     }
+    .recommendation-overlay {
+      padding: 35px 15px;
+      gap: 22px;
+    }
+    .recommendation-content {
+      .btn-primary {
+        min-width: 220px;
+        padding: 13px 20px;
+      }
+    }
+    .recommendation-list {
+      gap: 10px;
+    }
+    .recommend-item {
+      padding: 12px 13px;
+      font-size: 12px;
+      gap: 9px;
+      i {
+        font-size: 15px;
+      }
+    }
+  }
 }
 /*=========================*
  * VERY SMALL MOBILE
  *=========================*/
 @media (max-width: 360px) {
-    .recommendation {
-        .recommendation-overlay {
-            padding: 30px 12px;
-        }
-        .recommendation-content {
-            .btn-primary {
-                min-width: 200px;
-                padding: 12px 18px;
-                font-size: 13px;
-            }
-        }
-        .recommend-item {
-            padding: 11px 12px;
-            font-size: 11px;
-            i {
-                font-size: 14px;
-            }
-        }
+  .recommendation {
+    .recommendation-overlay {
+      padding: 30px 12px;
     }
+    .recommendation-content {
+      .btn-primary {
+        min-width: 200px;
+        padding: 12px 18px;
+        font-size: 13px;
+      }
+    }
+    .recommend-item {
+      padding: 11px 12px;
+      font-size: 11px;
+      i {
+        font-size: 14px;
+      }
+    }
+  }
 }

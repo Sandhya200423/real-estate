@@ -1,76 +1,49 @@
 <section class="why-section section">
+  <div class="container why-container">
+    <div class="why-content">
+      <span class="section-subtitle"> WHY CHOOSE SKYDWELL </span>
 
-    <div class="container why-container">
+      <h2 class="section-title white">
+        Building Homes With
 
-        <div class="why-content">
+        <br />
 
-            <span class="section-subtitle">
-                WHY CHOOSE SKYDWELL
+        <span> Trust & Excellence </span>
+      </h2>
+
+      <p class="section-description white">
+        SkyDwell is committed to providing premium properties with quality, trust and excellence.
+      </p>
+
+      <div class="trust-points">
+        @for (point of trustPoints; track point) {
+          <div class="trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+              {{ point }}
             </span>
-
-            <h2 class="section-title white">
-
-                Building Homes With
-
-                <br>
-
-                <span>
-                    Trust & Excellence
-                </span>
-
-            </h2>
-
-            <p class="section-description white">
-                SkyDwell is committed to providing premium properties
-                with quality, trust and excellence.
-            </p>
-
-
-            <div class="trust-points">
-
-                @for (point of trustPoints; track point) {
-
-                    <div class="trust-item">
-
-                        <i class="fa-solid fa-circle-check"></i>
-
-                        <span>
-                            {{ point }}
-                        </span>
-
-                    </div>
-
-                }
-
-            </div>
-
-        </div>
-
-
-        <div class="feature-area">
-
-            @for (feature of features; track feature.title) {
-
-                <div class="feature-box card">
-
-                    <div class="icon-box">
-                        <i [class]="feature.icon"></i>
-                    </div>
-
-                    <h3 class="heading">
-                        {{ feature.title }}
-                    </h3>
-
-                    <p class="text">
-                        {{ feature.text }}
-                    </p>
-
-                </div>
-
-            }
-
-        </div>
-
+          </div>
+        }
+      </div>
     </div>
 
+    <div class="feature-area">
+      @for (feature of features; track feature.title) {
+        <div class="feature-box card">
+          <div class="icon-box">
+            <i [class]="feature.icon"></i>
+          </div>
+
+          <h3 class="heading">
+            {{ feature.title }}
+          </h3>
+
+          <p class="text">
+            {{ feature.text }}
+          </p>
+        </div>
+      }
+    </div>
+  </div>
 </section>

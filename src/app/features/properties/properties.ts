@@ -5,91 +5,84 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './properties.html',
-  styleUrl: './properties.css'
+  styleUrl: './properties.css',
 })
 export class Properties {
-
   searchItems = [
     {
       label: 'Location',
-      options: ['Select Location', 'Pune', 'Mumbai', 'Goa']
+      options: ['Select Location', 'Pune', 'Mumbai', 'Goa'],
     },
     {
       label: 'Property Type',
-      options: ['All Types', 'Villa', 'Apartment', 'Penthouse']
+      options: ['All Types', 'Villa', 'Apartment', 'Penthouse'],
     },
     {
       label: 'Price Range',
-      options: ['Any Price', '₹1Cr+', '₹3Cr+']
+      options: ['Any Price', '₹1Cr+', '₹3Cr+'],
     },
     {
       label: 'BHK',
-      options: ['Any', '2 BHK', '3 BHK', '4 BHK']
-    }
+      options: ['Any', '2 BHK', '3 BHK', '4 BHK'],
+    },
   ];
 
-  popularSearches = [
-    'Pune',
-    'Mumbai',
-    'Goa',
-    'Bangalore',
-    'Delhi'
-  ];
+  popularSearches = ['Pune', 'Mumbai', 'Goa', 'Bangalore', 'Delhi'];
 
   stats = [
     {
       icon: 'fa-solid fa-house',
       value: '250+',
-      title: 'Premium Properties'
+      title: 'Premium Properties',
     },
     {
       icon: 'fa-solid fa-building',
       value: '15+',
-      title: 'Cities Covered'
+      title: 'Cities Covered',
     },
     {
       icon: 'fa-solid fa-user-tie',
       value: '100+',
-      title: 'Verified Agents'
+      title: 'Verified Agents',
     },
     {
       icon: 'fa-solid fa-heart',
       value: '12K+',
-      title: 'Happy Clients'
-    }
+      title: 'Happy Clients',
+    },
   ];
 
   categories = [
     {
       icon: 'fa-solid fa-house',
       name: 'Villa',
-      properties: '120'
+      properties: '120',
     },
     {
       icon: 'fa-solid fa-building',
       name: 'Apartment',
-      properties: '300'
+      properties: '300',
     },
     {
       icon: 'fa-solid fa-city',
       name: 'Penthouse',
-      properties: '85'
+      properties: '85',
     },
     {
       icon: 'fa-solid fa-building-columns',
       name: 'Commercial',
-      properties: '150'
+      properties: '150',
     },
     {
       icon: 'fa-solid fa-house-chimney',
       name: 'Farmhouse',
-      properties: '45'
+      properties: '45',
     },
     {
       icon: 'fa-solid fa-map',
       name: 'Land',
-      properties: '60'
-    }
+      properties: '60',
+    },
   ];
 
   showcaseProperties = [
@@ -100,7 +93,7 @@ export class Properties {
       beds: '4 Beds',
       baths: '4 Baths',
       area: '4100 Sq.Ft.',
-      image: '/properties/i4.jpg'
+      image: '/properties/i4.jpg',
     },
     {
       title: 'Skyline Penthouse Mumbai',
@@ -109,7 +102,7 @@ export class Properties {
       beds: '4 Beds',
       baths: '5 Baths',
       area: '6200 Sq.Ft.',
-      image: '/properties/i2.jpg'
+      image: '/properties/i2.jpg',
     },
     {
       title: 'Modern Apartment Baner',
@@ -118,8 +111,8 @@ export class Properties {
       beds: '3 Beds',
       baths: '3 Baths',
       area: '1850 Sq.Ft.',
-      image: '/properties/i3.jpg'
-    }
+      image: '/properties/i3.jpg',
+    },
   ];
 
   premiumProperties = [
@@ -131,7 +124,7 @@ export class Properties {
       beds: '4 Beds',
       baths: '4 Baths',
       area: '3800 Sq.Ft',
-      image: '/properties/i5.jpg'
+      image: '/properties/i5.jpg',
     },
     {
       title: 'Premium Villa in Goa',
@@ -141,7 +134,7 @@ export class Properties {
       beds: '5 Beds',
       baths: '5 Baths',
       area: '5000 Sq.Ft',
-      image: '/properties/i6.jpg'
+      image: '/properties/i6.jpg',
     },
     {
       title: 'Luxury Apartment in Worli',
@@ -151,7 +144,7 @@ export class Properties {
       beds: '4 Beds',
       baths: '4 Baths',
       area: '3450 Sq.Ft',
-      image: '/properties/p1.jpg'
+      image: '/properties/p1.jpg',
     },
     {
       title: 'Beachfront Villa Goa',
@@ -161,7 +154,7 @@ export class Properties {
       beds: '5 Beds',
       baths: '6 Baths',
       area: '6300 Sq.Ft',
-      image: '/properties/p2.jpg'
+      image: '/properties/p2.jpg',
     },
     {
       title: 'Premium Apartment',
@@ -171,11 +164,9 @@ export class Properties {
       beds: '3 Beds',
       baths: '3 Baths',
       area: '2500 Sq.Ft',
-      image: '/properties/m3.jpg'
-    }
+      image: '/properties/m3.jpg',
+    },
   ];
-
-
 
   viewDetails(property: any) {
     console.log('Selected Property:', property);
@@ -188,5 +179,4 @@ export class Properties {
   searchProperties() {
     console.log('Search properties');
   }
-
 }

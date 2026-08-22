@@ -4,36 +4,31 @@ import { Component } from '@angular/core';
   selector: 'app-why-choose',
   imports: [],
   templateUrl: './why-choose.html',
-  styleUrl: './why-choose.css'
+  styleUrl: './why-choose.css',
 })
 export class WhyChoose {
-
-  trustPoints = [
-    'Transparent Process',
-    'Customer First Approach'
-  ];
+  trustPoints = ['Transparent Process', 'Customer First Approach'];
 
   features = [
     {
       icon: 'fa-solid fa-location-dot',
       title: 'Prime Locations',
-      text: 'Homes located in premium areas with excellent connectivity.'
+      text: 'Homes located in premium areas with excellent connectivity.',
     },
     {
       icon: 'fa-solid fa-building',
       title: 'Quality Construction',
-      text: 'Designed with superior materials and modern architecture.'
+      text: 'Designed with superior materials and modern architecture.',
     },
     {
       icon: 'fa-solid fa-gem',
       title: 'Luxury Amenities',
-      text: 'Experience comfort with world-class lifestyle facilities.'
+      text: 'Experience comfort with world-class lifestyle facilities.',
     },
     {
       icon: 'fa-solid fa-handshake',
       title: 'Trusted Partner',
-      text: 'Transparent service and customer-focused approach.'
-    }
+      text: 'Transparent service and customer-focused approach.',
+    },
   ];
-
 }

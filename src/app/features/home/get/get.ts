@@ -4,18 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-get',
   imports: [],
   templateUrl: './get.html',
-  styleUrl: './get.css'
+  styleUrl: './get.css',
 })
 export class Get {
-
-  recommendations = [
-    'Personalized Suggestions',
-    'Expert Consultation',
-    'Best Price Guarantee'
-  ];
+  recommendations = ['Personalized Suggestions', 'Expert Consultation', 'Best Price Guarantee'];
 
   getRecommendations() {
     console.log('Getting home recommendations...');
   }
-
 }

@@ -1,313 +1,207 @@
 <!-- ================= CONTACT SECTION ================= -->
 <section class="contact-section">
-
-    <div class="container">
-
-        <!-- Heading -->
-        <div class="section-heading">
-
-            <span class="section-subtitle">
-                CONTACT US
-            </span>
-
-            <h2 class="section-title">
-                Let's Connect With Us
-            </h2>
-
-            <p class="section-description">
-                We're here to help you find the perfect property.
-                Get in touch with our team for any queries.
-            </p>
-
-        </div>
-
-
-        <!-- Main Contact -->
-        <div class="contact-wrapper">
-
-            <!-- Left Form -->
-            <div class="contact-form-card">
-
-                <div class="card-title">
-
-                    <div class="title-icon">
-                        <i class="fa-regular fa-comments"></i>
-                    </div>
-
-                    <div>
-                        <h3>
-                            Send Us a Message
-                        </h3>
-                    </div>
-
-                </div>
-
-
-                <form (ngSubmit)="sendMessage()">
-
-                    <div class="form-grid">
-
-                        <!-- Name -->
-                        <div class="input-box">
-
-                            <i class="fa-regular fa-user"></i>
-
-                            <input
-                                type="text"
-                                placeholder="Your Full Name"
-                                [(ngModel)]="contactForm.name"
-                                name="name">
-
-                        </div>
-
-
-                        <!-- Email -->
-                        <div class="input-box">
-
-                            <i class="fa-regular fa-envelope"></i>
-
-                            <input
-                                type="email"
-                                placeholder="Email Address"
-                                [(ngModel)]="contactForm.email"
-                                name="email">
-
-                        </div>
-
-
-                        <!-- Phone -->
-                        <div class="input-box">
-
-                            <i class="fa-solid fa-phone"></i>
-
-                            <input
-                                type="text"
-                                placeholder="Phone Number"
-                                [(ngModel)]="contactForm.phone"
-                                name="phone">
-
-                        </div>
-
-
-                        <!-- Property -->
-                        <div class="input-box">
-
-                            <i class="fa-regular fa-building"></i>
-
-                            <select
-                                [(ngModel)]="contactForm.property"
-                                name="property">
-
-                                <option value="">
-                                    Select Property
-                                </option>
-
-                                <option
-                                    *ngFor="let property of properties"
-                                    [value]="property">
-                                    {{ property }}
-                                </option>
-
-                            </select>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Message -->
-                    <div class="input-box textarea">
-
-                        <i class="fa-regular fa-pen-to-square"></i>
-
-                        <textarea
-                            placeholder="Your Message"
-                            [(ngModel)]="contactForm.message"
-                            name="message">
-                        </textarea>
-
-                    </div>
-
-
-                    <!-- Button -->
-                    <button
-                        type="submit"
-                        class="contact-btn">
-
-                        <i class="fa-solid fa-paper-plane"></i>
-
-                        SEND MESSAGE
-
-                    </button>
-
-                </form>
-
-            </div>
-
-
-            <!-- Contact Info -->
-            <div class="contact-info-card">
-
-                <h3>
-                    Contact Information
-                </h3>
-
-
-                <!-- Address -->
-                <div class="info-item">
-
-                    <div class="info-icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-
-                    <div>
-
-                        <h4>
-                            Office Address
-                        </h4>
-
-                        <p>
-                            123, New Market Road,
-                            <br>
-                            Kolhapur, Maharashtra - 416001
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Phone -->
-                <div class="info-item">
-
-                    <div class="info-icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-
-                    <div>
-
-                        <h4>
-                            Phone Number
-                        </h4>
-
-                        <p>
-                            +91 98765 43210
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Email -->
-                <div class="info-item">
-
-                    <div class="info-icon">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-
-                    <div>
-
-                        <h4>
-                            Email Address
-                        </h4>
-
-                        <p>
-                            info@skydwellrealty.com
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Working Hours -->
-                <div class="info-item">
-
-                    <div class="info-icon">
-                        <i class="fa-regular fa-clock"></i>
-                    </div>
-
-                    <div>
-
-                        <h4>
-                            Working Hours
-                        </h4>
-
-                        <p>
-                            Mon - Sat : 9:00 AM - 7:00 PM
-                            <br>
-                            Sunday : Closed
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Social -->
-                <div class="social-box">
-
-                    <h4>
-                        Follow Us
-                    </h4>
-
-                    <div class="social-icons">
-
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-
-                        <a href="#">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-
-                        <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-
-                        <a href="#">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Bottom Features -->
-        <div class="contact-features">
-
-            <div
-                class="feature-box"
-                *ngFor="let feature of features">
-
-                <div class="feature-icon">
-
-                    <i [class]="feature.icon"></i>
-
-                </div>
-
-                <div>
-
-                    <h4>
-                        {{ feature.title }}
-                    </h4>
-
-                    <p>
-                        {{ feature.description }}
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
+  <div class="container">
+    <!-- Heading -->
+    <div class="section-heading">
+      <span class="section-subtitle"> CONTACT US </span>
+
+      <h2 class="section-title">Let's Connect With Us</h2>
+
+      <p class="section-description">
+        We're here to help you find the perfect property. Get in touch with our team for any
+        queries.
+      </p>
     </div>
 
+    <!-- Main Contact -->
+    <div class="contact-wrapper">
+      <!-- Left Form -->
+      <div class="contact-form-card">
+        <div class="card-title">
+          <div class="title-icon">
+            <i class="fa-regular fa-comments"></i>
+          </div>
+
+          <div>
+            <h3>Send Us a Message</h3>
+          </div>
+        </div>
+
+        <form (ngSubmit)="sendMessage()">
+          <div class="form-grid">
+            <!-- Name -->
+            <div class="input-box">
+              <i class="fa-regular fa-user"></i>
+
+              <input
+                type="text"
+                placeholder="Your Full Name"
+                [(ngModel)]="contactForm.name"
+                name="name"
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="input-box">
+              <i class="fa-regular fa-envelope"></i>
+
+              <input
+                type="email"
+                placeholder="Email Address"
+                [(ngModel)]="contactForm.email"
+                name="email"
+              />
+            </div>
+
+            <!-- Phone -->
+            <div class="input-box">
+              <i class="fa-solid fa-phone"></i>
+
+              <input
+                type="text"
+                placeholder="Phone Number"
+                [(ngModel)]="contactForm.phone"
+                name="phone"
+              />
+            </div>
+
+            <!-- Property -->
+            <div class="input-box">
+              <i class="fa-regular fa-building"></i>
+
+              <select [(ngModel)]="contactForm.property" name="property">
+                <option value="">Select Property</option>
+
+                <option *ngFor="let property of properties" [value]="property">
+                  {{ property }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="input-box textarea">
+            <i class="fa-regular fa-pen-to-square"></i>
+
+            <textarea placeholder="Your Message" [(ngModel)]="contactForm.message" name="message">
+            </textarea>
+          </div>
+
+          <!-- Button -->
+          <button type="submit" class="contact-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+
+            SEND MESSAGE
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info-card">
+        <h3>Contact Information</h3>
+
+        <!-- Address -->
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+
+          <div>
+            <h4>Office Address</h4>
+
+            <p>
+              123, New Market Road,
+              <br />
+              Kolhapur, Maharashtra - 416001
+            </p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+
+          <div>
+            <h4>Phone Number</h4>
+
+            <p>+91 98765 43210</p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
+          <div>
+            <h4>Email Address</h4>
+
+            <p>info@skydwellrealty.com</p>
+          </div>
+        </div>
+
+        <!-- Working Hours -->
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+
+          <div>
+            <h4>Working Hours</h4>
+
+            <p>
+              Mon - Sat : 9:00 AM - 7:00 PM
+              <br />
+              Sunday : Closed
+            </p>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="social-box">
+          <h4>Follow Us</h4>
+
+          <div class="social-icons">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="#">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Features -->
+    <div class="contact-features">
+      <div class="feature-box" *ngFor="let feature of features">
+        <div class="feature-icon">
+          <i [class]="feature.icon"></i>
+        </div>
+
+        <div>
+          <h4>
+            {{ feature.title }}
+          </h4>
+
+          <p>
+            {{ feature.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

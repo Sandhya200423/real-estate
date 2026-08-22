@@ -9,10 +9,10 @@ RESET
 ========== */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
 }
 
 /* ===========
@@ -20,13 +20,13 @@ ROOT COLORS
 ============= */
 
 :root {
-    --primary: #102B3F;
-    --secondary: #D7A63C;
-    --white: #FFFFFF;
-    --black: #1B1B1B;
-    --text: #6C757D;
-    --bg: #F8F8F6;
-    --border: #E5E7EB;
+  --primary: #102b3f;
+  --secondary: #d7a63c;
+  --white: #ffffff;
+  --black: #1b1b1b;
+  --text: #6c757d;
+  --bg: #f8f8f6;
+  --border: #e5e7eb;
 }
 
 /* =======
@@ -34,7 +34,7 @@ HTML
 ========== */
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* ===================
@@ -42,9 +42,9 @@ COMMON CONTAINER
 ====================== */
 
 .container {
-    width: 90%;
-    max-width: 1320px;
-    margin: auto;
+  width: 90%;
+  max-width: 1320px;
+  margin: auto;
 }
 
 /* ===================
@@ -52,7 +52,7 @@ COMMON SECTION
 ==================== */
 
 .section {
-    padding: 100px 0;
+  padding: 100px 0;
 }
 
 /* =================
@@ -60,9 +60,9 @@ COMMON HEADING
 ==================== */
 
 .heading {
-    color: var(--primary);
-    font-weight: 600;
-    line-height: 1.2;
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* =========================================================
@@ -70,8 +70,8 @@ COMMON TEXT
 ========================================================= */
 
 .text {
-    color: var(--text);
-    line-height: 1.8;
+  color: var(--text);
+  line-height: 1.8;
 }
 
 /* ===================
@@ -79,9 +79,9 @@ SECTION HEADING
 ===================== */
 
 .section-heading {
-    text-align: center;
-    margin-bottom: 60px;
-    margin-top: 60px;
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 60px;
 }
 
 /* ====================
@@ -89,13 +89,13 @@ SECTION SUBTITLE
 ====================== */
 
 .section-subtitle {
-    display: inline-block;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--secondary);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
 }
 
 /* ===============
@@ -103,11 +103,11 @@ SECTION TITLE
 ================== */
 
 .section-title {
-    font-size: 46px;
-    font-weight: 600;
-    color: var(--primary);
-    line-height: 1.2;
-    margin-bottom: 15px;
+  font-size: 46px;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 15px;
 }
 
 /* =======================
@@ -115,22 +115,22 @@ SECTION DESCRIPTION
 ========================= */
 
 .section-description {
-    max-width: 650px;
-    margin: auto;
-    font-size: 16px;
-    color: var(--text);
-    line-height: 1.8;
+  max-width: 650px;
+  margin: auto;
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.8;
 }
 /* =========================
    WHITE TEXT VARIANT
 ========================= */
 
 .section-title.white {
-    color: var(--white);
+  color: var(--white);
 }
 
 .section-description.white {
-    color: var(--white);
+  color: var(--white);
 }
 
 /* ================
@@ -138,18 +138,18 @@ COMMON BUTTON
 ================== */
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px 30px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    transition: .35s ease;
-    border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.35s ease;
+  border: none;
 }
 
 /* =================
@@ -157,13 +157,13 @@ PRIMARY BUTTON
 ====================*/
 
 .btn-primary {
-    background: var(--secondary);
-    color: var(--white);
+  background: var(--secondary);
+  color: var(--white);
 }
 
 .btn-primary:hover {
-    background: #C89529;
-    transform: translateY(-3px);
+  background: #c89529;
+  transform: translateY(-3px);
 }
 
 /* ===============
@@ -171,14 +171,14 @@ OUTLINE BUTTON
 ==================*/
 
 .btn-outline {
-    border: 1.5px solid var(--white);
-    color: var(--white);
-    background: transparent;
+  border: 1.5px solid var(--white);
+  color: var(--white);
+  background: transparent;
 }
 
 .btn-outline:hover {
-    background: var(--white);
-    color: var(--primary);
+  background: var(--white);
+  color: var(--primary);
 }
 
 /* ==========
@@ -186,13 +186,13 @@ DARK BUTTON
 ===========*/
 
 .btn-dark {
-    background: var(--primary);
-    color: var(--white);
+  background: var(--primary);
+  color: var(--white);
 }
 
 .btn-dark:hover {
-    background: #0B202F;
-    transform: translateY(-3px);
+  background: #0b202f;
+  transform: translateY(-3px);
 }
 
 /* ============
@@ -200,16 +200,16 @@ COMMON CARD
 ==============*/
 
 .card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: .35s;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.35s;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, .12);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
 }
 
 /* ===============
@@ -217,8 +217,8 @@ COMMON IMAGE
 ================ */
 
 .img-fluid {
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
 }
 
 /* ===================
@@ -226,7 +226,7 @@ COMMON RADIUS
 ======================*/
 
 .radius {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 /* ================
@@ -234,15 +234,15 @@ COMMON BACKGROUND
 ====================== */
 
 .bg-light {
-    background: var(--bg);
+  background: var(--bg);
 }
 
 .bg-dark {
-    background: var(--primary);
+  background: var(--primary);
 }
 
 .bg-white {
-    background: var(--white);
+  background: var(--white);
 }
 
 /* ===========
@@ -250,8 +250,8 @@ COMMON GRID
 ===============*/
 
 .grid {
-    display: grid;
-    gap: 30px;
+  display: grid;
+  gap: 30px;
 }
 
 /* ========
@@ -259,7 +259,7 @@ GRID 2
 ============*/
 
 .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 /* ==============
@@ -267,7 +267,7 @@ GRID 3
 ================ */
 
 .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* ===================
@@ -275,7 +275,7 @@ GRID 4
 =================== */
 
 .grid-4 {
-    grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /* ==================
@@ -283,15 +283,15 @@ COMMON ICON BOX
 ====================*/
 
 .icon-box {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background: rgba(212, 160, 55, .12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--secondary);
-    font-size: 24px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: rgba(212, 160, 55, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+  font-size: 24px;
 }
 
 /* ===============
@@ -300,12 +300,12 @@ COMMON HEADER
 =====================*/
 
 .common-header {
-    width: 100%;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    padding: 14px 0;
-    transition: .35s ease;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  transition: 0.35s ease;
 }
 
 /* =================
@@ -313,9 +313,9 @@ HEADER CONTAINER
 ===========================*/
 
 .common-header .container {
-    width: 90%;
-    max-width: 1320px;
-    margin: auto;
+  width: 90%;
+  max-width: 1320px;
+  margin: auto;
 }
 
 /* ===================
@@ -323,10 +323,10 @@ HEADER NAVBAR
 ======================*/
 
 .common-navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
 }
 
 /* ====================
@@ -334,29 +334,29 @@ HEADER LOGO
 ========================== */
 
 .common-logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
 }
 
 .common-logo img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
 }
 
 .common-logo h2 {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .common-logo span {
-    display: block;
-    font-size: 10px;
-    margin-top: 5px;
-    letter-spacing: 1px;
+  display: block;
+  font-size: 10px;
+  margin-top: 5px;
+  letter-spacing: 1px;
 }
 
 /* ========================
@@ -364,16 +364,16 @@ HEADER - DARK VERSION
 ========================= */
 
 .header-dark {
-    background: var(--primary);
+  background: var(--primary);
 }
 
 .header-dark .common-logo h2,
 .header-dark .common-logo span {
-    color: var(--white);
+  color: var(--white);
 }
 
 .header-dark .common-nav a {
-    color: var(--white);
+  color: var(--white);
 }
 
 /* =======================
@@ -381,19 +381,19 @@ HEADER - LIGHT VERSION
 ======================= */
 
 .header-light {
-    background: var(--white);
+  background: var(--white);
 }
 
 .header-light .common-logo h2 {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .header-light .common-logo span {
-    color: var(--text);
+  color: var(--text);
 }
 
 .header-light .common-nav a {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 /* =============
@@ -401,22 +401,22 @@ COMMON NAVIGATION
 ==================*/
 
 .common-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
 }
 
 .common-nav a {
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    position: relative;
-    transition: .3s;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
 }
 
 .common-nav a:hover {
-    color: var(--secondary) !important;
+  color: var(--secondary) !important;
 }
 
 /* ===========
@@ -424,23 +424,23 @@ ACTIVE NAV
 ===============*/
 
 .common-nav a.active {
-    color: var(--secondary) !important;
+  color: var(--secondary) !important;
 }
 
 .common-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 0;
-    height: 2px;
-    background: var(--secondary);
-    transition: .3s;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: var(--secondary);
+  transition: 0.3s;
 }
 
 .common-nav a:hover::after,
 .common-nav a.active::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* =====================
@@ -448,25 +448,25 @@ COMMON SOCIAL LINKS
 =========================*/
 
 .social-links {
-    display: flex;
-    gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
 .social-links a {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255, 255, 255, .15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    transition: .35s;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: 0.35s;
 }
 
 .social-links a:hover {
-    background: var(--secondary);
-    border-color: var(--secondary);
+  background: var(--secondary);
+  border-color: var(--secondary);
 }
 
 /* =========================
@@ -476,25 +476,25 @@ COMMON FORM INPUT
 input,
 select,
 textarea {
-    width: 100%;
-    padding: 14px 15px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    outline: none;
-    font-size: 14px;
-    transition: .3s;
-    background: var(--white);
+  width: 100%;
+  padding: 14px 15px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+  background: var(--white);
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: var(--secondary);
-    box-shadow: 0 0 0 3px rgba(215, 166, 60, .12);
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(215, 166, 60, 0.12);
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }
 
 /* =========================
@@ -505,12 +505,12 @@ FONT AWESOME FIX
 .fa-solid,
 .fa-brands,
 .fas {
-    font-family: "Font Awesome 6 Free" !important;
-    font-weight: 900 !important;
+  font-family: 'Font Awesome 6 Free' !important;
+  font-weight: 900 !important;
 }
 
 .fa-brands {
-    font-family: "Font Awesome 6 Brands" !important;
+  font-family: 'Font Awesome 6 Brands' !important;
 }
 
 /* =====================
@@ -518,134 +518,126 @@ TABLET
 ========================= */
 
 @media (max-width: 992px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
 
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
+  .section {
+    padding: 80px 0;
+  }
 
-    .section {
-        padding: 80px 0;
-    }
+  .section-title {
+    font-size: 36px;
+  }
 
-    .section-title {
-        font-size: 36px;
-    }
+  .common-header {
+    min-height: 75px;
+  }
 
-    .common-header {
-        min-height: 75px;
-    }
+  .common-logo img {
+    width: 55px;
+    height: 55px;
+  }
 
-    .common-logo img {
-        width: 55px;
-        height: 55px;
-    }
-
-    .common-nav {
-        gap: 20px;
-    }
-
+  .common-nav {
+    gap: 20px;
+  }
 }
-
 
 /* =====================
 MOBILE
 ========================= */
 
 @media (max-width: 768px) {
+  .container {
+    width: 92%;
+  }
 
-    .container {
-        width: 92%;
-    }
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
 
-    .grid-4,
-    .grid-3,
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
+  .section {
+    padding: 65px 0;
+  }
 
-    .section {
-        padding: 65px 0;
-    }
+  .section-heading {
+    margin-bottom: 40px;
+  }
 
-    .section-heading {
-        margin-bottom: 40px;
-    }
+  .section-title {
+    font-size: 30px;
+  }
 
-    .section-title {
-        font-size: 30px;
-    }
+  .section-description {
+    font-size: 15px;
+  }
 
-    .section-description {
-        font-size: 15px;
-    }
+  .btn {
+    padding: 13px 24px;
+  }
 
-    .btn {
-        padding: 13px 24px;
-    }
-
-    .common-header {
-        min-height: 70px;
-    }
-
+  .common-header {
+    min-height: 70px;
+  }
 }
-
 
 /* =====================
 SMALL MOBILE
 ========================= */
 
 @media (max-width: 576px) {
+  .container {
+    width: 94%;
+  }
 
-    .container {
-        width: 94%;
-    }
+  .section {
+    padding: 55px 0;
+  }
 
-    .section {
-        padding: 55px 0;
-    }
+  .section-title {
+    font-size: 27px;
+  }
 
-    .section-title {
-        font-size: 27px;
-    }
+  .section-subtitle {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+  }
 
-    .section-subtitle {
-        font-size: 13px;
-        letter-spacing: 1.5px;
-    }
+  .section-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
 
-    .section-description {
-        font-size: 14px;
-        line-height: 1.7;
-    }
+  .btn {
+    width: 100%;
+  }
 
-    .btn {
-        width: 100%;
-    }
+  .common-header {
+    min-height: 65px;
+    padding: 10px 0;
+  }
 
-    .common-header {
-        min-height: 65px;
-        padding: 10px 0;
-    }
+  .common-logo img {
+    width: 48px;
+    height: 48px;
+  }
 
-    .common-logo img {
-        width: 48px;
-        height: 48px;
-    }
+  .common-logo h2 {
+    font-size: 18px;
+  }
 
-    .common-logo h2 {
-        font-size: 18px;
-    }
-
-    .common-logo span {
-        font-size: 9px;
-    }
-
+  .common-logo span {
+    font-size: 9px;
+  }
 }

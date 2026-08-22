@@ -1,129 +1,69 @@
 <!-- ================= HERO ================= -->
 <section class="hero">
+  <!-- Background Image -->
+  <img [src]="heroImage" alt="Luxury Home" class="hero-bg" />
 
-    <!-- Background Image -->
-    <img
-        [src]="heroImage"
-        alt="Luxury Home"
-        class="hero-bg">
+  <div class="hero-overlay"></div>
 
-    <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="heading">
+        <span class="section-subtitle"> LUXURY REAL ESTATE </span>
 
+        <h1 class="section-title white">
+          Discover Your
+
+          <br />
+
+          Dream Home
+
+          <br />
+
+          With SkyDwell
+        </h1>
+
+        <p class="section-description white">
+          Discover luxurious apartments, villas and premium properties in the best locations. We
+          help you find the perfect place for your family and investment.
+        </p>
+      </div>
+
+      <div class="hero-buttons">
+        <a routerLink="/properties" class="btn btn-primary"> Explore Properties </a>
+
+        <a routerLink="/contact" class="btn btn-outline"> Contact Us </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="hero-search">
     <div class="container">
+      <div class="search-box">
+        @for (item of searchItems; track item.label) {
+          <div class="search-item">
+            <label>
+              <i [class]="item.icon"></i>
 
-        <div class="hero-content">
+              {{ item.label }}
+            </label>
 
-            <div class="heading">
+            <select [(ngModel)]="item.selected">
+              @for (option of item.options; track option) {
+                <option [value]="option">
+                  {{ option }}
+                </option>
+              }
+            </select>
+          </div>
+        }
 
-                <span class="section-subtitle">
-                    LUXURY REAL ESTATE
-                </span>
+        <button class="btn btn-dark" (click)="searchProperties()">
+          <i class="fa-solid fa-magnifying-glass"></i>
 
-                <h1 class="section-title white">
-
-                    Discover Your
-
-                    <br>
-
-                    Dream Home
-
-                    <br>
-
-                    With SkyDwell
-
-                </h1>
-
-                <p class="section-description white">
-                    Discover luxurious apartments, villas and premium
-                    properties in the best locations. We help you find
-                    the perfect place for your family and investment.
-                </p>
-
-            </div>
-
-
-            <div class="hero-buttons">
-
-                <a
-                    routerLink="/properties"
-                    class="btn btn-primary">
-
-                    Explore Properties
-
-                </a>
-
-                <a
-                    routerLink="/contact"
-                    class="btn btn-outline">
-
-                    Contact Us
-
-                </a>
-
-            </div>
-
-        </div>
-
+          Search
+        </button>
+      </div>
     </div>
-
-
-    <!-- Search -->
-    <div class="hero-search">
-
-        <div class="container">
-
-            <div class="search-box">
-
-                @for (
-                    item of searchItems;
-                    track item.label
-                ) {
-
-                    <div class="search-item">
-
-                        <label>
-
-                            <i [class]="item.icon"></i>
-
-                            {{ item.label }}
-
-                        </label>
-
-                        <select
-                            [(ngModel)]="item.selected">
-
-                            @for (
-                                option of item.options;
-                                track option
-                            ) {
-
-                                <option [value]="option">
-                                    {{ option }}
-                                </option>
-
-                            }
-
-                        </select>
-
-                    </div>
-
-                }
-
-
-                <button
-                    class="btn btn-dark"
-                    (click)="searchProperties()">
-
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                    Search
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
+  </div>
 </section>

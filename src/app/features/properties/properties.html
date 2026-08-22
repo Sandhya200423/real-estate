@@ -1,317 +1,257 @@
 <!-- ================= PROPERTIES HERO ================= -->
 <section class="hero">
-    <div class="hero-overlay"></div>
+  <div class="hero-overlay"></div>
 
-    <div class="container hero-container">
-        <div class="hero-content">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <span class="section-subtitle"> PREMIUM COLLECTION </span>
 
-            <span class="section-subtitle">
-                PREMIUM COLLECTION
-            </span>
+      <h1 class="section-title white">
+        Discover
+        <br />
+        Extraordinary
+        <br />
+        Properties
+      </h1>
 
-            <h1 class="section-title white">
-                Discover
-                <br>
-                Extraordinary
-                <br>
-                Properties
-            </h1>
+      <p class="section-description white">
+        Explore handpicked luxury homes and investments that define elegance and exclusivity.
+      </p>
 
-            <p class="section-description white">
-                Explore handpicked luxury homes and investments
-                that define elegance and exclusivity.
-            </p>
+      <!-- Search -->
+      <div class="search-box">
+        @for (item of searchItems; track item.label) {
+          <div class="search-item">
+            <label>
+              {{ item.label }}
+            </label>
 
-            <!-- Search -->
-            <div class="search-box">
-                @for (item of searchItems; track item.label) {
-                    <div class="search-item">
-                        <label>
-                            {{ item.label }}
-                        </label>
+            <select>
+              @for (option of item.options; track option) {
+                <option>
+                  {{ option }}
+                </option>
+              }
+            </select>
+          </div>
+        }
 
-                        <select>
-                            @for (option of item.options; track option) {
-                                <option>
-                                    {{ option }}
-                                </option>
-                            }
-                        </select>
-                    </div>
-                }
+        <button class="search-btn" (click)="searchProperties()">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
 
-                <button
-                    class="search-btn"
-                    (click)="searchProperties()">
+      <!-- Popular Searches -->
+      <div class="popular-search">
+        <span> Popular Searches: </span>
 
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                </button>
-            </div>
-
-            <!-- Popular Searches -->
-            <div class="popular-search">
-                <span>
-                    Popular Searches:
-                </span>
-
-                @for (search of popularSearches; track search) {
-                    <a href="#">
-                        {{ search }}
-                    </a>
-                }
-            </div>
-
-        </div>
-
-        <!-- Stats -->
-        <div class="stats-card">
-            @for (stat of stats; track stat.title) {
-                <div class="stat">
-                    <div class="icon">
-                        <i [class]="stat.icon"></i>
-                    </div>
-
-                    <div>
-                        <h3>
-                            {{ stat.value }}
-                        </h3>
-
-                        <p>
-                            {{ stat.title }}
-                        </p>
-                    </div>
-                </div>
-            }
-        </div>
-
+        @for (search of popularSearches; track search) {
+          <a href="#">
+            {{ search }}
+          </a>
+        }
+      </div>
     </div>
-</section>
 
+    <!-- Stats -->
+    <div class="stats-card">
+      @for (stat of stats; track stat.title) {
+        <div class="stat">
+          <div class="icon">
+            <i [class]="stat.icon"></i>
+          </div>
+
+          <div>
+            <h3>
+              {{ stat.value }}
+            </h3>
+
+            <p>
+              {{ stat.title }}
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
 
 <!-- ================= PROPERTY SHOWCASE ================= -->
 <section class="property-showcase">
+  <!-- Categories -->
+  <aside class="categories">
+    <h3>Categories</h3>
 
-    <!-- Categories -->
-    <aside class="categories">
-        <h3>
-            Categories
-        </h3>
+    @for (category of categories; track category.name) {
+      <div class="category">
+        <i [class]="category.icon"></i>
 
-        @for (category of categories; track category.name) {
-            <div class="category">
-                <i [class]="category.icon"></i>
+        <div>
+          <h4>
+            {{ category.name }}
+          </h4>
 
-                <div>
-                    <h4>
-                        {{ category.name }}
-                    </h4>
+          <span> {{ category.properties }} Properties </span>
+        </div>
+      </div>
+    }
 
-                    <span>
-                        {{ category.properties }} Properties
-                    </span>
-                </div>
+    <button class="view-btn" (click)="viewAllProperties()">
+      View All Properties
+
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </aside>
+
+  <!-- Showcase -->
+  <div class="showcase">
+    @for (property of showcaseProperties; track property.title) {
+      <div class="property-card" [class.second]="$index === 1">
+        @if ($index % 2 === 0) {
+          <!-- Content -->
+          <div class="property-content">
+            <h2>
+              {{ property.title }}
+            </h2>
+
+            <p class="location">
+              <i class="fa-solid fa-location-dot"></i>
+              {{ property.location }}
+            </p>
+
+            <h3>
+              {{ property.price }}
+            </h3>
+
+            <div class="details">
+              <span>
+                {{ property.beds }}
+              </span>
+
+              <span>
+                {{ property.baths }}
+              </span>
+
+              <span>
+                {{ property.area }}
+              </span>
             </div>
-        }
 
-        <button
-            class="view-btn"
-            (click)="viewAllProperties()">
+            <button (click)="viewDetails(property)">View Details →</button>
+          </div>
 
-            View All Properties
+          <!-- Image -->
+          <div class="property-img">
+            <img [src]="property.image" [alt]="property.title" />
+          </div>
+        } @else {
+          <!-- Image -->
+          <div class="property-img">
+            <img [src]="property.image" [alt]="property.title" />
+          </div>
 
-            <i class="fa-solid fa-arrow-right"></i>
+          <!-- Content -->
+          <div class="property-content">
+            <h2>
+              {{ property.title }}
+            </h2>
 
-        </button>
-    </aside>
+            <p class="location">
+              <i class="fa-solid fa-location-dot"></i>
+              {{ property.location }}
+            </p>
 
-    <!-- Showcase -->
-    <div class="showcase">
-        @for (property of showcaseProperties; track property.title) {
+            <h3>
+              {{ property.price }}
+            </h3>
 
-            <div
-                class="property-card"
-                [class.second]="$index === 1">
+            <div class="details">
+              <span>
+                {{ property.beds }}
+              </span>
 
-                @if ($index % 2 === 0) {
+              <span>
+                {{ property.baths }}
+              </span>
 
-                    <!-- Content -->
-                    <div class="property-content">
-                        <h2>
-                            {{ property.title }}
-                        </h2>
-
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            {{ property.location }}
-                        </p>
-
-                        <h3>
-                            {{ property.price }}
-                        </h3>
-
-                        <div class="details">
-                            <span>
-                                {{ property.beds }}
-                            </span>
-
-                            <span>
-                                {{ property.baths }}
-                            </span>
-
-                            <span>
-                                {{ property.area }}
-                            </span>
-                        </div>
-
-                        <button
-                            (click)="viewDetails(property)">
-
-                            View Details →
-
-                        </button>
-                    </div>
-
-                    <!-- Image -->
-                    <div class="property-img">
-                        <img
-                            [src]="property.image"
-                            [alt]="property.title">
-                    </div>
-
-                } @else {
-
-                    <!-- Image -->
-                    <div class="property-img">
-                        <img
-                            [src]="property.image"
-                            [alt]="property.title">
-                    </div>
-
-                    <!-- Content -->
-                    <div class="property-content">
-                        <h2>
-                            {{ property.title }}
-                        </h2>
-
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            {{ property.location }}
-                        </p>
-
-                        <h3>
-                            {{ property.price }}
-                        </h3>
-
-                        <div class="details">
-                            <span>
-                                {{ property.beds }}
-                            </span>
-
-                            <span>
-                                {{ property.baths }}
-                            </span>
-
-                            <span>
-                                {{ property.area }}
-                            </span>
-                        </div>
-
-                        <button
-                            (click)="viewDetails(property)">
-
-                            View Details →
-
-                        </button>
-                    </div>
-
-                }
+              <span>
+                {{ property.area }}
+              </span>
             </div>
-        }
-    </div>
 
+            <button (click)="viewDetails(property)">View Details →</button>
+          </div>
+        }
+      </div>
+    }
+  </div>
 </section>
-
 
 <!-- ================= PREMIUM PROPERTIES ================= -->
 <section class="premium-section">
+  <div class="section-heading">
+    <div>
+      <h2>Explore Premium Properties</h2>
 
-    <div class="section-heading">
-        <div>
-            <h2>
-                Explore Premium Properties
-            </h2>
+      <span class="heading-line"></span>
+    </div>
 
-            <span class="heading-line"></span>
+    <button class="view-all-btn" (click)="viewAllProperties()">
+      View All Properties
+
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+
+  <div class="premium-grid">
+    @for (property of premiumProperties; track property.title) {
+      <div class="premium-card">
+        <!-- Image -->
+        <div class="image-box">
+          <img [src]="property.image" [alt]="property.title" />
+
+          <span class="badge">
+            {{ property.badge }}
+          </span>
+
+          <i class="fa-regular fa-heart heart"></i>
         </div>
 
-        <button
-            class="view-all-btn"
-            (click)="viewAllProperties()">
+        <!-- Content -->
+        <div class="card-content">
+          <div class="title-row">
+            <h3>
+              {{ property.title }}
+            </h3>
 
-            View All Properties
+            <h4>
+              {{ property.price }}
+            </h4>
+          </div>
 
-            <i class="fa-solid fa-arrow-right"></i>
+          <p class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            {{ property.location }}
+          </p>
 
-        </button>
-    </div>
+          <div class="property-info">
+            <span>
+              <i class="fa-solid fa-bed"></i>
+              {{ property.beds }}
+            </span>
 
-    <div class="premium-grid">
-        @for (property of premiumProperties; track property.title) {
+            <span>
+              <i class="fa-solid fa-bath"></i>
+              {{ property.baths }}
+            </span>
 
-            <div class="premium-card">
-
-                <!-- Image -->
-                <div class="image-box">
-                    <img
-                        [src]="property.image"
-                        [alt]="property.title">
-
-                    <span class="badge">
-                        {{ property.badge }}
-                    </span>
-
-                    <i class="fa-regular fa-heart heart"></i>
-                </div>
-
-                <!-- Content -->
-                <div class="card-content">
-
-                    <div class="title-row">
-                        <h3>
-                            {{ property.title }}
-                        </h3>
-
-                        <h4>
-                            {{ property.price }}
-                        </h4>
-                    </div>
-
-                    <p class="location">
-                        <i class="fa-solid fa-location-dot"></i>
-                        {{ property.location }}
-                    </p>
-
-                    <div class="property-info">
-                        <span>
-                            <i class="fa-solid fa-bed"></i>
-                            {{ property.beds }}
-                        </span>
-
-                        <span>
-                            <i class="fa-solid fa-bath"></i>
-                            {{ property.baths }}
-                        </span>
-
-                        <span>
-                            <i class="fa-solid fa-ruler-combined"></i>
-                            {{ property.area }}
-                        </span>
-                    </div>
-
-                </div>
-            </div>
-        }
-    </div>
-
+            <span>
+              <i class="fa-solid fa-ruler-combined"></i>
+              {{ property.area }}
+            </span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
 </section>

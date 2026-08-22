@@ -5,10 +5,9 @@ import { RouterLink } from '@angular/router';
   selector: 'app-featured-properties',
   imports: [RouterLink],
   templateUrl: './featured-properties.html',
-  styleUrl: './featured-properties.css'
+  styleUrl: './featured-properties.css',
 })
 export class FeaturedProperties {
-
   properties = [
     {
       image: '/featured property/img1.jpg',
@@ -18,7 +17,7 @@ export class FeaturedProperties {
       price: '₹1.50 Cr',
       beds: '3 Beds',
       baths: '2 Baths',
-      area: '1800 sqft'
+      area: '1800 sqft',
     },
     {
       image: '/featured property/img2.jpg',
@@ -28,7 +27,7 @@ export class FeaturedProperties {
       price: '₹95 Lakh',
       beds: '2 Beds',
       baths: '2 Baths',
-      area: '1200 sqft'
+      area: '1200 sqft',
     },
     {
       image: '/featured property/img3.jpg',
@@ -38,7 +37,7 @@ export class FeaturedProperties {
       price: '₹75 Lakh',
       beds: '3 Beds',
       baths: '2 Baths',
-      area: '1500 sqft'
+      area: '1500 sqft',
     },
     {
       image: '/featured property/e1.jpg',
@@ -48,7 +47,7 @@ export class FeaturedProperties {
       price: '₹2.30 Cr',
       beds: '4 Beds',
       baths: '3 Baths',
-      area: '2800 sqft'
+      area: '2800 sqft',
     },
     {
       image: '/featured property/e2.jpg',
@@ -58,7 +57,7 @@ export class FeaturedProperties {
       price: '₹1.20 Cr',
       beds: '3 Beds',
       baths: '3 Baths',
-      area: '2100 sqft'
+      area: '2100 sqft',
     },
     {
       image: '/featured property/e3.jpg',
@@ -68,8 +67,8 @@ export class FeaturedProperties {
       price: '₹88 Lakh',
       beds: '2 Beds',
       baths: '2 Baths',
-      area: '1400 sqft'
-    }
+      area: '1400 sqft',
+    },
   ];
 
   currentIndex = 0;
@@ -96,5 +95,4 @@ export class FeaturedProperties {
   toggleWishlist(property: any) {
     console.log('Wishlist:', property.title);
   }
-
 }

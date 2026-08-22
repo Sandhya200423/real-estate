@@ -1,77 +1,47 @@
 <!-- ================= BUY CONFIDENCE ================= -->
 <section class="buy-confidence section">
+  <div class="container">
+    <!-- Common Section Heading -->
+    <div class="section-heading">
+      <h2 class="section-title">
+        Find Your Perfect Home
+        <span> With Confidence </span>
+      </h2>
 
-    <div class="container">
-
-        <!-- Common Section Heading -->
-        <div class="section-heading">
-
-            <h2 class="section-title">
-                Find Your Perfect Home
-                <span>
-                    With Confidence
-                </span>
-            </h2>
-
-            <p class="section-description">
-                Explore verified luxury properties, premium locations and
-                expert guidance to make your home buying journey simple,
-                secure and rewarding.
-            </p>
-
-        </div>
-
-
-        <div class="confidence-box">
-
-            <!-- Left Content -->
-            <div class="confidence-content">
-
-                <div
-                    class="buy-feature"
-                    *ngFor="let feature of features">
-
-                    <i [class]="feature.icon"></i>
-
-                    <div>
-
-                        <h3>
-                            {{ feature.title }}
-                        </h3>
-
-                        <p>
-                            {{ feature.description }}
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <a
-                    routerLink="/properties"
-                    class="btn btn-primary">
-
-                    Explore Properties
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </div>
-
-
-            <!-- Right Image -->
-            <div class="confidence-image">
-
-                <img
-                    [src]="image"
-                    alt="Premium Property">
-
-            </div>
-
-        </div>
-
+      <p class="section-description">
+        Explore verified luxury properties, premium locations and expert guidance to make your home
+        buying journey simple, secure and rewarding.
+      </p>
     </div>
 
+    <div class="confidence-box">
+      <!-- Left Content -->
+      <div class="confidence-content">
+        <div class="buy-feature" *ngFor="let feature of features">
+          <i [class]="feature.icon"></i>
+
+          <div>
+            <h3>
+              {{ feature.title }}
+            </h3>
+
+            <p>
+              {{ feature.description }}
+            </p>
+          </div>
+        </div>
+
+        <a routerLink="/properties" class="btn btn-primary">
+          Explore Properties
+
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Right Image -->
+      <div class="confidence-image">
+        <img [src]="image" alt="Premium Property" />
+      </div>
+    </div>
+  </div>
 </section>

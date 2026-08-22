@@ -1,59 +1,34 @@
 <section class="recommendation section">
+  <div class="container">
+    <div class="recommendation-banner">
+      <div class="recommendation-overlay">
+        <!-- Left -->
+        <div class="recommendation-content">
+          <h2 class="section-title white">Ready to Find Your Dream Home?</h2>
 
-    <div class="container">
+          <p class="section-description white">
+            Get personalized property recommendations based on your budget, lifestyle and
+            preferences.
+          </p>
 
-        <div class="recommendation-banner">
-
-            <div class="recommendation-overlay">
-
-                <!-- Left -->
-                <div class="recommendation-content">
-
-                    <h2 class="section-title white">
-                        Ready to Find Your
-                        Dream Home?
-                    </h2>
-
-                    <p class="section-description white">
-                        Get personalized property recommendations based on
-                        your budget, lifestyle and preferences.
-                    </p>
-
-                    <a
-                        href="#"
-                        class="btn btn-primary"
-                        (click)="getRecommendations()">
-
-                        Get Home Recommendations
-
-                    </a>
-
-                </div>
-
-
-                <!-- Right -->
-                <div class="recommendation-list">
-
-                    @for (item of recommendations; track item) {
-
-                        <div class="recommend-item">
-
-                            <i class="fa-solid fa-circle-check"></i>
-
-                            <span>
-                                {{ item }}
-                            </span>
-
-                        </div>
-
-                    }
-
-                </div>
-
-            </div>
-
+          <a href="#" class="btn btn-primary" (click)="getRecommendations()">
+            Get Home Recommendations
+          </a>
         </div>
 
-    </div>
+        <!-- Right -->
+        <div class="recommendation-list">
+          @for (item of recommendations; track item) {
+            <div class="recommend-item">
+              <i class="fa-solid fa-circle-check"></i>
 
+              <span>
+                {{ item }}
+              </span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

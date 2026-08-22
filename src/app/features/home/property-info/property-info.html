@@ -1,35 +1,23 @@
 <section class="features section">
+  <div class="container">
+    <div class="grid grid-4">
+      @for (feature of features; track feature.title) {
+        <div class="feature-item">
+          <div class="icon-box">
+            <i [class]="feature.icon"></i>
+          </div>
 
-    <div class="container">
+          <div class="feature-content">
+            <h3 class="heading">
+              {{ feature.title }}
+            </h3>
 
-        <div class="grid grid-4">
-
-            @for (feature of features; track feature.title) {
-
-                <div class="feature-item">
-
-                    <div class="icon-box">
-                        <i [class]="feature.icon"></i>
-                    </div>
-
-                    <div class="feature-content">
-
-                        <h3 class="heading">
-                            {{ feature.title }}
-                        </h3>
-
-                        <p class="text">
-                            {{ feature.description }}
-                        </p>
-
-                    </div>
-
-                </div>
-
-            }
-
+            <p class="text">
+              {{ feature.description }}
+            </p>
+          </div>
         </div>
-
+      }
     </div>
-
+  </div>
 </section>

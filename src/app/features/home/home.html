@@ -1,0 +1,19 @@
+<app-hero></app-hero>
+
+<app-property-info></app-property-info>
+
+@defer (on viewport) {
+  <app-featured-properties></app-featured-properties>
+} @placeholder {
+  <div style="min-height: 300px"></div>
+}
+
+<app-why-choose></app-why-choose>
+
+@defer (on viewport) {
+  <app-popular-location></app-popular-location>
+} @placeholder {
+  <div style="min-height: 300px"></div>
+}
+
+<app-get></app-get>

@@ -1,226 +1,135 @@
 <!-- ================= BLOG HERO ================= -->
 <section class="blog-hero">
-    <div class="container">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-subtitle"> LATEST INSIGHTS </span>
 
-        <div class="section-heading">
+      <h1 class="section-title">Discover Real Estate Trends & Property Insights</h1>
 
-            <span class="section-subtitle">
-                LATEST INSIGHTS
-            </span>
-
-            <h1 class="section-title">
-                Discover Real Estate Trends & Property Insights
-            </h1>
-
-            <p class="section-description">
-                Explore expert advice, market updates and valuable insights
-                to make smarter property decisions.
-            </p>
-
-        </div>
-
+      <p class="section-description">
+        Explore expert advice, market updates and valuable insights to make smarter property
+        decisions.
+      </p>
     </div>
+  </div>
 </section>
-
 
 <!-- ================= FEATURED BLOG ================= -->
 <section class="featured-blog">
-    <div class="container">
+  <div class="container">
+    <div class="featured-wrapper">
+      <!-- Main Blog -->
+      <div class="featured-card">
+        <img [src]="featured.image" [alt]="featured.alt" />
 
-        <div class="featured-wrapper">
+        <div class="featured-content">
+          <span class="blog-category"> Property Trends </span>
 
-            <!-- Main Blog -->
-            <div class="featured-card">
+          <h2>Latest Luxury Real Estate Trends You Should Know</h2>
 
-                <img
-                    [src]="featured.image"
-                    [alt]="featured.alt">
+          <p>Discover upcoming property trends, premium locations and investment opportunities.</p>
 
-                <div class="featured-content">
+          <div class="blog-meta">
+            <span>
+              <i class="fa-regular fa-calendar"></i>
+              Aug 07, 2026
+            </span>
 
-                    <span class="blog-category">
-                        Property Trends
-                    </span>
+            <span> 5 Min Read </span>
+          </div>
 
-                    <h2>
-                        Latest Luxury Real Estate Trends You Should Know
-                    </h2>
-
-                    <p>
-                        Discover upcoming property trends, premium locations
-                        and investment opportunities.
-                    </p>
-
-                    <div class="blog-meta">
-
-                        <span>
-                            <i class="fa-regular fa-calendar"></i>
-                            Aug 07, 2026
-                        </span>
-
-                        <span>
-                            5 Min Read
-                        </span>
-
-                    </div>
-
-                    <button (click)="readFeaturedBlog()">
-                        Read More
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Trending Blogs -->
-            <div class="trending-blog">
-
-                <div
-                    class="trend-item"
-                    *ngFor="let trend of trending">
-
-                    <img
-                        [src]="trend.image"
-                        [alt]="trend.alt">
-
-                    <div>
-
-                        <h3>
-                            {{ trend.title }}
-                        </h3>
-
-                        <span>
-                            {{ trend.date }}
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          <button (click)="readFeaturedBlog()">
+            Read More
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
+      </div>
 
+      <!-- Trending Blogs -->
+      <div class="trending-blog">
+        <div class="trend-item" *ngFor="let trend of trending">
+          <img [src]="trend.image" [alt]="trend.alt" />
+
+          <div>
+            <h3>
+              {{ trend.title }}
+            </h3>
+
+            <span>
+              {{ trend.date }}
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-
 
 <!-- ================= LATEST ARTICLES ================= -->
 <section class="latest-articles">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="section-subtitle"> EXPLORE MORE </span>
 
-    <div class="container">
+        <h2 class="section-title">Latest Real Estate Articles</h2>
+      </div>
 
-        <div class="section-heading">
-
-            <div>
-
-                <span class="section-subtitle">
-                    EXPLORE MORE
-                </span>
-
-                <h2 class="section-title">
-                    Latest Real Estate Articles
-                </h2>
-
-            </div>
-
-            <p class="section-description">
-                Stay updated with property trends, investment tips and expert
-                real estate advice.
-            </p>
-
-        </div>
-
-
-        <div class="blog-grid">
-
-            <div
-                class="blog-card"
-                *ngFor="let blog of blogs">
-
-                <img
-                    [src]="blog.image"
-                    [alt]="blog.alt">
-
-                <div class="blog-card-content">
-
-                    <span class="blog-category">
-                        {{ blog.category }}
-                    </span>
-
-                    <h3>
-                        {{ blog.title }}
-                    </h3>
-
-                    <p>
-                        {{ blog.description }}
-                    </p>
-
-                    <div class="blog-info">
-
-                        <span>
-                            <i class="fa-regular fa-calendar"></i>
-                            {{ blog.date }}
-                        </span>
-
-                    </div>
-
-                    <a
-                        href="#"
-                        class="read-more"
-                        (click)="readBlog(blog.title)">
-                        Read More
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
+      <p class="section-description">
+        Stay updated with property trends, investment tips and expert real estate advice.
+      </p>
     </div>
 
-</section>
+    <div class="blog-grid">
+      <div class="blog-card" *ngFor="let blog of blogs">
+        <img [src]="blog.image" [alt]="blog.alt" />
 
+        <div class="blog-card-content">
+          <span class="blog-category">
+            {{ blog.category }}
+          </span>
+
+          <h3>
+            {{ blog.title }}
+          </h3>
+
+          <p>
+            {{ blog.description }}
+          </p>
+
+          <div class="blog-info">
+            <span>
+              <i class="fa-regular fa-calendar"></i>
+              {{ blog.date }}
+            </span>
+          </div>
+
+          <a href="#" class="read-more" (click)="readBlog(blog.title)">
+            Read More
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= BLOG CTA ================= -->
 <section class="blog-cta">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <span class="section-subtitle"> READY TO FIND YOUR DREAM HOME? </span>
 
-    <div class="container">
+        <h2 class="section-title white">Let's Make Your Property Journey Simple</h2>
 
-        <div class="cta-box">
+        <p>Connect with our experts and discover premium properties matching your lifestyle.</p>
+      </div>
 
-            <div>
-
-                <span class="section-subtitle">
-                    READY TO FIND YOUR DREAM HOME?
-                </span>
-
-                <h2 class="section-title white">
-                    Let's Make Your Property Journey Simple
-                </h2>
-
-                <p>
-                    Connect with our experts and discover premium properties
-                    matching your lifestyle.
-                </p>
-
-            </div>
-
-            <a
-                href="#"
-                (click)="contactUs()">
-
-                Contact Us
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
+      <a href="#" (click)="contactUs()">
+        Contact Us
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
     </div>
-
+  </div>
 </section>

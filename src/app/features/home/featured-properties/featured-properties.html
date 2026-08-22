@@ -1,146 +1,85 @@
 <!-- ================= FEATURED PROPERTIES ================= -->
 <section class="featured section">
+  <div class="container">
+    <div class="featured-wrapper">
+      <!-- LEFT CONTENT -->
+      <div class="featured-left">
+        <span class="section-subtitle"> Featured Properties </span>
 
-    <div class="container">
+        <h2 class="section-title white">Handpicked Premium Properties For You</h2>
 
-        <div class="featured-wrapper">
+        <p class="section-description white">
+          Explore our exclusive collection of luxury villas, apartments and premium homes.
+        </p>
 
-            <!-- LEFT CONTENT -->
-            <div class="featured-left">
+        <a routerLink="/properties" class="btn btn-dark"> View All Properties </a>
+      </div>
 
-                <span class="section-subtitle">
-                    Featured Properties
-                </span>
+      <!-- RIGHT SLIDER -->
+      <div class="featured-right">
+        <div class="properties-slider">
+          <div class="slider-track" [style.transform]="transform">
+            @for (property of properties; track property.title) {
+              <div class="card property-card">
+                <div class="property-image">
+                  <img [src]="property.image" [alt]="property.title" class="img-fluid" />
 
-                <h2 class="section-title white">
-                    Handpicked Premium Properties For You
-                </h2>
+                  <span class="badge">
+                    {{ property.badge }}
+                  </span>
 
-                <p class="section-description white">
-                    Explore our exclusive collection of luxury villas,
-                    apartments and premium homes.
-                </p>
-
-                <a
-                    routerLink="/properties"
-                    class="btn btn-dark">
-
-                    View All Properties
-
-                </a>
-
-            </div>
-
-
-            <!-- RIGHT SLIDER -->
-            <div class="featured-right">
-
-                <div class="properties-slider">
-
-                    <div
-                        class="slider-track"
-                        [style.transform]="transform">
-
-                        @for (
-                            property of properties;
-                            track property.title
-                        ) {
-
-                            <div class="card property-card">
-
-                                <div class="property-image">
-
-                                    <img
-                                        [src]="property.image"
-                                        [alt]="property.title"
-                                        class="img-fluid">
-
-                                    <span class="badge">
-                                        {{ property.badge }}
-                                    </span>
-
-                                    <button
-                                        class="wishlist"
-                                        (click)="toggleWishlist(property)">
-
-                                        <i class="fa-regular fa-heart"></i>
-
-                                    </button>
-
-                                </div>
-
-
-                                <div class="property-content">
-
-                                    <h3 class="heading">
-                                        {{ property.title }}
-                                    </h3>
-
-                                    <p class="text">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                        {{ property.location }}
-                                    </p>
-
-                                    <h2 class="price">
-                                        {{ property.price }}
-                                    </h2>
-
-
-                                    <div class="property-info">
-
-                                        <span>
-                                            <i class="fa-solid fa-bed"></i>
-                                            {{ property.beds }}
-                                        </span>
-
-                                        <span>
-                                            <i class="fa-solid fa-bath"></i>
-                                            {{ property.baths }}
-                                        </span>
-
-                                        <span>
-                                            <i class="fa-solid fa-ruler-combined"></i>
-                                            {{ property.area }}
-                                        </span>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        }
-
-                    </div>
-
+                  <button class="wishlist" (click)="toggleWishlist(property)">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
                 </div>
 
+                <div class="property-content">
+                  <h3 class="heading">
+                    {{ property.title }}
+                  </h3>
 
-                <!-- ARROWS -->
-                <div class="slider-buttons">
+                  <p class="text">
+                    <i class="fa-solid fa-location-dot"></i>
+                    {{ property.location }}
+                  </p>
 
-                    <button
-                        class="arrow-btn"
-                        (click)="previous()">
+                  <h2 class="price">
+                    {{ property.price }}
+                  </h2>
 
-                        <i class="fa-solid fa-arrow-left"></i>
+                  <div class="property-info">
+                    <span>
+                      <i class="fa-solid fa-bed"></i>
+                      {{ property.beds }}
+                    </span>
 
-                    </button>
+                    <span>
+                      <i class="fa-solid fa-bath"></i>
+                      {{ property.baths }}
+                    </span>
 
-                    <button
-                        class="arrow-btn"
-                        (click)="next()">
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </button>
-
+                    <span>
+                      <i class="fa-solid fa-ruler-combined"></i>
+                      {{ property.area }}
+                    </span>
+                  </div>
                 </div>
-
-            </div>
-
+              </div>
+            }
+          </div>
         </div>
 
-    </div>
+        <!-- ARROWS -->
+        <div class="slider-buttons">
+          <button class="arrow-btn" (click)="previous()">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
 
+          <button class="arrow-btn" (click)="next()">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

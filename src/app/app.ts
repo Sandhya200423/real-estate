@@ -3,19 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layout/header/header';
 import { Footer } from './layout/footer/footer';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    Footer
-  
-  ],
+  imports: [RouterOutlet, HeaderComponent, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-
-}
+export class App {}
