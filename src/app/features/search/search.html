@@ -1,0 +1,91 @@
+<section class="search-results">
+  <div class="container">
+    <!-- Header -->
+    <div class="search-header">
+      <div class="search-header-content">
+        <span class="search-label">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          PROPERTY SEARCH
+        </span>
+
+        <h2>Search Results</h2>
+
+        <p>
+          {{ filteredProperties.length }}
+          {{ filteredProperties.length === 1 ? 'property' : 'properties' }}
+          found
+        </p>
+      </div>
+
+      <a routerLink="/" class="home-btn">
+        <i class="fa-solid fa-house"></i>
+        Back to Home
+      </a>
+    </div>
+
+    <!-- Results -->
+    @if (filteredProperties.length > 0) {
+      <div class="property-grid">
+        @for (property of filteredProperties; track property.id) {
+          <article class="property-card">
+            <div class="property-image">
+              <img [src]="property.image" [alt]="property.title" />
+
+              <span class="property-type">
+                {{ property.type }}
+              </span>
+            </div>
+
+            <div class="property-content">
+              <h3>
+                {{ property.title }}
+              </h3>
+
+              <p class="property-location">
+                <i class="fa-solid fa-location-dot"></i>
+                {{ property.location }}
+              </p>
+
+              <div class="property-details">
+                <span>
+                  <i class="fa-solid fa-bed"></i>
+                  {{ property.bhk }}
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-ruler-combined"></i>
+                  {{ property.area }}
+                </span>
+              </div>
+
+              <div class="property-bottom">
+                <h4>₹{{ property.price | number }}</h4>
+
+                <button class="view-btn">
+                  View
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    } @else {
+      <!-- No Results -->
+      <div class="no-results">
+        <div class="no-results-icon">
+          <i class="fa-solid fa-house-circle-exclamation"></i>
+        </div>
+
+        <h3>No Properties Found</h3>
+
+        <p>No properties match your selected search criteria.</p>
+
+        <a routerLink="/" class="home-btn no-results-btn">
+          <i class="fa-solid fa-house"></i>
+          Back to Home
+        </a>
+      </div>
+    }
+  </div>
+</section>

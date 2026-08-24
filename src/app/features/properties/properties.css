@@ -27,7 +27,7 @@
     border-radius: 20px;
     padding: 15px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr) 65px;
+    grid-template-columns: repeat(4, 1fr) 180px;
     gap: 10px;
     width: 850px;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
@@ -60,6 +60,10 @@
       font-size: 20px;
       cursor: pointer;
       transition: 0.35s;
+      width: 100%;
+      height: 58px;
+      padding: 0 25px; 
+      margin-top: 15px;
       &:hover {
         background: var(--primary);
         transform: translateY(-3px);

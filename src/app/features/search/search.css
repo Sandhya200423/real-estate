@@ -1,0 +1,602 @@
+/* =========================================================
+   SEARCH RESULTS
+========================================================= */
+
+.search-results {
+  min-height: 100vh;
+
+  /* FIX: Fixed Header खाली content आणण्यासाठी */
+  padding: 130px 0 90px;
+
+  background: var(--bg);
+
+  .container {
+    width: min(92%, 1250px);
+    margin: 0 auto;
+  }
+
+  /* ================= HEADER ================= */
+
+  .search-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid var(--border);
+
+    .search-header-content {
+      .search-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        margin-bottom: 12px;
+
+        color: var(--secondary);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+
+        i {
+          font-size: 13px;
+        }
+      }
+
+      h2 {
+        margin: 0;
+
+        color: var(--primary);
+        font-size: clamp(30px, 4vw, 44px);
+        line-height: 1.15;
+        font-weight: 700;
+      }
+
+      p {
+        margin: 10px 0 0;
+
+        color: var(--text);
+        font-size: 15px;
+      }
+    }
+
+    /* ================= HOME BUTTON ================= */
+
+    .home-btn {
+      flex-shrink: 0;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 12px 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: var(--white);
+      color: var(--primary);
+
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 13px;
+      }
+
+      &:hover {
+        background: var(--primary);
+        color: var(--white);
+        border-color: var(--primary);
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 8px 20px rgba(16, 43, 63, 0.18);
+      }
+    }
+  }
+
+  /* =====================================================
+     PROPERTY GRID
+  ===================================================== */
+
+  .property-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+  }
+
+  /* =====================================================
+     PROPERTY CARD
+  ===================================================== */
+
+  .property-card {
+    overflow: hidden;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(16, 43, 63, 0.06);
+
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-7px);
+
+      border-color: var(--secondary);
+
+      box-shadow: 0 18px 40px rgba(16, 43, 63, 0.12);
+
+      .property-image {
+        img {
+          transform: scale(1.06);
+        }
+      }
+    }
+
+    /* ================= IMAGE ================= */
+
+    .property-image {
+      position: relative;
+
+      width: 100%;
+      height: 250px;
+
+      overflow: hidden;
+
+      background: #f5f5f5;
+
+      img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+        object-position: center;
+
+        transition: transform 0.5s ease;
+      }
+
+      .property-type {
+        position: absolute;
+
+        top: 15px;
+        left: 15px;
+
+        padding: 7px 12px;
+
+        border-radius: 7px;
+
+        background: var(--primary);
+        color: var(--white);
+
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+
+        backdrop-filter: blur(6px);
+      }
+    }
+
+    /* ================= CONTENT ================= */
+
+    .property-content {
+      padding: 22px;
+
+      h3 {
+        margin: 0;
+
+        color: var(--primary);
+
+        font-size: 20px;
+        line-height: 1.4;
+        font-weight: 700;
+      }
+
+      .property-location {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        margin: 10px 0 20px;
+
+        color: var(--text);
+
+        font-size: 14px;
+
+        i {
+          color: var(--secondary);
+          font-size: 13px;
+        }
+      }
+
+      /* ================= DETAILS ================= */
+
+      .property-details {
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        flex-wrap: wrap;
+
+        padding: 15px 0;
+
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+
+        span {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+
+          color: var(--text);
+
+          font-size: 13px;
+          font-weight: 600;
+
+          i {
+            color: var(--secondary);
+            font-size: 12px;
+          }
+
+          + span {
+            padding-left: 10px;
+
+            border-left: 1px solid var(--border);
+          }
+        }
+      }
+
+      /* ================= BOTTOM ================= */
+
+      .property-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 15px;
+
+        padding-top: 20px;
+
+        h4 {
+          margin: 0;
+
+          color: var(--secondary);
+
+          font-size: 21px;
+          font-weight: 700;
+        }
+
+        .view-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+
+          padding: 9px 13px;
+
+          border: 1px solid rgba(215, 166, 60, 0.25);
+          border-radius: 8px;
+
+          background: rgba(215, 166, 60, 0.1);
+          color: var(--secondary);
+
+          font-size: 12px;
+          font-weight: 700;
+
+          cursor: pointer;
+
+          transition: all 0.25s ease;
+
+          &:hover {
+            background: var(--secondary);
+            color: var(--white);
+
+            transform: translateX(2px);
+          }
+        }
+      }
+    }
+  }
+
+  /* =====================================================
+     NO RESULTS
+  ===================================================== */
+
+  .no-results {
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(16, 43, 63, 0.05);
+
+    .no-results-icon {
+      width: 72px;
+      height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 20px;
+
+      border-radius: 50%;
+
+      background: rgba(215, 166, 60, 0.12);
+
+      color: var(--secondary);
+
+      font-size: 28px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+
+      color: var(--primary);
+
+      font-size: 25px;
+    }
+
+    p {
+      max-width: 430px;
+
+      margin: 0 0 25px;
+
+      color: var(--text);
+
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .no-results-btn {
+      background: var(--primary);
+      color: var(--white);
+
+      border-color: var(--primary);
+
+      &:hover {
+        background: var(--secondary);
+        border-color: var(--secondary);
+      }
+    }
+  }
+
+  /* =====================================================
+     LAPTOP
+  ===================================================== */
+
+  @media (max-width: 1200px) {
+    /* फक्त Header spacing */
+    padding-top: 125px;
+
+    .property-grid {
+      gap: 22px;
+    }
+
+    .property-card {
+      .property-image {
+        height: 220px;
+      }
+
+      .property-content {
+        padding: 19px;
+      }
+    }
+  }
+
+  /* =====================================================
+     TABLET / IPAD
+  ===================================================== */
+
+  @media (max-width: 992px) {
+    /* फक्त Header spacing */
+    padding-top: 115px;
+
+    padding-bottom: 70px;
+
+    .property-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 20px;
+    }
+
+    .property-card {
+      .property-image {
+        height: 215px;
+      }
+    }
+  }
+
+  /* =====================================================
+     SMALL TABLET / IPAD MINI
+  ===================================================== */
+
+  @media (max-width: 768px) {
+    /* फक्त Header spacing */
+    padding-top: 105px;
+
+    padding-bottom: 60px;
+
+    .search-header {
+      align-items: flex-start;
+
+      flex-direction: column;
+
+      gap: 18px;
+
+      margin-bottom: 30px;
+
+      .home-btn {
+        width: auto;
+      }
+    }
+
+    .property-grid {
+      gap: 18px;
+    }
+
+    .property-card {
+      .property-image {
+        height: 200px;
+      }
+
+      .property-content {
+        h3 {
+          font-size: 18px;
+        }
+
+        .property-bottom {
+          h4 {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  /* =====================================================
+     MOBILE
+  ===================================================== */
+
+  @media (max-width: 576px) {
+    /* फक्त Header spacing */
+    padding-top: 100px;
+
+    padding-bottom: 50px;
+
+    .container {
+      width: 92%;
+    }
+
+    .search-header {
+      .search-header-content {
+        .search-label {
+          font-size: 10px;
+        }
+
+        h2 {
+          font-size: 30px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .home-btn {
+        width: 100%;
+      }
+    }
+
+    .property-grid {
+      grid-template-columns: 1fr;
+
+      gap: 20px;
+    }
+
+    .property-card {
+      .property-image {
+        height: 220px;
+      }
+
+      .property-content {
+        padding: 20px;
+
+        h3 {
+          font-size: 20px;
+        }
+
+        .property-details {
+          gap: 12px;
+        }
+
+        .property-bottom {
+          h4 {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .no-results {
+      min-height: 340px;
+
+      padding: 30px 20px;
+
+      h3 {
+        font-size: 21px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  /* =====================================================
+     SMALL MOBILE
+  ===================================================== */
+
+  @media (max-width: 380px) {
+    /* फक्त Header spacing */
+    padding-top: 95px;
+
+    .search-header {
+      .search-header-content {
+        h2 {
+          font-size: 27px;
+        }
+      }
+    }
+
+    .property-card {
+      .property-image {
+        height: 195px;
+      }
+
+      .property-content {
+        padding: 17px;
+
+        .property-bottom {
+          align-items: flex-start;
+
+          flex-direction: column;
+
+          .view-btn {
+            width: 100%;
+
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

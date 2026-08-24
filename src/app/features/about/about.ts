@@ -73,8 +73,4 @@ export class About {
       description: 'Dedicated support whenever you need assistance.',
     },
   ];
-
-  learnMore() {
-    console.log('Learn More clicked');
-  }
 }

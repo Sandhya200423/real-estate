@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
+  standalone: true,
   imports: [FormsModule, RouterLink],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
 export class Hero {
   heroImage = '/hero/heron.png';
+
+  constructor(private router: Router) {}
 
   searchItems = [
     {
@@ -41,9 +44,32 @@ export class Hero {
     },
   ];
 
-  searchProperties() {
-    console.log('Search clicked');
+  searchProperties(): void {
+    const location = this.searchItems[0].selected;
 
-    console.log(this.searchItems);
+    const type = this.searchItems[1].selected;
+
+    const budget = this.searchItems[2].selected;
+
+    const bedrooms = this.searchItems[3].selected;
+
+    this.router.navigate(['/search'], {
+      queryParams: {
+        location: location !== 'Select Location' ? location : null,
+
+        type: type !== 'All Properties' ? type : null,
+
+        price:
+          budget === '₹20L - ₹50L'
+            ? 'under50'
+            : budget === '₹50L - ₹1Cr'
+              ? '50to100'
+              : budget === '₹1Cr+'
+                ? '1crplus'
+                : null,
+
+        bhk: bedrooms !== 'Any' ? bedrooms.replace(' BHK', '') : null,
+      },
+    });
   }
 }

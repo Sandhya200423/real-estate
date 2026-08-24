@@ -1,0 +1,104 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "title": "Luxury Villa in Pune",
+      "location": "Pune",
+      "type": "Villa",
+      "budget": "₹1Cr+",
+      "bhk": "4+ BHK",
+      "price": 12500000,
+      "area": "2500 Sq.Ft",
+      "image": "/search/s1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Premium Apartment in Pune",
+      "location": "Pune",
+      "type": "Apartment",
+      "budget": "₹50L - ₹1Cr",
+      "bhk": "3 BHK",
+      "price": 8500000,
+      "area": "1800 Sq.Ft",
+      "image": "/search/s2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Modern Penthouse in Mumbai",
+      "location": "Mumbai",
+      "type": "Penthouse",
+      "budget": "₹1Cr+",
+      "bhk": "4+ BHK",
+      "price": 18000000,
+      "area": "3000 Sq.Ft",
+      "image": "/search/s3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Beautiful Apartment in Mumbai",
+      "location": "Mumbai",
+      "type": "Apartment",
+      "budget": "₹50L - ₹1Cr",
+      "bhk": "2 BHK",
+      "price": 7000000,
+      "area": "1400 Sq.Ft",
+      "image": "/search/s4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Premium Villa in Kolhapur",
+      "location": "Kolhapur",
+      "type": "Villa",
+      "budget": "₹20L - ₹50L",
+      "bhk": "3 BHK",
+      "price": 4500000,
+      "area": "2200 Sq.Ft",
+      "image": "/search/s5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Affordable Apartment in Kolhapur",
+      "location": "Kolhapur",
+      "type": "Apartment",
+      "budget": "₹20L - ₹50L",
+      "bhk": "1 BHK",
+      "price": 3000000,
+      "area": "900 Sq.Ft",
+      "image": "/search/s6.jpg"
+    },
+
+    {
+      "id": 7,
+      "title": "Luxury Penthouse in Pune",
+      "location": "Pune",
+      "type": "Penthouse",
+      "budget": "₹1Cr+",
+      "bhk": "4+ BHK",
+      "price": 15500000,
+      "area": "2800 Sq.Ft",
+      "image": "/search/s7.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Premium Villa in Mumbai",
+      "location": "Mumbai",
+      "type": "Villa",
+      "budget": "₹1Cr+",
+      "bhk": "4+ BHK",
+      "price": 22000000,
+      "area": "3200 Sq.Ft",
+      "image": "/search/s8.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Modern Penthouse in Kolhapur",
+      "location": "Kolhapur",
+      "type": "Penthouse",
+      "budget": "₹50L - ₹1Cr",
+      "bhk": "3 BHK",
+      "price": 9000000,
+      "area": "2100 Sq.Ft",
+      "image": "/search/s9.jpg"
+    }
+  ]
+}

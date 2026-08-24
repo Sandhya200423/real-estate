@@ -75,7 +75,7 @@ export class FeaturedProperties {
   transform = 'translateX(0)';
 
   next() {
-    if (this.currentIndex < this.properties.length - 1) {
+    if (this.currentIndex < this.properties.length - 3) {
       this.currentIndex++;
       this.updateSlider();
     }
@@ -89,7 +89,8 @@ export class FeaturedProperties {
   }
 
   updateSlider() {
-    this.transform = `translateX(-${this.currentIndex * 100}%)`;
+    // 3 cards visible + gap
+    this.transform = `translateX(-${this.currentIndex * 33.333}%)`;
   }
 
   toggleWishlist(property: any) {

@@ -118,6 +118,7 @@ SECTION DESCRIPTION
   max-width: 650px;
   margin: auto;
   font-size: 16px;
+  font-weight: 100;
   color: var(--text);
   line-height: 1.8;
 }
@@ -142,8 +143,10 @@ COMMON BUTTON
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 30px;
-  border-radius: 10px;
+  width: 200px;
+  height: 55px;
+  padding: 0;
+  border-radius: 30px;
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
@@ -162,7 +165,7 @@ PRIMARY BUTTON
 }
 
 .btn-primary:hover {
-  background: #c89529;
+  background: var(--primary);
   transform: translateY(-3px);
 }
 
@@ -191,7 +194,7 @@ DARK BUTTON
 }
 
 .btn-dark:hover {
-  background: #0b202f;
+  background: var(--secondary);
   transform: translateY(-3px);
 }
 

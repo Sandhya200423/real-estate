@@ -8,8 +8,21 @@
     align-items: center;
   }
   .featured-left {
-    width: 90%;
+  width: 90%;
+
+  .section-subtitle {
+    display: block;
+    margin-bottom: 25px;
   }
+
+  .section-title {
+    margin-bottom: 25px;
+  }
+
+  .section-description {
+    margin-bottom: 25px;
+  }
+}
   .featured-right {
     position: relative;
     overflow: hidden;
@@ -29,12 +42,6 @@
     border: 1px solid var(--border);
     border-radius: 18px;
     overflow: hidden;
-  }
-  .btn-dark {
-    transition: 0.35s ease;
-    border: none;
-    background: var(--secondary);
-    color: var(--white);
   }
   .property-image {
     position: relative;
@@ -102,7 +109,7 @@
     display: flex;
     gap: 10px;
     margin-top: 20px;
-    justify-content: flex-end;
+    justify-content: center;
   }
   .arrow-btn {
     width: 45px;
