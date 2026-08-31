@@ -26,19 +26,6 @@
     max-width: 700px;
   }
 
-  .sell-buttons {
-    display: flex;
-    margin-top: 35px;
-
-    .btn-primary {
-      border-radius: 50px;
-      padding: 14px 32px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-  }
-
   .sell-features {
     display: flex;
     flex-wrap: wrap;
@@ -57,6 +44,162 @@
     i {
       color: var(--secondary);
     }
+  }
+}
+/* =========================
+   SELL PAGE BUTTONS
+========================= */
+
+/* Hero - List Property Button */
+.sell-buttons {
+  display: flex;
+  margin-top: 35px;
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 50px;
+    background: var(--secondary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+
+    i {
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+/* =========================
+   FORM ACTION BUTTONS
+========================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 140px;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn-primary {
+    background: var(--secondary);
+    color: #fff;
+
+    i {
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+/* =========================
+   CONTACT US BUTTON
+========================= */
+
+.contact-card {
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 25px;
+    margin-top: 15px;
+
+    background: var(--secondary);
+    color: #fff;
+
+    border: none;
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+/* =========================
+   UPLOAD / CHOOSE IMAGES
+========================= */
+
+.upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 25px;
+  margin-top: 15px;
+
+  background: var(--secondary);
+  color: #fff;
+
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  i {
+    font-size: 13px;
+  }
+
+  &:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   }
 }
 

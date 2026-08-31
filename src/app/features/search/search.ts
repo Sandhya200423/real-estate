@@ -15,6 +15,8 @@ export class Search implements OnInit {
   properties: Property[] = [];
   filteredProperties: Property[] = [];
 
+  currentParams: any = {};
+
   constructor(
     private route: ActivatedRoute,
     private propertyService: PropertyService,
@@ -25,6 +27,8 @@ export class Search implements OnInit {
     this.route.queryParams.subscribe((params) => {
       console.log('QUERY PARAMS:', params);
 
+      this.currentParams = params;
+
       if (this.properties.length > 0) {
         this.filterProperties(params);
       }
@@ -33,9 +37,18 @@ export class Search implements OnInit {
     this.loadProperties();
   }
 
-  // =====================================================
-  // LOAD PROPERTIES
-  // =====================================================
+  saveSearchState(): void {
+    sessionStorage.setItem('propertySearchParams', JSON.stringify(this.currentParams));
+
+    sessionStorage.setItem('propertySearchResults', JSON.stringify(this.filteredProperties));
+
+    sessionStorage.setItem('propertiesScrollPosition', window.scrollY.toString());
+
+    console.log('SEARCH STATE SAVED:', {
+      params: this.currentParams,
+      results: this.filteredProperties,
+    });
+  }
 
   loadProperties(): void {
     this.propertyService.getProperties().subscribe({
@@ -44,11 +57,11 @@ export class Search implements OnInit {
 
         this.properties = data;
 
-        console.log('ALL PROPERTIES:', this.properties);
+        const params = this.route.snapshot.queryParams;
 
-        this.route.queryParams.subscribe((params) => {
-          this.filterProperties(params);
-        });
+        this.currentParams = params;
+
+        this.filterProperties(params);
       },
 
       error: (error) => {
@@ -62,10 +75,6 @@ export class Search implements OnInit {
     });
   }
 
-  // =====================================================
-  // MAIN SEARCH
-  // =====================================================
-
   filterProperties(params: any): void {
     if (!this.properties || this.properties.length === 0) {
       this.filteredProperties = [];
@@ -73,11 +82,8 @@ export class Search implements OnInit {
     }
 
     const location = this.normalize(params['location']);
-
     const type = this.normalize(params['type']);
-
     const price = this.normalize(params['price']);
-
     const bhk = this.normalize(params['bhk']);
 
     console.log('==============================');
@@ -87,55 +93,24 @@ export class Search implements OnInit {
     console.log('BHK:', bhk);
     console.log('==============================');
 
-    const sameLocation = this.properties.filter((property) => {
-      if (!location) {
-        return true;
-      }
+    let relatedProperties = this.properties.filter((property) => {
+      const locationMatch = !location || this.normalize(property.location) === location;
 
-      return this.normalize(property.location) === location;
-    });
-
-    console.log('SAME LOCATION PROPERTIES:', sameLocation);
-
-    const exactMatches = sameLocation.filter((property) => {
       const typeMatch = !type || this.normalize(property.type) === type;
 
-      const budgetMatch = !price || this.checkBudget(property.budget, price);
-
-      const bhkMatch = !bhk || this.checkBhk(property.bhk, bhk);
-
-      return typeMatch && budgetMatch && bhkMatch;
+      return locationMatch && typeMatch;
     });
 
-    console.log('EXACT MATCHES:', exactMatches);
+    console.log('LOCATION + TYPE PROPERTIES:', relatedProperties);
 
-    if (exactMatches.length > 0) {
-      this.filteredProperties = exactMatches;
-
-      console.log('SHOWING EXACT MATCHES:', this.filteredProperties);
-
-      console.log('RESULT COUNT:', this.filteredProperties.length);
-
-      this.cdr.detectChanges();
-
-      return;
-    }
-
-    const relatedProperties = sameLocation
+    relatedProperties = relatedProperties
       .map((property) => {
         let score = 0;
 
-        // Property Type
-        if (type && this.normalize(property.type) === type) {
-          score += 3;
-        }
-
-        // Budget
         if (price && this.checkBudget(property.budget, price)) {
           score += 2;
         }
 
-        // BHK
         if (bhk && this.checkBhk(property.bhk, bhk)) {
           score += 2;
         }
@@ -145,40 +120,29 @@ export class Search implements OnInit {
           score,
         };
       })
-
-      .filter((item) => item.score > 0)
-
       .sort((a, b) => b.score - a.score)
-
       .map((item) => item.property);
 
     this.filteredProperties = relatedProperties;
 
-    console.log('RELATED PROPERTIES:', this.filteredProperties);
+    console.log('FINAL SEARCH RESULTS:', this.filteredProperties);
 
     console.log('RESULT COUNT:', this.filteredProperties.length);
 
     this.cdr.detectChanges();
   }
 
-  // =====================================================
-  // BUDGET CHECK
-  // =====================================================
-
   checkBudget(propertyBudget: string, selectedPrice: string): boolean {
     const budget = this.normalize(propertyBudget);
 
-    // ₹20L - ₹50L
     if (selectedPrice === 'under50') {
       return budget === this.normalize('₹20L - ₹50L');
     }
 
-    // ₹50L - ₹1Cr
     if (selectedPrice === '50to100') {
       return budget === this.normalize('₹50L - ₹1Cr');
     }
 
-    // ₹1Cr+
     if (selectedPrice === '1crplus') {
       return budget === this.normalize('₹1Cr+');
     }
@@ -186,41 +150,29 @@ export class Search implements OnInit {
     return true;
   }
 
-  // =====================================================
-  // BHK CHECK
-  // =====================================================
-
   checkBhk(propertyBhk: string, selectedBhk: string): boolean {
     const propertyValue = this.normalize(propertyBhk);
 
     const selectedValue = this.normalize(selectedBhk);
 
-    // 4+ BHK
     if (selectedValue === '4+') {
       return propertyValue === this.normalize('4+ BHK');
     }
 
-    // 1 BHK
     if (selectedValue === '1') {
       return propertyValue === this.normalize('1 BHK');
     }
 
-    // 2 BHK
     if (selectedValue === '2') {
       return propertyValue === this.normalize('2 BHK');
     }
 
-    // 3 BHK
     if (selectedValue === '3') {
       return propertyValue === this.normalize('3 BHK');
     }
 
     return true;
   }
-
-  // =====================================================
-  // NORMALIZE
-  // =====================================================
 
   private normalize(value: unknown): string {
     if (value === null || value === undefined) {

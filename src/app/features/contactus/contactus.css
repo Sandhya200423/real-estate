@@ -102,7 +102,6 @@
     height: 160px;
     resize: none;
     padding: 22px 22px 22px 60px;
-    
   }
   input::placeholder,
   textarea::placeholder {
@@ -149,19 +148,65 @@
     transform: scale(1.1);
   }
 }
-  i {
-    font-size: 18px;
-  }
-  &:hover {
-    transform: translateY(-5px);
-    background: linear-gradient(90deg, var(--secondary), #c99628);
-    box-shadow: 0 20px 45px rgba(215, 166, 60, 0.35);
-  }
-  &:active {
-    transform: scale(0.98);
-  }
-  .send-message-btn {
+i {
+  font-size: 18px;
+}
+&:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(90deg, var(--secondary), #c99628);
+  box-shadow: 0 20px 45px rgba(215, 166, 60, 0.35);
+}
+&:active {
+  transform: scale(0.98);
+}
+.send-message-btn {
   margin-top: 20px;
+}
+/* =========================
+   CONTACT SEND BUTTON
+========================= */
+
+.contact-section {
+  .contact-send-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-width: 180px;
+    height: 50px;
+    padding: 0 26px;
+
+    background: #d9a936;
+    color: #ffffff;
+
+    border: 1px solid #d9a936;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: #c89628;
+      border-color: #c89628;
+      transform: translateY(-2px);
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+  }
 }
 
 /*==========================*

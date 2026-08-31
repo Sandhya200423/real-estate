@@ -1,0 +1,471 @@
+<section class="property-details-page">
+  <div class="container">
+    @if (loading) {
+      <div class="loading">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        <p>Loading property...</p>
+      </div>
+    } @else if (property) {
+      <!-- ==============================
+           TOP BAR
+      =============================== -->
+      <div class="top-bar">
+        <div class="breadcrumb">
+          <a routerLink="/">
+            <i class="fa-solid fa-house"></i>
+            Home
+          </a>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <a routerLink="/properties"> Properties </a>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <span>
+            {{ property.title }}
+          </span>
+        </div>
+
+        <button type="button" class="back-btn" (click)="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to Properties
+        </button>
+      </div>
+
+      <!-- ==============================
+           MAIN PROPERTY
+      =============================== -->
+      <div class="property-main">
+        <!-- LEFT : GALLERY -->
+        <div class="property-gallery">
+          <div class="main-image">
+            <!-- MAIN IMAGE -->
+            <img [src]="galleryImages[selectedImageIndex]" [alt]="property.title" />
+
+            <span class="property-type">
+              {{ property.type }}
+            </span>
+
+            <!-- LEFT ARROW -->
+            <button type="button" class="gallery-arrow left" (click)="previousImage()">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <!-- RIGHT ARROW -->
+            <button type="button" class="gallery-arrow right" (click)="nextImage()">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <!-- FAVORITE -->
+            <button type="button" class="favorite-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+
+          <!-- ==============================
+               THUMBNAILS
+          =============================== -->
+          <div class="thumbnail-row">
+            @for (image of galleryImages; track $index) {
+              <div
+                class="thumbnail"
+                [class.active]="$index === selectedImageIndex"
+                (click)="selectImage($index)"
+              >
+                <img [src]="image" [alt]="property.title" />
+              </div>
+            }
+          </div>
+        </div>
+
+        <!-- RIGHT : PROPERTY INFO -->
+        <div class="property-info">
+          <span class="featured"> Featured </span>
+
+          <h1>
+            {{ property.title }}
+          </h1>
+
+          <p class="location">
+            <i class="fa-solid fa-location-dot"></i>
+
+            {{ property.location }}, Maharashtra
+          </p>
+
+          <div class="divider"></div>
+
+          <!-- PRICE -->
+          <div class="price-section">
+            <h2>₹{{ property.price | number }}</h2>
+
+            <span>
+              {{ property.budget }}
+            </span>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- BASIC STATS -->
+          <div class="basic-stats">
+            <div class="basic-stat">
+              <i class="fa-solid fa-bed"></i>
+
+              <div>
+                <strong>
+                  {{ property.bhk }}
+                </strong>
+
+                <span> Bedrooms </span>
+              </div>
+            </div>
+
+            <div class="basic-stat">
+              <i class="fa-solid fa-bath"></i>
+
+              <div>
+                <strong>
+                  {{ property.bathrooms }}
+                </strong>
+
+                <span> Bathrooms </span>
+              </div>
+            </div>
+
+            <div class="basic-stat">
+              <i class="fa-solid fa-ruler-combined"></i>
+
+              <div>
+                <strong>
+                  {{ property.area }}
+                </strong>
+
+                <span> Built-up Area </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- PROPERTY STATUS -->
+          <div class="property-status">
+            <div class="status-item">
+              <i class="fa-solid fa-house"></i>
+
+              <div>
+                <span> Property Type </span>
+
+                <strong>
+                  {{ property.type }}
+                </strong>
+              </div>
+            </div>
+
+            <div class="status-item">
+              <i class="fa-regular fa-circle-check"></i>
+
+              <div>
+                <span> Status </span>
+
+                <strong>
+                  {{ property.status }}
+                </strong>
+              </div>
+            </div>
+
+            <div class="status-item">
+              <i class="fa-solid fa-crown"></i>
+
+              <div>
+                <span> Possession </span>
+
+                <strong>
+                  {{ property.possession }}
+                </strong>
+              </div>
+            </div>
+
+            <div class="status-item">
+              <i class="fa-regular fa-calendar"></i>
+
+              <div>
+                <span> Property Age </span>
+
+                <strong>
+                  {{ property.propertyAge }}
+                </strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- ENQUIRE BUTTON -->
+          <button type="button" class="enquire-btn" (click)="openEnquiry()">Enquire Now</button>
+        </div>
+      </div>
+
+      <!-- ==============================
+           BOTTOM CONTENT
+      =============================== -->
+      <div class="bottom-grid">
+        <!-- ABOUT -->
+        <div class="about-card">
+          <h2>About This Property</h2>
+
+          <p>
+            {{ property.description }}
+          </p>
+
+          <div class="divider"></div>
+
+          <!-- FEATURES -->
+          <div class="features-grid">
+            @for (feature of property.features; track $index) {
+              <div>
+                <i class="fa-regular fa-circle-check"></i>
+
+                {{ feature }}
+              </div>
+            }
+          </div>
+        </div>
+
+        <!-- PROPERTY DETAILS -->
+        <div class="details-card">
+          <h2>Property Details</h2>
+
+          <div class="details-columns">
+            <!-- LEFT COLUMN -->
+            <div class="details-column">
+              <div class="detail-row">
+                <span> Property ID </span>
+
+                <b>:</b>
+
+                <strong>
+                  {{ property.id }}
+                </strong>
+              </div>
+
+              <div class="detail-row">
+                <span> Property Type </span>
+
+                <b>:</b>
+
+                <strong>
+                  {{ property.type }}
+                </strong>
+              </div>
+
+              <div class="detail-row">
+                <span> Bedrooms </span>
+
+                <b>:</b>
+
+                <strong>
+                  {{ property.bhk }}
+                </strong>
+              </div>
+
+              <div class="detail-row">
+                <span> Bathrooms </span>
+
+                <b>:</b>
+
+                <strong>
+                  {{ property.bathrooms }}
+                </strong>
+              </div>
+
+              <div class="detail-row">
+                <span> Built-up Area </span>
+
+                <b>:</b>
+
+                <strong>
+                  {{ property.area }}
+                </strong>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="details-column">
+              <div class="detail-row">
+                <span> Furnishing </span>
+
+                <b>:</b>
+
+                <strong>
+                  {{ property.furnishing }}
+                </strong>
+              </div>
+
+              <div class="detail-row">
+                <span> Car Parking </span>
+
+                <b>:</b>
+
+                <strong>
+                  {{ property.carParking }}
+                </strong>
+              </div>
+
+              <div class="detail-row">
+                <span> Floor </span>
+
+                <b>:</b>
+
+                <strong>
+                  {{ property.floor }}
+                </strong>
+              </div>
+
+              <div class="detail-row">
+                <span> Total Floors </span>
+
+                <b>:</b>
+
+                <strong>
+                  {{ property.totalFloors }}
+                </strong>
+              </div>
+
+              <div class="detail-row">
+                <span> Facing </span>
+
+                <b>:</b>
+
+                <strong>
+                  {{ property.facing }}
+                </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <!-- ==============================
+           NOT FOUND
+      =============================== -->
+      <div class="not-found">
+        <i class="fa-solid fa-house-circle-exclamation"></i>
+
+        <h2>Property Not Found</h2>
+
+        <p>The property you are looking for does not exist.</p>
+
+        <button type="button" class="back-btn" (click)="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to Search
+        </button>
+      </div>
+    }
+  </div>
+
+  <!-- ==========================================
+       ENQUIRY POPUP
+  =========================================== -->
+
+  @if (showEnquiry) {
+    <div class="enquiry-overlay" (click)="closeEnquiry()">
+      <div class="enquiry-modal" (click)="$event.stopPropagation()">
+        <!-- CLOSE -->
+        <button type="button" class="close-enquiry" (click)="closeEnquiry()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- HEADER -->
+        <div class="enquiry-header">
+          <span> PROPERTY ENQUIRY </span>
+
+          <h2>Interested in this Property?</h2>
+
+          <p>
+            {{ property?.title }}
+          </p>
+        </div>
+
+        <!-- SUCCESS -->
+        @if (enquirySubmitted) {
+          <div class="enquiry-success">
+            <div class="success-icon">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <h3>Enquiry Sent Successfully!</h3>
+
+            <p>
+              Thank you for your interest in
+              <strong> {{ property?.title }} </strong>.
+            </p>
+
+            <p>Our team will contact you soon.</p>
+
+            <button type="button" class="send-enquiry-btn" (click)="closeEnquiry()">Close</button>
+          </div>
+        } @else {
+          <!-- FORM -->
+          <form (ngSubmit)="sendEnquiry()">
+            <!-- NAME -->
+            <div class="form-group">
+              <label for="name"> Full Name </label>
+
+              <input
+                id="name"
+                type="text"
+                name="name"
+                [(ngModel)]="enquiry.name"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <!-- MOBILE -->
+            <div class="form-group">
+              <label for="mobile"> Mobile Number </label>
+
+              <input
+                id="mobile"
+                type="tel"
+                name="mobile"
+                [(ngModel)]="enquiry.mobile"
+                placeholder="Enter your mobile number"
+              />
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+              <label for="email"> Email Address </label>
+
+              <input
+                id="email"
+                type="email"
+                name="email"
+                [(ngModel)]="enquiry.email"
+                placeholder="Enter your email address"
+              />
+            </div>
+
+            <!-- MESSAGE -->
+            <div class="form-group">
+              <label for="message"> Message </label>
+
+              <textarea
+                id="message"
+                rows="4"
+                name="message"
+                [(ngModel)]="enquiry.message"
+                placeholder="I'm interested in this property..."
+              ></textarea>
+            </div>
+
+            <!-- SEND -->
+            <button type="submit" class="send-enquiry-btn">
+              Send Enquiry
+
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        }
+      </div>
+    </div>
+  }
+</section>

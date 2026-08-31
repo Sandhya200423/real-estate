@@ -179,7 +179,74 @@ Navigation
     }
   }
 }
+/*==================================================
+                  HEADER BUTTONS
+==================================================*/
 
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* Sign In */
+  .btn-outline {
+    background: var(--secondary);
+    color: #fff;
+    border: 1px solid var(--secondary);
+  }
+
+  /* Add Property */
+  .btn-primary {
+    background: var(--secondary);
+    color: #fff;
+    border: 1px solid var(--secondary);
+  }
+}
+
+.mobile-buttons {
+  display: none;
+}
+
+.header-buttons,
+.mobile-buttons {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    i {
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    /* Sign In */
+    &.btn-outline {
+      background: var(--secondary);
+      color: #fff;
+    }
+
+    /* Add Property */
+    &.btn-primary {
+      background: var(--secondary);
+      color: #fff;
+    }
+  }
+}
 /* ==========================
 Buy Dropdown
 ========================== */

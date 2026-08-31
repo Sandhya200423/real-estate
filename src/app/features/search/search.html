@@ -61,10 +61,14 @@
               <div class="property-bottom">
                 <h4>₹{{ property.price | number }}</h4>
 
-                <button class="view-btn">
+                <a
+                  class="view-btn"
+                  [routerLink]="['/property', property.id]"
+                  (click)="saveSearchState()"
+                >
                   View
                   <i class="fa-solid fa-arrow-right"></i>
-                </button>
+                </a>
               </div>
             </div>
           </article>

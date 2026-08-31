@@ -8,27 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './properties.css',
 })
 export class Properties {
-  searchItems = [
-    {
-      label: 'Location',
-      options: ['Select Location', 'Pune', 'Mumbai', 'Goa'],
-    },
-    {
-      label: 'Property Type',
-      options: ['All Types', 'Villa', 'Apartment', 'Penthouse'],
-    },
-    {
-      label: 'Price Range',
-      options: ['Any Price', '₹1Cr+', '₹3Cr+'],
-    },
-    {
-      label: 'BHK',
-      options: ['Any', '2 BHK', '3 BHK', '4 BHK'],
-    },
-  ];
-
-  popularSearches = ['Pune', 'Mumbai', 'Goa', 'Bangalore', 'Delhi'];
-
   stats = [
     {
       icon: 'fa-solid fa-house',
@@ -168,15 +147,11 @@ export class Properties {
     },
   ];
 
-  viewDetails(property: any) {
-    console.log('Selected Property:', property);
+  scheduleVisit(property: any) {
+    console.log('Schedule a Visit:', property);
   }
 
   viewAllProperties() {
     console.log('View all properties');
-  }
-
-  searchProperties() {
-    console.log('Search properties');
   }
 }

@@ -1,77 +1,90 @@
-<!-- ================= PROPERTIES HERO ================= -->
 <section class="hero">
   <div class="hero-overlay"></div>
 
   <div class="container hero-container">
     <div class="hero-content">
-      <span class="section-subtitle"> PREMIUM COLLECTION </span>
+      <span class="section-subtitle">PREMIUM COLLECTION</span>
 
       <h1 class="section-title white">
-        Discover
+        Find your
         <br />
-        Extraordinary
+        perfect <span>place</span>
         <br />
-        Properties
+        to call home.
       </h1>
 
       <p class="section-description white">
-        Explore handpicked luxury homes and investments that define elegance and exclusivity.
+        Curated luxury residences in prime
+        <br />
+        locations for the way you live.
       </p>
 
-      <!-- Search -->
-      <div class="search-box">
-        @for (item of searchItems; track item.label) {
-          <div class="search-item">
-            <label>
-              {{ item.label }}
-            </label>
-
-            <select>
-              @for (option of item.options; track option) {
-                <option>
-                  {{ option }}
-                </option>
-              }
-            </select>
-          </div>
-        }
-
-        <button class="search-btn" (click)="searchProperties()">
-          <i class="fa-solid fa-magnifying-glass"></i>
+      <div class="hero-buttons">
+        <button class="explore-btn" routerLink="/properties">
+          Explore Properties
+          <i class="fa-solid fa-arrow-right"></i>
         </button>
-      </div>
-
-      <!-- Popular Searches -->
-      <div class="popular-search">
-        <span> Popular Searches: </span>
-
-        @for (search of popularSearches; track search) {
-          <a href="#">
-            {{ search }}
-          </a>
-        }
       </div>
     </div>
 
-    <!-- Stats -->
     <div class="stats-card">
       @for (stat of stats; track stat.title) {
         <div class="stat">
           <div class="icon">
             <i [class]="stat.icon"></i>
           </div>
-
-          <div>
-            <h3>
-              {{ stat.value }}
-            </h3>
-
-            <p>
-              {{ stat.title }}
-            </p>
-          </div>
+          <h3>{{ stat.value }}</h3>
+          <p>{{ stat.title }}</p>
         </div>
       }
+    </div>
+
+    <div class="trust-card">
+      <div class="trust-heading">
+        <span></span>
+        <p>TRUSTED BY THOUSANDS OF<br />HOME BUYERS ACROSS INDIA</p>
+        <span></span>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div>
+          <h3>Verified Properties</h3>
+          <p>All properties are thoroughly verified</p>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <div>
+          <h3>Expert Guidance</h3>
+          <p>Get professional advice from our experts</p>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">
+          <i class="fa-solid fa-handshake"></i>
+        </div>
+        <div>
+          <h3>Best Price Guarantee</h3>
+          <p>We ensure the best value for your investment</p>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <div>
+          <h3>Secure Transactions</h3>
+          <p>Safe, transparent and hassle-free process</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -96,7 +109,7 @@
       </div>
     }
 
-    <button class="view-btn" (click)="viewAllProperties()">
+    <button class="properties-view-btn" (click)="viewAllProperties()">
       View All Properties
 
       <i class="fa-solid fa-arrow-right"></i>
@@ -137,7 +150,9 @@
               </span>
             </div>
 
-            <button (click)="viewDetails(property)">View Details →</button>
+            <button class="property-details-btn" (click)="scheduleVisit(property)">
+              Schedule a Visit →
+            </button>
           </div>
 
           <!-- Image -->
@@ -179,7 +194,9 @@
               </span>
             </div>
 
-            <button (click)="viewDetails(property)">View Details →</button>
+            <button class="property-details-btn" (click)="scheduleVisit(property)">
+              Schedule a Visit →
+            </button>
           </div>
         }
       </div>
@@ -196,7 +213,7 @@
       <span class="heading-line"></span>
     </div>
 
-    <button class="view-all-btn" (click)="viewAllProperties()">
+    <button class="properties-view-all-btn" (click)="viewAllProperties()">
       View All Properties
 
       <i class="fa-solid fa-arrow-right"></i>

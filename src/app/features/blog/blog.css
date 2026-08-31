@@ -81,6 +81,95 @@
   margin: 20px 0;
   font-size: 14px;
 }
+/* =========================
+   BLOG BUTTONS
+========================= */
+
+.featured-blog {
+  .blog-read-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-width: 140px;
+    height: 46px;
+    padding: 0 22px;
+
+    background: #d9a936;
+    color: #ffffff;
+
+    border: 1px solid #d9a936;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 13px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: #c89628;
+      border-color: #c89628;
+      transform: translateY(-2px);
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+/* =========================
+   BLOG CTA BUTTON
+========================= */
+
+.blog-cta {
+  .blog-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-width: 150px;
+    height: 50px;
+    padding: 0 26px;
+
+    background: #d9a936;
+    color: #ffffff;
+
+    border: 1px solid #d9a936;
+    border-radius: 7px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 13px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: #c89628;
+      border-color: #c89628;
+      transform: translateY(-2px);
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
 /*==========================*
 *TRENDING BLOG*
 *==========================*/

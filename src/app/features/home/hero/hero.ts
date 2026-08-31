@@ -46,12 +46,19 @@ export class Hero {
 
   searchProperties(): void {
     const location = this.searchItems[0].selected;
-
     const type = this.searchItems[1].selected;
-
     const budget = this.searchItems[2].selected;
-
     const bedrooms = this.searchItems[3].selected;
+
+    const nothingSelected =
+      location === 'Select Location' &&
+      type === 'All Properties' &&
+      budget === 'Choose Budget' &&
+      bedrooms === 'Any';
+
+    if (nothingSelected) {
+      return;
+    }
 
     this.router.navigate(['/search'], {
       queryParams: {

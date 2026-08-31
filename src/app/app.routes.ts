@@ -15,6 +15,11 @@ export const routes: Routes = [
     loadComponent: () => import('./features/search/search').then((m) => m.Search),
   },
   {
+    path: 'property/:id',
+    loadComponent: () =>
+      import('./features/property-details/property-details').then((m) => m.PropertyDetails),
+  },
+  {
     path: 'buy',
     loadComponent: () => import('./features/buy/buy').then((m) => m.Buy),
   },

@@ -12,6 +12,20 @@ export interface Property {
   price: number;
   area: string;
   image: string;
+
+  bathrooms: number;
+  status: string;
+  possession: string;
+  propertyAge: number;
+  furnishing: string;
+  carParking: number;
+  floor: number;
+  totalFloors: number;
+  facing: string;
+
+  features: string[];
+
+  description: string;
 }
 
 @Injectable({
