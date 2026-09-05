@@ -180,9 +180,7 @@ export class Sell {
 
   selectedImages: File[] = [];
 
-  listProperty() {
-    console.log('List Property clicked');
-  }
+  
 
   onImagesSelected(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -190,13 +188,5 @@ export class Sell {
     if (input.files) {
       this.selectedImages = Array.from(input.files);
     }
-  }
-
-  saveDraft() {
-    console.log('Property draft saved', this.property);
-  }
-
-  submitProperty() {
-    console.log('Property submitted', this.property);
   }
 }

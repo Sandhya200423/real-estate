@@ -1,0 +1,178 @@
+<section class="loan-page">
+  <div class="loan-container">
+    <!-- Heading -->
+    <div class="loan-heading">
+      <span>SMART HOME FINANCING</span>
+      <h1>Plan Your <b>Home Loan</b></h1>
+      <p>
+        Understand your EMI, loan amount and repayment plan before making your dream home purchase.
+      </p>
+    </div>
+
+    <!-- Main Loan Box -->
+    <div class="loan-box">
+      <!-- Left Content -->
+      <div class="loan-content">
+        <div class="loan-tag">
+          <i class="fa-solid fa-calculator"></i>
+          EMI PLANNER
+        </div>
+
+        <h2>
+          Make Your Home Purchase
+          <span>Financially Smarter.</span>
+        </h2>
+
+        <p class="loan-description">
+          Plan your property budget with a clear understanding of monthly EMI, interest and total
+          repayment.
+        </p>
+
+        <div class="loan-points">
+          <div class="loan-point">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <h3>Flexible Loan Options</h3>
+              <p>Choose a loan amount and tenure that suits your budget.</p>
+            </div>
+          </div>
+
+          <div class="loan-point">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <h3>Easy EMI Planning</h3>
+              <p>Know your monthly repayment instantly.</p>
+            </div>
+          </div>
+
+          <div class="loan-point">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <h3>Better Decisions</h3>
+              <p>Compare your property budget with your repayment capacity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMI Calculator -->
+      <div class="emi-card">
+        <div class="emi-card-header">
+          <div>
+            <small>ESTIMATED MONTHLY EMI</small>
+            <h2>₹{{ emi | number: '1.0-0' }}</h2>
+          </div>
+
+          <div class="emi-icon">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+          </div>
+        </div>
+
+        <div class="emi-divider"></div>
+
+        <!-- Loan Amount -->
+        <div class="calculator-field">
+          <div class="field-top">
+            <label>Loan Amount</label>
+            <strong>₹{{ loanAmount | number: '1.0-0' }}</strong>
+          </div>
+
+          <input
+            type="range"
+            min="500000"
+            max="20000000"
+            step="100000"
+            [(ngModel)]="loanAmount"
+            (input)="calculateEMI()"
+          />
+        </div>
+
+        <!-- Interest -->
+        <div class="calculator-field">
+          <div class="field-top">
+            <label>Interest Rate</label>
+            <strong>{{ interestRate }}%</strong>
+          </div>
+
+          <input
+            type="range"
+            min="5"
+            max="15"
+            step="0.1"
+            [(ngModel)]="interestRate"
+            (input)="calculateEMI()"
+          />
+        </div>
+
+        <!-- Tenure -->
+        <div class="calculator-field">
+          <div class="field-top">
+            <label>Loan Tenure</label>
+            <strong>{{ tenure }} Years</strong>
+          </div>
+
+          <input
+            type="range"
+            min="5"
+            max="30"
+            step="1"
+            [(ngModel)]="tenure"
+            (input)="calculateEMI()"
+          />
+        </div>
+
+        <div class="emi-divider"></div>
+
+        <!-- Result Details -->
+        <div class="emi-details">
+          <div>
+            <span>Loan Amount</span>
+            <strong>₹{{ loanAmount | number: '1.0-0' }}</strong>
+          </div>
+
+          <div>
+            <span>Total Interest</span>
+            <strong>₹{{ totalInterest | number: '1.0-0' }}</strong>
+          </div>
+
+          <div>
+            <span>Total Payment</span>
+            <strong>₹{{ totalPayment | number: '1.0-0' }}</strong>
+          </div>
+        </div>
+
+        <a class="loan-btn">
+          Explore Properties
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Highlights -->
+    <div class="loan-highlights">
+      <div class="highlight">
+        <i class="fa-solid fa-percent"></i>
+        <div>
+          <strong>Competitive Rates</strong>
+          <span>Plan according to your budget</span>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <i class="fa-solid fa-calendar-days"></i>
+        <div>
+          <strong>Flexible Tenure</strong>
+          <span>Choose a comfortable repayment period</span>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div>
+          <strong>Transparent Planning</strong>
+          <span>Understand your repayment better</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

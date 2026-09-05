@@ -20,8 +20,27 @@ export const routes: Routes = [
       import('./features/property-details/property-details').then((m) => m.PropertyDetails),
   },
   {
+    path: 'schedule-visit/:id',
+    loadComponent: () =>
+      import('./features/shedule-visit/shedule-visit').then((m) => m.ScheduleVisit),
+  },
+  {
     path: 'buy',
     loadComponent: () => import('./features/buy/buy').then((m) => m.Buy),
+  },
+  {
+    path: 'buy/find-your-home',
+    loadComponent: () => import('./features/buy/find-home/find-home').then((m) => m.FindYourHome),
+  },
+
+  {
+    path: 'buy/new-launches',
+    loadComponent: () => import('./features/buy/newlaunch/newlaunch').then((m) => m.NewLaunches),
+  },
+
+  {
+    path: 'buy/home-loan-emi',
+    loadComponent: () => import('./features/buy/emi/emi').then((m) => m.HomeLoanEmi),
   },
 
   {

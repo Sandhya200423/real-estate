@@ -1,0 +1,50 @@
+<main class="find-home">
+  <div class="container">
+    <div class="heading">
+      <span>FIND YOUR HOME</span>
+      <h1>Find Your <b>Perfect Home</b></h1>
+      <p>Discover beautiful homes designed for your lifestyle.</p>
+    </div>
+
+    <div class="property-grid">
+      @for (property of properties; track property.title) {
+        <div class="property-card">
+          <div class="image-box">
+            <img [src]="property.image" [alt]="property.title" />
+            <span>FOR SALE</span>
+          </div>
+
+          <div class="card-content">
+            <h2>{{ property.title }}</h2>
+
+            <p class="location">
+              <i class="fa-solid fa-location-dot"></i>
+              {{ property.location }}
+            </p>
+
+            <div class="details">
+              <div>
+                <i class="fa-solid fa-bed"></i>
+                {{ property.bhk }}
+              </div>
+
+              <div>
+                <i class="fa-solid fa-ruler-combined"></i>
+                {{ property.area }}
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <strong>{{ property.price }}</strong>
+
+              <a>
+                Buy
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</main>

@@ -42,7 +42,5 @@ export class Contactus {
     },
   ];
 
-  sendMessage() {
-    console.log('Contact Form:', this.contactForm);
-  }
+  sendMessage() {}
 }

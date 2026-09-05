@@ -1,0 +1,363 @@
+.new-launches {
+  padding: 85px 0;
+  background: var(--bg);
+
+  .projects {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+
+      span {
+        color: var(--secondary);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+      }
+
+      h2 {
+        margin: 10px 0;
+        color: var(--primary);
+        font-size: 42px;
+        font-weight: 700;
+
+        b {
+          color: var(--secondary);
+          font-weight: 500;
+        }
+      }
+
+      p {
+        margin: 0;
+        color: var(--text);
+        font-size: 15px;
+      }
+    }
+
+    .property-grid {
+      columns: 3;
+      column-gap: 24px;
+    }
+
+    .property-card {
+      break-inside: avoid;
+      margin-bottom: 24px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(16, 43, 63, 0.07);
+      transition: 0.35s ease;
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 38px rgba(16, 43, 63, 0.14);
+
+        .property-image {
+          img {
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      .property-image {
+        position: relative;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 300px;
+          display: block;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+
+        .new-badge {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          padding: 7px 12px;
+          background: var(--secondary);
+          color: var(--white);
+          border-radius: 4px;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
+
+        .heart-btn {
+          position: absolute;
+          top: 14px;
+          right: 14px;
+          width: 38px;
+          height: 38px;
+          border: none;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.94);
+          color: var(--primary);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.3s;
+
+          &:hover {
+            background: var(--secondary);
+            color: var(--white);
+          }
+        }
+
+        .property-info {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 60px 20px 20px;
+          color: var(--white);
+          background: linear-gradient(to bottom, transparent, rgba(16, 43, 63, 0.95));
+
+          small {
+            color: var(--secondary);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+          }
+
+          h3 {
+            margin: 6px 0;
+            color: var(--white);
+            font-size: 21px;
+            line-height: 1.25;
+          }
+
+          p {
+            margin: 0;
+            color: #f1f5f9;
+            font-size: 13px;
+
+            i {
+              margin-right: 6px;
+              color: var(--secondary);
+            }
+          }
+        }
+      }
+
+      .card-bottom {
+        min-height: 65px;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+
+        strong {
+          color: var(--primary);
+          font-size: 18px;
+          font-weight: 700;
+        }
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          color: var(--secondary);
+          text-decoration: none;
+          font-size: 13px;
+          font-weight: 700;
+          transition: 0.25s;
+
+          i {
+            font-size: 11px;
+          }
+
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+
+  /* ================= TABLET ================= */
+
+  @media (max-width: 900px) {
+    padding: 65px 0;
+
+    .projects {
+      width: 92%;
+
+      .section-heading {
+        margin-bottom: 35px;
+
+        h2 {
+          font-size: 36px;
+        }
+      }
+
+      .property-grid {
+        columns: 2;
+        column-gap: 18px;
+      }
+
+      .property-card {
+        margin-bottom: 18px;
+
+        .property-image {
+          img {
+            height: 280px;
+          }
+
+          .property-info {
+            padding: 55px 17px 17px;
+
+            h3 {
+              font-size: 19px;
+            }
+          }
+        }
+
+        .card-bottom {
+          padding: 14px 17px;
+
+          strong {
+            font-size: 16px;
+          }
+
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  /* ================= MOBILE ================= */
+
+  @media (max-width: 600px) {
+    padding: 50px 0;
+
+    .projects {
+      width: 92%;
+
+      .section-heading {
+        margin-bottom: 30px;
+
+        span {
+          font-size: 10px;
+          letter-spacing: 2px;
+        }
+
+        h2 {
+          font-size: 31px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 1.6;
+        }
+      }
+
+      .property-grid {
+        columns: 1;
+      }
+
+      .property-card {
+        margin-bottom: 20px;
+        border-radius: 14px;
+
+        .property-image {
+          img {
+            height: 330px;
+          }
+
+          .new-badge {
+            top: 13px;
+            left: 13px;
+          }
+
+          .heart-btn {
+            top: 12px;
+            right: 12px;
+          }
+
+          .property-info {
+            padding: 70px 18px 18px;
+
+            small {
+              font-size: 10px;
+            }
+
+            h3 {
+              font-size: 20px;
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+
+        .card-bottom {
+          min-height: 60px;
+          padding: 14px 18px;
+
+          strong {
+            font-size: 16px;
+          }
+
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  /* ================= SMALL MOBILE ================= */
+
+  @media (max-width: 380px) {
+    padding: 40px 0;
+
+    .projects {
+      width: 94%;
+
+      .section-heading {
+        h2 {
+          font-size: 28px;
+        }
+
+        p {
+          font-size: 13px;
+        }
+      }
+
+      .property-card {
+        .property-image {
+          img {
+            height: 290px;
+          }
+
+          .property-info {
+            padding: 60px 15px 15px;
+
+            h3 {
+              font-size: 18px;
+            }
+          }
+        }
+
+        .card-bottom {
+          padding: 13px 15px;
+
+          strong {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

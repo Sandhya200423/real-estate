@@ -5,9 +5,9 @@
     linear-gradient(
       90deg,
       rgba(5, 13, 22, 0.92) 0%,
-      rgba(5, 13, 22, 0.72) 25%,
-      rgba(5, 13, 22, 0.22) 58%,
-      rgba(5, 13, 22, 0.2) 100%
+      rgba(5, 13, 22, 0.72) 20%,
+      rgba(5, 13, 22, 0.22) 40%,
+      rgba(5, 13, 22, 0.2) 80%
     ),
     url('/properties/hero.jpg');
   background-size: cover;

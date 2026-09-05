@@ -84,16 +84,4 @@ export class Blog {
       date: 'July 05, 2026',
     },
   ];
-
-  readFeaturedBlog() {
-    console.log('Featured blog clicked');
-  }
-
-  readBlog(title: string) {
-    console.log('Read blog:', title);
-  }
-
-  contactUs() {
-    console.log('Contact Us clicked');
-  }
 }

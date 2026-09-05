@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Property, PropertyService } from '../../shared/service/property.service';
 
 @Component({
   selector: 'app-properties',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './properties.html',
   styleUrl: './properties.css',
 })
-export class Properties {
+export class Properties implements OnInit {
+  properties: Property[] = [];
+
   stats = [
     {
       icon: 'fa-solid fa-house',
@@ -66,6 +71,7 @@ export class Properties {
 
   showcaseProperties = [
     {
+      id: 1,
       title: 'Luxury Villa in Lonavala',
       location: 'Lonavala, Pune',
       price: '₹ 3.45 Cr',
@@ -75,6 +81,7 @@ export class Properties {
       image: '/properties/i4.jpg',
     },
     {
+      id: 2,
       title: 'Skyline Penthouse Mumbai',
       location: 'Bandra West, Mumbai',
       price: '₹ 9.80 Cr',
@@ -84,6 +91,7 @@ export class Properties {
       image: '/properties/i2.jpg',
     },
     {
+      id: 3,
       title: 'Modern Apartment Baner',
       location: 'Baner, Pune',
       price: '₹ 1.75 Cr',
@@ -96,6 +104,7 @@ export class Properties {
 
   premiumProperties = [
     {
+      id: 4,
       title: 'Elegant Villa in Kharadi',
       price: '₹ 2.95 Cr',
       location: 'Kharadi, Pune',
@@ -106,6 +115,7 @@ export class Properties {
       image: '/properties/i5.jpg',
     },
     {
+      id: 5,
       title: 'Premium Villa in Goa',
       price: '₹ 4.20 Cr',
       location: 'Goa',
@@ -116,6 +126,7 @@ export class Properties {
       image: '/properties/i6.jpg',
     },
     {
+      id: 6,
       title: 'Luxury Apartment in Worli',
       price: '₹ 6.70 Cr',
       location: 'Worli, Mumbai',
@@ -126,6 +137,7 @@ export class Properties {
       image: '/properties/p1.jpg',
     },
     {
+      id: 7,
       title: 'Beachfront Villa Goa',
       price: '₹ 8.90 Cr',
       location: 'North Goa',
@@ -136,6 +148,7 @@ export class Properties {
       image: '/properties/p2.jpg',
     },
     {
+      id: 8,
       title: 'Premium Apartment',
       price: '₹ 3.85 Cr',
       location: 'Baner, Pune',
@@ -147,11 +160,30 @@ export class Properties {
     },
   ];
 
-  scheduleVisit(property: any) {
-    console.log('Schedule a Visit:', property);
+  constructor(
+    private router: Router,
+    private propertyService: PropertyService,
+  ) {}
+
+  ngOnInit(): void {
+    this.propertyService.getProperties().subscribe({
+      next: (data) => {
+        this.properties = data;
+      },
+
+      error: (error) => {
+        console.error('Error loading properties:', error);
+      },
+    });
   }
 
-  viewAllProperties() {
-    console.log('View all properties');
+  scheduleVisit(property: any): void {
+    this.router.navigate(['/schedule-visit', property.id], {
+      state: {
+        property: property,
+      },
+    });
   }
+
+  viewAllProperties(): void {}
 }

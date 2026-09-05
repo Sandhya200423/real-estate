@@ -8,8 +8,4 @@ import { Component } from '@angular/core';
 })
 export class Get {
   recommendations = ['Personalized Suggestions', 'Expert Consultation', 'Best Price Guarantee'];
-
-  getRecommendations() {
-    console.log('Getting home recommendations...');
-  }
 }

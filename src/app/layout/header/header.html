@@ -1,14 +1,17 @@
 <header class="header" [class.scrolled]="isScrolled">
   <div class="container">
     <div class="navbar">
+      <!-- Logo -->
       <a routerLink="/" class="logo">
         <img [src]="headerData.logo" [alt]="headerData.logoAlt" class="logo-img" />
+
         <div class="logo-text">
           <h2>{{ headerData.brandName }}</h2>
           <span>{{ headerData.tagline }}</span>
         </div>
       </a>
 
+      <!-- Navigation -->
       <nav class="nav-links" [class.active]="menuOpen">
         @for (item of navItems; track item.name) {
           @if (item.dropdown) {
@@ -28,9 +31,10 @@
                 </button>
               </div>
 
+              <!-- Buy Dropdown -->
               <div class="buy-dropdown-menu" [class.open]="buyDropdownOpen">
                 @for (menu of item.dropdown; track menu.name) {
-                  <a [routerLink]="['/buy']" [fragment]="menu.fragment" (click)="closeMenu()">
+                  <a [routerLink]="['/buy', menu.page]" (click)="closeMenu()">
                     {{ menu.name }}
                   </a>
                 }
@@ -48,6 +52,7 @@
           }
         }
 
+        <!-- Mobile Buttons -->
         <div class="mobile-buttons">
           <a [routerLink]="headerData.signInLink" class="btn btn-outline" (click)="closeMenu()">
             <i class="fa-solid fa-user"></i>
@@ -65,6 +70,7 @@
         </div>
       </nav>
 
+      <!-- Desktop Buttons -->
       <div class="header-buttons">
         <a [routerLink]="headerData.signInLink" class="btn btn-outline">
           <i class="fa-solid fa-user"></i>
@@ -77,6 +83,7 @@
         </a>
       </div>
 
+      <!-- Mobile Menu Button -->
       <button class="menu-btn" type="button" (click)="toggleMenu()">
         <i class="fa-solid" [class.fa-bars]="!menuOpen" [class.fa-xmark]="menuOpen"> </i>
       </button>

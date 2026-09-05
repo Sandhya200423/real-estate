@@ -12,6 +12,10 @@ export interface Property {
   price: number;
   area: string;
   image: string;
+  gallery?: string[];
+
+  beds: string;
+  baths: string;
 
   bathrooms: number;
   status: string;

@@ -89,11 +89,6 @@ export class FeaturedProperties {
   }
 
   updateSlider() {
-    // 3 cards visible + gap
     this.transform = `translateX(-${this.currentIndex * 33.333}%)`;
-  }
-
-  toggleWishlist(property: any) {
-    console.log('Wishlist:', property.title);
   }
 }

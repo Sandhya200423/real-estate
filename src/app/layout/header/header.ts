@@ -35,23 +35,16 @@ export class HeaderComponent {
       dropdown: [
         {
           name: 'Find Your Home',
-          fragment: 'find-home',
+          page: 'find-your-home',
         },
-        {
-          name: 'Explore Locations',
-          fragment: 'locations',
-        },
-        {
-          name: 'Featured Properties',
-          fragment: 'featured',
-        },
+
         {
           name: 'New Launches',
-          fragment: 'new-launches',
+          page: 'new-launches',
         },
         {
           name: 'Home Loan & EMI',
-          fragment: 'emi',
+          page: 'home-loan-emi',
         },
       ],
     },

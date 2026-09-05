@@ -1,33 +1,97 @@
+/* ================= ABOUT HERO ================= */
+
 .about-hero {
-  height: 550px;
+  height: 680px;
+  width: 100%;
+
   background-image: url('/about/about.png');
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   position: relative;
   display: flex;
   align-items: center;
+
   margin-top: 108px;
+  overflow: hidden;
 
   .about-overlay {
     position: absolute;
     inset: 0;
+
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+
+    text-align: left;
 
     background: linear-gradient(
       90deg,
-      rgba(16, 43, 63, 0.82) 0%,
-      rgba(16, 43, 63, 0.68) 35%,
-      rgba(16, 43, 63, 0.52) 70%,
-      rgba(16, 43, 63, 0.4) 100%
+      rgba(3, 20, 35, 0.75) 0%,
+      rgba(3, 20, 35, 0.6) 25%,
+      rgba(3, 20, 35, 0.4) 40%,
+      rgba(3, 20, 35, 0.18) 70%,
+      rgba(3, 20, 35, 0) 100%
     );
 
     z-index: 1;
+
+    .section-heading {
+      position: relative;
+      left: 5%;
+      top: -35px;
+
+      .section-subtitle {
+        margin-bottom: 25px;
+      }
+
+      .section-description {
+        margin-top: 35px;
+      }
+
+      .about-trust {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 0;
+        margin-top: 28px;
+
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+        font-weight: 500;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          padding: 0 18px;
+          white-space: nowrap;
+
+          &:first-child {
+            padding-left: 0;
+          }
+
+          + span {
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+          }
+
+          i {
+            color: #e7ad3d;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .highlight-text {
+    color: #e7ad3d;
   }
 }
+
 /*ABOUT COMPANY*/
 .about-company {
   padding: 100px 0;

@@ -1,0 +1,55 @@
+<section class="new-launches">
+  <!-- PROJECTS -->
+  <div class="projects">
+    <div class="section-heading">
+      <span>LATEST COLLECTION</span>
+
+      <h2>New <b>Launches</b></h2>
+
+      <p>Explore our newest premium residences.</p>
+    </div>
+
+    <!-- MASONRY -->
+    <div class="property-grid">
+      @for (project of projects; track project.title) {
+        <div class="property-card">
+          <div class="property-image">
+            <img [src]="project.image" [alt]="project.title" />
+
+            <span class="new-badge"> NEW </span>
+
+            <button class="heart-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <div class="property-info">
+              <small>
+                {{ project.type }}
+              </small>
+
+              <h3>
+                {{ project.title }}
+              </h3>
+
+              <p>
+                <i class="fa-solid fa-location-dot"></i>
+                {{ project.location }}
+              </p>
+            </div>
+          </div>
+
+          <div class="card-bottom">
+            <strong>
+              {{ project.price }}
+            </strong>
+
+            <a>
+              View
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

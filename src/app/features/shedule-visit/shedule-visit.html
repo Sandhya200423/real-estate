@@ -1,0 +1,139 @@
+<div class="schedule-page">
+  <div class="schedule-container">
+    <!-- Back Button -->
+    <a routerLink="/properties" class="back-btn"> ← Back to Properties </a>
+
+    <div class="schedule-content">
+      <!-- LEFT : PROPERTY DETAILS -->
+      <div class="property-card" *ngIf="property">
+        <div class="property-image">
+          <img [src]="property.image" [alt]="property.title" />
+        </div>
+
+        <div class="property-info">
+          <h2>{{ property.title }}</h2>
+
+          <p class="location">{{ property.location }}</p>
+
+          <h3>{{ property.price }}</h3>
+
+          <div class="property-features">
+            <span>{{ property.beds }}</span>
+            <span>{{ property.baths }}</span>
+            <span>{{ property.area }}</span>
+          </div>
+
+          <div class="visit-note">
+            <strong>Planning a visit?</strong>
+            <p>
+              Choose your preferred date and time and our property expert will contact you shortly.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT : FORM -->
+      <div class="form-card">
+        <div class="form-header">
+          <span>BOOK A VISIT</span>
+          <h1>Schedule a Visit</h1>
+          <p>Fill in your details and choose a convenient time to visit this property.</p>
+        </div>
+
+        <form>
+          <!-- NAME -->
+          <div class="form-group">
+            <label>Your Name *</label>
+
+            <input
+              type="text"
+              name="name"
+              [(ngModel)]="visitForm.name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <!-- EMAIL + PHONE -->
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address *</label>
+
+              <input
+                type="email"
+                name="email"
+                [(ngModel)]="visitForm.email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Phone Number *</label>
+
+              <input
+                type="tel"
+                name="phone"
+                [(ngModel)]="visitForm.phone"
+                placeholder="Enter phone number"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- DATE + TIME -->
+          <div class="form-row">
+            <div class="form-group">
+              <label>Preferred Date *</label>
+
+              <input type="date" name="date" [(ngModel)]="visitForm.date" required />
+            </div>
+
+            <div class="form-group">
+              <label>Preferred Time *</label>
+
+              <select name="time" [(ngModel)]="visitForm.time" required>
+                <option value="">Select time</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- VISITORS -->
+          <div class="form-group">
+            <label>Number of Visitors</label>
+
+            <select name="visitors" [(ngModel)]="visitForm.visitors">
+              <option [ngValue]="1">1 Person</option>
+              <option [ngValue]="2">2 People</option>
+              <option [ngValue]="3">3 People</option>
+              <option [ngValue]="4">4 People</option>
+              <option [ngValue]="5">5+ People</option>
+            </select>
+          </div>
+
+          <!-- MESSAGE -->
+          <div class="form-group">
+            <label>Message</label>
+
+            <textarea
+              name="message"
+              [(ngModel)]="visitForm.message"
+              placeholder="Any special request or message..."
+              rows="4"
+            ></textarea>
+          </div>
+
+          <!-- BUTTON -->
+          <button type="button" class="submit-btn">Schedule a Visit →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

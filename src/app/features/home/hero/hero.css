@@ -90,13 +90,13 @@
   }
 
   .hero-contact-btn {
-    background: transparent;
+    background: #d9a936;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid #d9a936;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: #ffffff;
+      background: #c89628;
+      border-color: #c89628;
       transform: translateY(-2px);
     }
   }

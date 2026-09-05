@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { Property, PropertyService } from '../../shared/service/property.service';
@@ -20,13 +20,10 @@ export class Search implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private propertyService: PropertyService,
-    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      console.log('QUERY PARAMS:', params);
-
       this.currentParams = params;
 
       if (this.properties.length > 0) {
@@ -39,22 +36,11 @@ export class Search implements OnInit {
 
   saveSearchState(): void {
     sessionStorage.setItem('propertySearchParams', JSON.stringify(this.currentParams));
-
-    sessionStorage.setItem('propertySearchResults', JSON.stringify(this.filteredProperties));
-
-    sessionStorage.setItem('propertiesScrollPosition', window.scrollY.toString());
-
-    console.log('SEARCH STATE SAVED:', {
-      params: this.currentParams,
-      results: this.filteredProperties,
-    });
   }
 
   loadProperties(): void {
     this.propertyService.getProperties().subscribe({
       next: (data: Property[]) => {
-        console.log('RAW DATA:', data);
-
         this.properties = data;
 
         const params = this.route.snapshot.queryParams;
@@ -65,12 +51,8 @@ export class Search implements OnInit {
       },
 
       error: (error) => {
-        console.error('DB JSON ERROR:', error);
-
         this.properties = [];
         this.filteredProperties = [];
-
-        this.cdr.detectChanges();
       },
     });
   }
@@ -86,13 +68,6 @@ export class Search implements OnInit {
     const price = this.normalize(params['price']);
     const bhk = this.normalize(params['bhk']);
 
-    console.log('==============================');
-    console.log('LOCATION:', location);
-    console.log('TYPE:', type);
-    console.log('PRICE:', price);
-    console.log('BHK:', bhk);
-    console.log('==============================');
-
     let relatedProperties = this.properties.filter((property) => {
       const locationMatch = !location || this.normalize(property.location) === location;
 
@@ -100,8 +75,6 @@ export class Search implements OnInit {
 
       return locationMatch && typeMatch;
     });
-
-    console.log('LOCATION + TYPE PROPERTIES:', relatedProperties);
 
     relatedProperties = relatedProperties
       .map((property) => {
@@ -124,12 +97,6 @@ export class Search implements OnInit {
       .map((item) => item.property);
 
     this.filteredProperties = relatedProperties;
-
-    console.log('FINAL SEARCH RESULTS:', this.filteredProperties);
-
-    console.log('RESULT COUNT:', this.filteredProperties.length);
-
-    this.cdr.detectChanges();
   }
 
   checkBudget(propertyBudget: string, selectedPrice: string): boolean {
